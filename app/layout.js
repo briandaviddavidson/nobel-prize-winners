@@ -12,8 +12,10 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    // Browser extensions (e.g. Ember Inspector, Grammarly) add attributes to <html> and
+    // <body> before hydration; this ignores those two elements' attributes only.
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
