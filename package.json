@@ -1,0 +1,22 @@
+{
+  "name": "nobel-prize-winners",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Charts on who wins the Nobel Prize and how that has changed since 1901.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "fetch-data": "node scripts/fetch-data.js",
+    "transform": "node scripts/transform.js && node scripts/geocode.js && node scripts/insights.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "vite": "^8.3.4"
+  }
+}
