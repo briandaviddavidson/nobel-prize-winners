@@ -1,12 +1,16 @@
 import ChartCard from '../components/ChartCard.js';
 import Legend from '../components/Legend.js';
+import AgeChart from '../components/charts/AgeChart.js';
 import PerDecadeChart from '../components/charts/PerDecadeChart.js';
 import { CATEGORIES } from '../lib/categories.js';
 import { lastDecade, lastYear, prizes, rows, yearsInLastDecade } from '../lib/data.js';
+import { ageCaption, ages } from '../lib/charts/age.js';
 import { perDecade, perDecadeCaption } from '../lib/charts/per-decade.js';
 
 export default function Home() {
   const decadeData = perDecade(rows, prizes);
+  const ageData = ages(rows);
+  const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${Math.abs(n).toFixed(1)}`;
   const partialNote = `*${lastDecade}–${lastYear} only (${yearsInLastDecade} of 10 years).`;
 
   return (
@@ -35,6 +39,30 @@ export default function Home() {
       >
         <Legend />
         <PerDecadeChart counts={decadeData.counts} decades={decadeData.decades} lastDecade={lastDecade} />
+      </ChartCard>
+
+      <ChartCard
+        id="age"
+        title="Age at award"
+        subtitle="Each dot is one laureate; the line is the linear trend with its 95% confidence band"
+        takeaway={ageCaption(ageData)}
+        note={`People only (${ageData.points.length.toLocaleString('en-US')}); organizations have no age. For ${
+          rows.filter((r) => r.birthDatePrecision === 'year').length
+        } laureates only the birth year is known, so their age may be off by one.`}
+        table={{
+          columns: ['Category', 'Laureates', 'Median before 1950', 'Median since 2000', 'Trend (yrs/decade)', 'Youngest', 'Oldest'],
+          rows: ageData.stats.map((s) => [
+            CATEGORIES.find((c) => c.name === s.category).short,
+            s.count,
+            s.earlyMedian ?? '–',
+            s.recentMedian ?? '–',
+            signed(s.slope),
+            `${s.youngest.name} (${s.youngest.age}, ${s.youngest.year})`,
+            `${s.oldest.name} (${s.oldest.age}, ${s.oldest.year})`,
+          ]),
+        }}
+      >
+        <AgeChart points={ageData.points} firstYear={1900} lastYear={lastYear} />
       </ChartCard>
 
       <footer>
