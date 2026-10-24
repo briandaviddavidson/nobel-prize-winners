@@ -1,0 +1,15 @@
+{
+  "Argonne, IL, USA": { "lat": 41.709141, "lng": -87.9786195, "displayName": "Argonne National Laboratory, Lemont, Illinois, United States", "note": "Nominatim matched Argonne Park; used the lab itself" },
+  "Goldschmieden, near Breslau, Poland": { "lat": 51.1374662, "lng": 16.889481, "displayName": "Złotniki, Wrocław, Poland", "note": "Goldschmieden is today's Złotniki district of Wrocław" },
+  "Harwell, Berkshire, United Kingdom": { "lat": 51.579546, "lng": -1.3081827, "displayName": "Harwell Campus, Oxfordshire, United Kingdom", "note": "Atomic Energy Research Establishment site; Harwell moved from Berkshire to Oxfordshire in 1974" },
+  "Kingston Hill, United Kingdom": { "lat": 51.4096275, "lng": -0.3062621, "displayName": "Kingston upon Thames, Greater London, United Kingdom", "note": "Nominatim matched a Kingston Hill in Stafford; Galsworthy was born at Kingston Hill, Surrey" },
+  "Altenberg; Grünau im Almtal, Austria": { "lat": 48.3399538, "lng": 16.2333429, "displayName": "Altenberg, Sankt Andrä-Wördern, Austria", "note": "API lists two sites; used Altenberg, the first" },
+  "Langford Grove, Maldon, Essex, United Kingdom": { "lat": 51.7528569, "lng": 0.6627162, "displayName": "Langford, Maldon, Essex, United Kingdom", "note": "Langford Grove was an estate in Langford" },
+  "Lochfield, Scotland": { "lat": 55.6097195, "lng": -4.2818359, "displayName": "Darvel, East Ayrshire, Scotland", "note": "Nominatim matched Lochfield in Paisley; Fleming was born at Lochfield farm near Darvel" },
+  "Rufford, near Chesterfield, United Kingdom": { "lat": 53.2352134, "lng": -1.4264097, "displayName": "Chesterfield, Derbyshire, United Kingdom", "note": "Approximate: Rufford Farm, near Chesterfield" },
+  "Vik, Sweden": { "lat": 59.7362983, "lng": 17.4622119, "displayName": "Wiks slott, Uppsala, Sweden", "note": "Nominatim matched Vik in Skåne; Arrhenius was born at Vik (Wik) castle near Uppsala" },
+  "Parusnoye, Russia": { "lat": 54.7301946, "lng": 20.0044301, "displayName": "Primorsk, Kaliningrad Oblast, Russia", "note": "Nominatim matched a Parusnoye on Sakhalin; Wien was born at Gaffken near Fischhausen (now Primorsk)" },
+  "Grand Valley, CO, USA": { "lat": 39.446423, "lng": -108.0522672, "displayName": "Parachute, Colorado, United States", "note": "Nominatim matched Grand Valley, Michigan; Grand Valley, CO was renamed Parachute" },
+  "Wailacama, East Timor": { "lat": -8.5822401, "lng": 126.274888, "displayName": "Vemasse, Baucau, East Timor", "note": "Approximate: Wailacama is in Vemasse subdistrict" },
+  "Yugoslavia": { "lat": 44.8178131, "lng": 20.4568974, "displayName": "Belgrade, Serbia", "note": "Nominatim matched Pico Yugoslavia in Bolivia; the country no longer exists, so used its capital, Belgrade, where Andrić lived" }
+}
