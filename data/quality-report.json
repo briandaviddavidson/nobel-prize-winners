@@ -1,0 +1,3700 @@
+{
+  "summary": {
+    "fetchedAt": "2026-10-24T23:31:56.419Z",
+    "rows": 1036,
+    "laureates": 1028,
+    "people": 1000,
+    "organizations": 28,
+    "awardYears": [
+      1901,
+      2026
+    ],
+    "newGeocodeLookups": 0,
+    "issueCounts": {
+      "partialBirthDate": 23,
+      "missingBirthDate": 0,
+      "missingBirthPlace": 3,
+      "organization": 28,
+      "repeatWinner": 7,
+      "notReceived": 3,
+      "noAffiliation": 270,
+      "multipleAffiliations": 84,
+      "geocoded": 23,
+      "countryCentroidOnly": 7,
+      "noCoordinates": 3,
+      "unawardedPrizes": 49,
+      "crossCheck": 0
+    }
+  },
+  "issues": {
+    "partialBirthDate": [
+      {
+        "id": "1004",
+        "name": "Abdulrazak Gurnah",
+        "raw": "1948-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "519",
+        "name": "Albert Lutuli",
+        "raw": "1898-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1031",
+        "name": "Aleksey Yekimov",
+        "raw": "1945-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "998",
+        "name": "Ardem Patapoutian",
+        "raw": "1967-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1039",
+        "name": "David Baker",
+        "raw": "1962-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1007",
+        "name": "David Card",
+        "raw": "1956-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1036",
+        "name": "Gary Ruvkun",
+        "raw": "1952-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1046",
+        "name": "James A. Robinson",
+        "raw": "1960-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1050",
+        "name": "John Clarke",
+        "raw": "1942-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1041",
+        "name": "John Jumper",
+        "raw": "1985-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1052",
+        "name": "John M. Martinis",
+        "raw": "1958-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1066",
+        "name": "Kenso Soai",
+        "raw": "1950-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1030",
+        "name": "Louis Brus",
+        "raw": "1943-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1057",
+        "name": "Maria Corina Machado",
+        "raw": "1967-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "986",
+        "name": "Michael Houghton",
+        "raw": "1949-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1070",
+        "name": "Michael Woodford",
+        "raw": "1955-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1051",
+        "name": "Michel H. Devoret",
+        "raw": "1953-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1029",
+        "name": "Moungi Bawendi",
+        "raw": "1961-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "969",
+        "name": "Paul M. Romer",
+        "raw": "1955-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1069",
+        "name": "Robert E. Hall",
+        "raw": "1943-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "864",
+        "name": "Saul Perlmutter",
+        "raw": "1959-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "1045",
+        "name": "Simon Johnson",
+        "raw": "1963-00-00",
+        "precision": "year"
+      },
+      {
+        "id": "841",
+        "name": "Venkatraman Ramakrishnan",
+        "raw": "1952-00-00",
+        "precision": "year"
+      }
+    ],
+    "missingBirthDate": [],
+    "missingBirthPlace": [
+      {
+        "id": "1004",
+        "name": "Abdulrazak Gurnah"
+      },
+      {
+        "id": "1046",
+        "name": "James A. Robinson"
+      },
+      {
+        "id": "1052",
+        "name": "John M. Martinis"
+      }
+    ],
+    "organization": [
+      {
+        "id": "509",
+        "name": "American Friends Service Committee",
+        "prizes": 1
+      },
+      {
+        "id": "537",
+        "name": "Amnesty International",
+        "prizes": 1
+      },
+      {
+        "id": "1020",
+        "name": "Center for Civil Liberties",
+        "prizes": 1
+      },
+      {
+        "id": "568",
+        "name": "Doctors Without Borders",
+        "prizes": 1
+      },
+      {
+        "id": "881",
+        "name": "European Union",
+        "prizes": 1
+      },
+      {
+        "id": "508",
+        "name": "Friends Service Council",
+        "prizes": 1
+      },
+      {
+        "id": "810",
+        "name": "Grameen Bank",
+        "prizes": 1
+      },
+      {
+        "id": "467",
+        "name": "Institute of International Law",
+        "prizes": 1
+      },
+      {
+        "id": "818",
+        "name": "Intergovernmental Panel on Climate Change",
+        "prizes": 1
+      },
+      {
+        "id": "797",
+        "name": "International Atomic Energy Agency",
+        "prizes": 1
+      },
+      {
+        "id": "948",
+        "name": "International Campaign to Abolish Nuclear Weapons",
+        "prizes": 1
+      },
+      {
+        "id": "564",
+        "name": "International Campaign to Ban Landmines",
+        "prizes": 1
+      },
+      {
+        "id": "482",
+        "name": "International Committee of the Red Cross",
+        "prizes": 3
+      },
+      {
+        "id": "527",
+        "name": "International Labour Organization",
+        "prizes": 1
+      },
+      {
+        "id": "547",
+        "name": "International Physicians for the Prevention of Nuclear War",
+        "prizes": 1
+      },
+      {
+        "id": "523",
+        "name": "League of Red Cross Societies",
+        "prizes": 1
+      },
+      {
+        "id": "1019",
+        "name": "Memorial",
+        "prizes": 1
+      },
+      {
+        "id": "503",
+        "name": "Nansen International Office for Refugees",
+        "prizes": 1
+      },
+      {
+        "id": "925",
+        "name": "National Dialogue Quartet",
+        "prizes": 1
+      },
+      {
+        "id": "1043",
+        "name": "Nihon Hidankyo",
+        "prizes": 1
+      },
+      {
+        "id": "515",
+        "name": "Office of the United Nations High Commissioner for Refugees",
+        "prizes": 2
+      },
+      {
+        "id": "893",
+        "name": "Organisation for the Prohibition of Chemical Weapons",
+        "prizes": 1
+      },
+      {
+        "id": "477",
+        "name": "Permanent International Peace Bureau",
+        "prizes": 1
+      },
+      {
+        "id": "561",
+        "name": "Pugwash Conferences on Science and World Affairs",
+        "prizes": 1
+      },
+      {
+        "id": "748",
+        "name": "United Nations",
+        "prizes": 1
+      },
+      {
+        "id": "525",
+        "name": "United Nations Children's Fund",
+        "prizes": 1
+      },
+      {
+        "id": "550",
+        "name": "United Nations Peacekeeping Forces",
+        "prizes": 1
+      },
+      {
+        "id": "994",
+        "name": "World Food Programme",
+        "prizes": 1
+      }
+    ],
+    "repeatWinner": [
+      {
+        "id": "222",
+        "name": "Frederick Sanger",
+        "prizes": [
+          "1958 Chemistry",
+          "1980 Chemistry"
+        ]
+      },
+      {
+        "id": "482",
+        "name": "International Committee of the Red Cross",
+        "prizes": [
+          "1917 Peace",
+          "1944 Peace",
+          "1963 Peace"
+        ]
+      },
+      {
+        "id": "66",
+        "name": "John Bardeen",
+        "prizes": [
+          "1956 Physics",
+          "1972 Physics"
+        ]
+      },
+      {
+        "id": "743",
+        "name": "K. Barry Sharpless",
+        "prizes": [
+          "2001 Chemistry",
+          "2022 Chemistry"
+        ]
+      },
+      {
+        "id": "217",
+        "name": "Linus Pauling",
+        "prizes": [
+          "1954 Chemistry",
+          "1962 Peace"
+        ]
+      },
+      {
+        "id": "6",
+        "name": "Marie Curie",
+        "prizes": [
+          "1903 Physics",
+          "1911 Chemistry"
+        ]
+      },
+      {
+        "id": "515",
+        "name": "Office of the United Nations High Commissioner for Refugees",
+        "prizes": [
+          "1954 Peace",
+          "1981 Peace"
+        ]
+      }
+    ],
+    "notReceived": [
+      {
+        "id": "629",
+        "name": "Boris Pasternak",
+        "awardYear": 1958,
+        "category": "Literature",
+        "status": "restricted"
+      },
+      {
+        "id": "637",
+        "name": "Jean-Paul Sartre",
+        "awardYear": 1964,
+        "category": "Literature",
+        "status": "declined"
+      },
+      {
+        "id": "531",
+        "name": "Le Duc Tho",
+        "awardYear": 1973,
+        "category": "Peace",
+        "status": "declined"
+      }
+    ],
+    "noAffiliation": [
+      {
+        "id": "1004",
+        "name": "Abdulrazak Gurnah",
+        "awardYear": 2021,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "981",
+        "name": "Abiy Ahmed Ali",
+        "awardYear": 2019,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "541",
+        "name": "Adolfo Pérez Esquivel",
+        "awardYear": 1980,
+        "category": "Peace",
+        "residence": "Argentina"
+      },
+      {
+        "id": "819",
+        "name": "Al Gore",
+        "awardYear": 2007,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "628",
+        "name": "Albert Camus",
+        "awardYear": 1957,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "465",
+        "name": "Albert Gobat",
+        "awardYear": 1902,
+        "category": "Peace",
+        "residence": "Switzerland"
+      },
+      {
+        "id": "519",
+        "name": "Albert Lutuli",
+        "awardYear": 1960,
+        "category": "Peace",
+        "residence": "South Africa"
+      },
+      {
+        "id": "513",
+        "name": "Albert Schweitzer",
+        "awardYear": 1952,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "644",
+        "name": "Aleksandr Solzhenitsyn",
+        "awardYear": 1970,
+        "category": "Literature",
+        "residence": "USSR (now Russia)"
+      },
+      {
+        "id": "1018",
+        "name": "Ales Bialiatski",
+        "awardYear": 2022,
+        "category": "Peace",
+        "residence": "Belarus"
+      },
+      {
+        "id": "544",
+        "name": "Alfonso García Robles",
+        "awardYear": 1982,
+        "category": "Peace",
+        "residence": "Geneva, Switzerland"
+      },
+      {
+        "id": "479",
+        "name": "Alfred Fried",
+        "awardYear": 1911,
+        "category": "Peace",
+        "residence": "Austria"
+      },
+      {
+        "id": "892",
+        "name": "Alice Munro",
+        "awardYear": 2013,
+        "category": "Literature",
+        "residence": "Canada"
+      },
+      {
+        "id": "543",
+        "name": "Alva Myrdal",
+        "awardYear": 1982,
+        "category": "Peace",
+        "residence": "Sweden"
+      },
+      {
+        "id": "509",
+        "name": "American Friends Service Committee",
+        "awardYear": 1947,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "537",
+        "name": "Amnesty International",
+        "awardYear": 1977,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "590",
+        "name": "Anatole France",
+        "awardYear": 1921,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "618",
+        "name": "André Gide",
+        "awardYear": 1947,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "534",
+        "name": "Andrei Sakharov",
+        "awardYear": 1975,
+        "category": "Peace",
+        "residence": "USSR (now Russia)"
+      },
+      {
+        "id": "1067",
+        "name": "Anne Carson",
+        "awardYear": 2026,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "1017",
+        "name": "Annie Ernaux",
+        "awardYear": 2022,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "538",
+        "name": "Anwar al-Sadat",
+        "awardYear": 1978,
+        "category": "Peace",
+        "residence": "Egypt"
+      },
+      {
+        "id": "490",
+        "name": "Aristide Briand",
+        "awardYear": 1926,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "499",
+        "name": "Arthur Henderson",
+        "awardYear": 1934,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "475",
+        "name": "Auguste Beernaert",
+        "awardYear": 1909,
+        "category": "Peace",
+        "residence": "Belgium"
+      },
+      {
+        "id": "553",
+        "name": "Aung San Suu Kyi",
+        "awardYear": 1991,
+        "category": "Peace",
+        "residence": "Burma (now Myanmar)"
+      },
+      {
+        "id": "845",
+        "name": "Barack H. Obama",
+        "awardYear": 2009,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "468",
+        "name": "Bertha von Suttner",
+        "awardYear": 1905,
+        "category": "Peace",
+        "residence": "Austria"
+      },
+      {
+        "id": "621",
+        "name": "Bertrand Russell",
+        "awardYear": 1950,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "535",
+        "name": "Betty Williams",
+        "awardYear": 1976,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "572",
+        "name": "Bjørnstjerne Bjørnson",
+        "awardYear": 1903,
+        "category": "Literature",
+        "residence": "Norway"
+      },
+      {
+        "id": "937",
+        "name": "Bob Dylan",
+        "awardYear": 2016,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "629",
+        "name": "Boris Pasternak",
+        "awardYear": 1958,
+        "category": "Literature",
+        "residence": "USSR (now Russia)"
+      },
+      {
+        "id": "666",
+        "name": "Camilo José Cela",
+        "awardYear": 1989,
+        "category": "Literature",
+        "residence": "Spain"
+      },
+      {
+        "id": "588",
+        "name": "Carl Spitteler",
+        "awardYear": 1919,
+        "category": "Literature",
+        "residence": "Switzerland"
+      },
+      {
+        "id": "500",
+        "name": "Carl von Ossietzky",
+        "awardYear": 1935,
+        "category": "Peace",
+        "residence": "Germany"
+      },
+      {
+        "id": "562",
+        "name": "Carlos Filipe Ximenes Belo",
+        "awardYear": 1996,
+        "category": "Peace",
+        "residence": "East Timor"
+      },
+      {
+        "id": "501",
+        "name": "Carlos Saavedra Lamas",
+        "awardYear": 1936,
+        "category": "Peace",
+        "residence": "Argentina"
+      },
+      {
+        "id": "1020",
+        "name": "Center for Civil Liberties",
+        "awardYear": 2022,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "489",
+        "name": "Charles G. Dawes",
+        "awardYear": 1925,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "486",
+        "name": "Christian Lange",
+        "awardYear": 1921,
+        "category": "Peace",
+        "residence": "Norway"
+      },
+      {
+        "id": "662",
+        "name": "Claude Simon",
+        "awardYear": 1985,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "505",
+        "name": "Cordell Hull",
+        "awardYear": 1945,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "657",
+        "name": "Czesław Miłosz",
+        "awardYear": 1980,
+        "category": "Literature",
+        "residence": "Poland"
+      },
+      {
+        "id": "520",
+        "name": "Dag Hammarskjöld",
+        "awardYear": 1961,
+        "category": "Peace",
+        "residence": "Sweden"
+      },
+      {
+        "id": "674",
+        "name": "Dario Fo",
+        "awardYear": 1997,
+        "category": "Literature",
+        "residence": "Italy"
+      },
+      {
+        "id": "567",
+        "name": "David Trimble",
+        "awardYear": 1998,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "966",
+        "name": "Denis Mukwege",
+        "awardYear": 2018,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "669",
+        "name": "Derek Walcott",
+        "awardYear": 1992,
+        "category": "Literature",
+        "residence": "Saint Lucia"
+      },
+      {
+        "id": "546",
+        "name": "Desmond Tutu",
+        "awardYear": 1984,
+        "category": "Peace",
+        "residence": "South Africa"
+      },
+      {
+        "id": "1006",
+        "name": "Dmitry Muratov",
+        "awardYear": 2021,
+        "category": "Peace",
+        "residence": "Russia"
+      },
+      {
+        "id": "568",
+        "name": "Doctors Without Borders",
+        "awardYear": 1999,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "817",
+        "name": "Doris Lessing",
+        "awardYear": 2007,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "533",
+        "name": "Eisaku Satō",
+        "awardYear": 1974,
+        "category": "Peace",
+        "residence": "Japan"
+      },
+      {
+        "id": "782",
+        "name": "Elfriede Jelinek",
+        "awardYear": 2004,
+        "category": "Literature",
+        "residence": "Austria"
+      },
+      {
+        "id": "658",
+        "name": "Elias Canetti",
+        "awardYear": 1981,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "464",
+        "name": "Élie Ducommun",
+        "awardYear": 1902,
+        "category": "Peace",
+        "residence": "Switzerland"
+      },
+      {
+        "id": "548",
+        "name": "Elie Wiesel",
+        "awardYear": 1986,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "480",
+        "name": "Elihu Root",
+        "awardYear": 1912,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "869",
+        "name": "Ellen Johnson Sirleaf",
+        "awardYear": 2011,
+        "category": "Peace",
+        "residence": "Liberia"
+      },
+      {
+        "id": "506",
+        "name": "Emily Greene Balch",
+        "awardYear": 1946,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "604",
+        "name": "Erik Axel Karlfeldt",
+        "awardYear": 1931,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "625",
+        "name": "Ernest Hemingway",
+        "awardYear": 1954,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "471",
+        "name": "Ernesto Teodoro Moneta",
+        "awardYear": 1907,
+        "category": "Peace",
+        "residence": "Italy"
+      },
+      {
+        "id": "608",
+        "name": "Eugene O'Neill",
+        "awardYear": 1936,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "651",
+        "name": "Eugenio Montale",
+        "awardYear": 1975,
+        "category": "Literature",
+        "residence": "Italy"
+      },
+      {
+        "id": "881",
+        "name": "European Union",
+        "awardYear": 2012,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "649",
+        "name": "Eyvind Johnson",
+        "awardYear": 1974,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "556",
+        "name": "F.W. de Klerk",
+        "awardYear": 1993,
+        "category": "Peace",
+        "residence": "South Africa"
+      },
+      {
+        "id": "492",
+        "name": "Ferdinand Buisson",
+        "awardYear": 1927,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "623",
+        "name": "François Mauriac",
+        "awardYear": 1952,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "494",
+        "name": "Frank B. Kellogg",
+        "awardYear": 1929,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "613",
+        "name": "Frans Eemil Sillanpää",
+        "awardYear": 1939,
+        "category": "Literature",
+        "residence": "Finland"
+      },
+      {
+        "id": "573",
+        "name": "Frédéric Mistral",
+        "awardYear": 1904,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "463",
+        "name": "Frédéric Passy",
+        "awardYear": 1901,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "474",
+        "name": "Fredrik Bajer",
+        "awardYear": 1908,
+        "category": "Peace",
+        "residence": "Denmark"
+      },
+      {
+        "id": "487",
+        "name": "Fridtjof Nansen",
+        "awardYear": 1922,
+        "category": "Peace",
+        "residence": "Norway"
+      },
+      {
+        "id": "685",
+        "name": "Friedrich von Hayek",
+        "awardYear": 1974,
+        "category": "Economic Sciences",
+        "residence": null
+      },
+      {
+        "id": "508",
+        "name": "Friends Service Council",
+        "awardYear": 1947,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "659",
+        "name": "Gabriel García Márquez",
+        "awardYear": 1982,
+        "category": "Literature",
+        "residence": "Mexico"
+      },
+      {
+        "id": "615",
+        "name": "Gabriela Mistral",
+        "awardYear": 1945,
+        "category": "Literature",
+        "residence": "Chile"
+      },
+      {
+        "id": "734",
+        "name": "Gao Xingjian",
+        "awardYear": 2000,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "596",
+        "name": "George Bernard Shaw",
+        "awardYear": 1925,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "514",
+        "name": "George C. Marshall",
+        "awardYear": 1953,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "517",
+        "name": "Georges Pire",
+        "awardYear": 1958,
+        "category": "Peace",
+        "residence": "Belgium"
+      },
+      {
+        "id": "582",
+        "name": "Gerhart Hauptmann",
+        "awardYear": 1912,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "635",
+        "name": "Giorgos Seferis",
+        "awardYear": 1963,
+        "category": "Literature",
+        "residence": "Greece"
+      },
+      {
+        "id": "576",
+        "name": "Giosuè Carducci",
+        "awardYear": 1906,
+        "category": "Literature",
+        "residence": "Italy"
+      },
+      {
+        "id": "810",
+        "name": "Grameen Bank",
+        "awardYear": 2006,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "597",
+        "name": "Grazia Deledda",
+        "awardYear": 1926,
+        "category": "Literature",
+        "residence": "Italy"
+      },
+      {
+        "id": "684",
+        "name": "Gunnar Myrdal",
+        "awardYear": 1974,
+        "category": "Economic Sciences",
+        "residence": null
+      },
+      {
+        "id": "676",
+        "name": "Günter Grass",
+        "awardYear": 1999,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "491",
+        "name": "Gustav Stresemann",
+        "awardYear": 1926,
+        "category": "Peace",
+        "residence": "Germany"
+      },
+      {
+        "id": "626",
+        "name": "Halldór Laxness",
+        "awardYear": 1955,
+        "category": "Literature",
+        "residence": "Iceland"
+      },
+      {
+        "id": "1042",
+        "name": "Han Kang",
+        "awardYear": 2024,
+        "category": "Literature",
+        "residence": "Seoul, South Korea"
+      },
+      {
+        "id": "801",
+        "name": "Harold Pinter",
+        "awardYear": 2005,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "650",
+        "name": "Harry Martinson",
+        "awardYear": 1974,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "647",
+        "name": "Heinrich Böll",
+        "awardYear": 1972,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "600",
+        "name": "Henri Bergson",
+        "awardYear": 1927,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "481",
+        "name": "Henri La Fontaine",
+        "awardYear": 1913,
+        "category": "Peace",
+        "residence": "Belgium"
+      },
+      {
+        "id": "587",
+        "name": "Henrik Pontoppidan",
+        "awardYear": 1917,
+        "category": "Literature",
+        "residence": "Denmark"
+      },
+      {
+        "id": "462",
+        "name": "Henry Dunant",
+        "awardYear": 1901,
+        "category": "Peace",
+        "residence": "Switzerland"
+      },
+      {
+        "id": "530",
+        "name": "Henry Kissinger",
+        "awardYear": 1973,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "575",
+        "name": "Henryk Sienkiewicz",
+        "awardYear": 1905,
+        "category": "Literature",
+        "residence": "Poland"
+      },
+      {
+        "id": "617",
+        "name": "Hermann Hesse",
+        "awardYear": 1946,
+        "category": "Literature",
+        "residence": "Switzerland"
+      },
+      {
+        "id": "844",
+        "name": "Herta Müller",
+        "awardYear": 2009,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "485",
+        "name": "Hjalmar Branting",
+        "awardYear": 1921,
+        "category": "Peace",
+        "residence": "Sweden"
+      },
+      {
+        "id": "761",
+        "name": "Imre Kertész",
+        "awardYear": 2002,
+        "category": "Literature",
+        "residence": "Hungary"
+      },
+      {
+        "id": "467",
+        "name": "Institute of International Law",
+        "awardYear": 1904,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "818",
+        "name": "Intergovernmental Panel on Climate Change",
+        "awardYear": 2007,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "797",
+        "name": "International Atomic Energy Agency",
+        "awardYear": 2005,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "948",
+        "name": "International Campaign to Abolish Nuclear Weapons",
+        "awardYear": 2017,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "564",
+        "name": "International Campaign to Ban Landmines",
+        "awardYear": 1997,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "482",
+        "name": "International Committee of the Red Cross",
+        "awardYear": 1917,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "482",
+        "name": "International Committee of the Red Cross",
+        "awardYear": 1944,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "482",
+        "name": "International Committee of the Red Cross",
+        "awardYear": 1963,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "527",
+        "name": "International Labour Organization",
+        "awardYear": 1969,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "547",
+        "name": "International Physicians for the Prevention of Nuclear War",
+        "awardYear": 1985,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "654",
+        "name": "Isaac Bashevis Singer",
+        "awardYear": 1978,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "606",
+        "name": "Ivan Bunin",
+        "awardYear": 1933,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "633",
+        "name": "Ivo Andrić",
+        "awardYear": 1961,
+        "category": "Literature",
+        "residence": "Yugoslavia (now N/A)"
+      },
+      {
+        "id": "763",
+        "name": "J. M. Coetzee",
+        "awardYear": 2003,
+        "category": "Literature",
+        "residence": "South Africa"
+      },
+      {
+        "id": "790",
+        "name": "J. Robin Warren",
+        "awardYear": 2005,
+        "category": "Physiology or Medicine",
+        "residence": "Perth, Australia"
+      },
+      {
+        "id": "592",
+        "name": "Jacinto Benavente",
+        "awardYear": 1922,
+        "category": "Literature",
+        "residence": "Spain"
+      },
+      {
+        "id": "496",
+        "name": "Jane Addams",
+        "awardYear": 1931,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "661",
+        "name": "Jaroslav Seifert",
+        "awardYear": 1984,
+        "category": "Literature",
+        "residence": "Czechoslovakia (now Czech Republic)"
+      },
+      {
+        "id": "832",
+        "name": "Jean-Marie Gustave Le Clézio",
+        "awardYear": 2008,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "637",
+        "name": "Jean-Paul Sartre",
+        "awardYear": 1964,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "762",
+        "name": "Jimmy Carter",
+        "awardYear": 2002,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "565",
+        "name": "Jody Williams",
+        "awardYear": 1997,
+        "category": "Peace",
+        "residence": "Putney, VT, USA"
+      },
+      {
+        "id": "614",
+        "name": "Johannes V. Jensen",
+        "awardYear": 1944,
+        "category": "Literature",
+        "residence": "Denmark"
+      },
+      {
+        "id": "605",
+        "name": "John Galsworthy",
+        "awardYear": 1932,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "566",
+        "name": "John Hume",
+        "awardYear": 1998,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "507",
+        "name": "John R. Mott",
+        "awardYear": 1946,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "634",
+        "name": "John Steinbeck",
+        "awardYear": 1962,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "1032",
+        "name": "Jon Fosse",
+        "awardYear": 2023,
+        "category": "Literature",
+        "residence": "Norway"
+      },
+      {
+        "id": "574",
+        "name": "José Echegaray",
+        "awardYear": 1904,
+        "category": "Literature",
+        "residence": "Spain"
+      },
+      {
+        "id": "563",
+        "name": "José Ramos-Horta",
+        "awardYear": 1996,
+        "category": "Peace",
+        "residence": "East Timor"
+      },
+      {
+        "id": "675",
+        "name": "José Saramago",
+        "awardYear": 1998,
+        "category": "Literature",
+        "residence": "Portugal"
+      },
+      {
+        "id": "664",
+        "name": "Joseph Brodsky",
+        "awardYear": 1987,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "560",
+        "name": "Joseph Rotblat",
+        "awardYear": 1995,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "934",
+        "name": "Juan Manuel Santos",
+        "awardYear": 2016,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "627",
+        "name": "Juan Ramón Jiménez",
+        "awardYear": 1956,
+        "category": "Literature",
+        "residence": "Spain"
+      },
+      {
+        "id": "913",
+        "name": "Kailash Satyarthi",
+        "awardYear": 2014,
+        "category": "Peace",
+        "residence": "India"
+      },
+      {
+        "id": "586",
+        "name": "Karl Gjellerup",
+        "awardYear": 1917,
+        "category": "Literature",
+        "residence": "Denmark"
+      },
+      {
+        "id": "278",
+        "name": "Kary B. Mullis",
+        "awardYear": 1993,
+        "category": "Chemistry",
+        "residence": "La Jolla, CA, USA"
+      },
+      {
+        "id": "947",
+        "name": "Kazuo Ishiguro",
+        "awardYear": 2017,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "671",
+        "name": "Kenzaburo Oe",
+        "awardYear": 1994,
+        "category": "Literature",
+        "residence": "Japan"
+      },
+      {
+        "id": "725",
+        "name": "Kim Dae-jung",
+        "awardYear": 2000,
+        "category": "Peace",
+        "residence": "South Korea"
+      },
+      {
+        "id": "473",
+        "name": "Klas Pontus Arnoldson",
+        "awardYear": 1908,
+        "category": "Peace",
+        "residence": "Sweden"
+      },
+      {
+        "id": "589",
+        "name": "Knut Hamsun",
+        "awardYear": 1920,
+        "category": "Literature",
+        "residence": "Norway"
+      },
+      {
+        "id": "749",
+        "name": "Kofi Annan",
+        "awardYear": 2001,
+        "category": "Peace",
+        "residence": "Ghana"
+      },
+      {
+        "id": "1056",
+        "name": "László Krasznahorkai",
+        "awardYear": 2025,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "531",
+        "name": "Le Duc Tho",
+        "awardYear": 1973,
+        "category": "Peace",
+        "residence": "Democratic Republic of Vietnam (now Vietnam)"
+      },
+      {
+        "id": "523",
+        "name": "League of Red Cross Societies",
+        "awardYear": 1963,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "545",
+        "name": "Lech Wałęsa",
+        "awardYear": 1983,
+        "category": "Peace",
+        "residence": "Poland"
+      },
+      {
+        "id": "484",
+        "name": "Léon Bourgeois",
+        "awardYear": 1920,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "512",
+        "name": "Léon Jouhaux",
+        "awardYear": 1951,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "516",
+        "name": "Lester Bowles Pearson",
+        "awardYear": 1957,
+        "category": "Peace",
+        "residence": "Canada"
+      },
+      {
+        "id": "870",
+        "name": "Leymah Gbowee",
+        "awardYear": 2011,
+        "category": "Peace",
+        "residence": "Liberia"
+      },
+      {
+        "id": "855",
+        "name": "Liu Xiaobo",
+        "awardYear": 2010,
+        "category": "Peace",
+        "residence": "China"
+      },
+      {
+        "id": "510",
+        "name": "Lord Boyd Orr",
+        "awardYear": 1949,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "993",
+        "name": "Louise Glück",
+        "awardYear": 2020,
+        "category": "Literature",
+        "residence": "Cambridge, MA, USA"
+      },
+      {
+        "id": "493",
+        "name": "Ludwig Quidde",
+        "awardYear": 1927,
+        "category": "Peace",
+        "residence": "Germany"
+      },
+      {
+        "id": "607",
+        "name": "Luigi Pirandello",
+        "awardYear": 1934,
+        "category": "Literature",
+        "residence": "Italy"
+      },
+      {
+        "id": "536",
+        "name": "Mairead Corrigan",
+        "awardYear": 1976,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "914",
+        "name": "Malala Yousafzai",
+        "awardYear": 2014,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "1057",
+        "name": "Maria Corina Machado",
+        "awardYear": 2025,
+        "category": "Peace",
+        "residence": "Venezuela"
+      },
+      {
+        "id": "1005",
+        "name": "Maria Ressa",
+        "awardYear": 2021,
+        "category": "Peace",
+        "residence": "Philippines"
+      },
+      {
+        "id": "6",
+        "name": "Marie Curie",
+        "awardYear": 1903,
+        "category": "Physics",
+        "residence": null
+      },
+      {
+        "id": "854",
+        "name": "Mario Vargas Llosa",
+        "awardYear": 2010,
+        "category": "Literature",
+        "residence": null
+      },
+      {
+        "id": "524",
+        "name": "Martin Luther King Jr.",
+        "awardYear": 1964,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "159",
+        "name": "Martinus J.G. Veltman",
+        "awardYear": 1999,
+        "category": "Physics",
+        "residence": "Bilthoven, the Netherlands"
+      },
+      {
+        "id": "833",
+        "name": "Martti Ahtisaari",
+        "awardYear": 2008,
+        "category": "Peace",
+        "residence": "Finland"
+      },
+      {
+        "id": "581",
+        "name": "Maurice Maeterlinck",
+        "awardYear": 1911,
+        "category": "Literature",
+        "residence": "Belgium"
+      },
+      {
+        "id": "1019",
+        "name": "Memorial",
+        "awardYear": 2022,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "539",
+        "name": "Menachem Begin",
+        "awardYear": 1978,
+        "category": "Peace",
+        "residence": "Israel"
+      },
+      {
+        "id": "641",
+        "name": "Miguel Angel Asturias",
+        "awardYear": 1967,
+        "category": "Literature",
+        "residence": "Guatemala"
+      },
+      {
+        "id": "552",
+        "name": "Mikhail Gorbachev",
+        "awardYear": 1990,
+        "category": "Peace",
+        "residence": "USSR (now Russia)"
+      },
+      {
+        "id": "638",
+        "name": "Mikhail Sholokhov",
+        "awardYear": 1965,
+        "category": "Literature",
+        "residence": "USSR (now Russia)"
+      },
+      {
+        "id": "880",
+        "name": "Mo Yan",
+        "awardYear": 2012,
+        "category": "Literature",
+        "residence": "China"
+      },
+      {
+        "id": "798",
+        "name": "Mohamed ElBaradei",
+        "awardYear": 2005,
+        "category": "Peace",
+        "residence": "Egypt"
+      },
+      {
+        "id": "540",
+        "name": "Mother Teresa",
+        "awardYear": 1979,
+        "category": "Peace",
+        "residence": "India"
+      },
+      {
+        "id": "809",
+        "name": "Muhammad Yunus",
+        "awardYear": 2006,
+        "category": "Peace",
+        "residence": "Bangladesh"
+      },
+      {
+        "id": "967",
+        "name": "Nadia Murad",
+        "awardYear": 2018,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "668",
+        "name": "Nadine Gordimer",
+        "awardYear": 1991,
+        "category": "Literature",
+        "residence": "South Africa"
+      },
+      {
+        "id": "665",
+        "name": "Naguib Mahfouz",
+        "awardYear": 1988,
+        "category": "Literature",
+        "residence": "Egypt"
+      },
+      {
+        "id": "503",
+        "name": "Nansen International Office for Refugees",
+        "awardYear": 1938,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "1033",
+        "name": "Narges Mohammadi",
+        "awardYear": 2023,
+        "category": "Peace",
+        "residence": "Iran"
+      },
+      {
+        "id": "495",
+        "name": "Nathan Söderblom",
+        "awardYear": 1930,
+        "category": "Peace",
+        "residence": "Sweden"
+      },
+      {
+        "id": "925",
+        "name": "National Dialogue Quartet",
+        "awardYear": 2015,
+        "category": "Peace",
+        "residence": "Tunisia"
+      },
+      {
+        "id": "1068",
+        "name": "Navi Pillay",
+        "awardYear": 2026,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "640",
+        "name": "Nelly Sachs",
+        "awardYear": 1966,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "555",
+        "name": "Nelson Mandela",
+        "awardYear": 1993,
+        "category": "Peace",
+        "residence": "South Africa"
+      },
+      {
+        "id": "1043",
+        "name": "Nihon Hidankyo",
+        "awardYear": 2024,
+        "category": "Peace",
+        "residence": "Tokyo, Japan"
+      },
+      {
+        "id": "528",
+        "name": "Norman Borlaug",
+        "awardYear": 1970,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "667",
+        "name": "Octavio Paz",
+        "awardYear": 1990,
+        "category": "Literature",
+        "residence": "Mexico"
+      },
+      {
+        "id": "655",
+        "name": "Odysseus Elytis",
+        "awardYear": 1979,
+        "category": "Literature",
+        "residence": "Greece"
+      },
+      {
+        "id": "515",
+        "name": "Office of the United Nations High Commissioner for Refugees",
+        "awardYear": 1954,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "515",
+        "name": "Office of the United Nations High Commissioner for Refugees",
+        "awardYear": 1981,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "979",
+        "name": "Olga Tokarczuk",
+        "awardYear": 2018,
+        "category": "Literature",
+        "residence": "Wroclaw, Poland"
+      },
+      {
+        "id": "893",
+        "name": "Organisation for the Prohibition of Chemical Weapons",
+        "awardYear": 2013,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "808",
+        "name": "Orhan Pamuk",
+        "awardYear": 2006,
+        "category": "Literature",
+        "residence": "Turkey"
+      },
+      {
+        "id": "549",
+        "name": "Oscar Arias Sánchez",
+        "awardYear": 1987,
+        "category": "Peace",
+        "residence": "Costa Rica"
+      },
+      {
+        "id": "645",
+        "name": "Pablo Neruda",
+        "awardYear": 1971,
+        "category": "Literature",
+        "residence": "Chile"
+      },
+      {
+        "id": "622",
+        "name": "Pär Lagerkvist",
+        "awardYear": 1951,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "912",
+        "name": "Patrick Modiano",
+        "awardYear": 2014,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "648",
+        "name": "Patrick White",
+        "awardYear": 1973,
+        "category": "Literature",
+        "residence": "Australia"
+      },
+      {
+        "id": "476",
+        "name": "Paul Henri d'Estournelles de Constant",
+        "awardYear": 1909,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "580",
+        "name": "Paul Heyse",
+        "awardYear": 1910,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "610",
+        "name": "Pearl Buck",
+        "awardYear": 1938,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "477",
+        "name": "Permanent International Peace Bureau",
+        "awardYear": 1910,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "980",
+        "name": "Peter Handke",
+        "awardYear": 2019,
+        "category": "Literature",
+        "residence": "Chaville, France"
+      },
+      {
+        "id": "518",
+        "name": "Philip Noel-Baker",
+        "awardYear": 1959,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "561",
+        "name": "Pugwash Conferences on Science and World Affairs",
+        "awardYear": 1995,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "583",
+        "name": "Rabindranath Tagore",
+        "awardYear": 1913,
+        "category": "Literature",
+        "residence": "India"
+      },
+      {
+        "id": "466",
+        "name": "Randal Cremer",
+        "awardYear": 1903,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "526",
+        "name": "René Cassin",
+        "awardYear": 1968,
+        "category": "Peace",
+        "residence": "France"
+      },
+      {
+        "id": "554",
+        "name": "Rigoberta Menchú Tum",
+        "awardYear": 1992,
+        "category": "Peace",
+        "residence": "Guatemala"
+      },
+      {
+        "id": "502",
+        "name": "Robert Cecil, Viscount Cecil of Chelwood",
+        "awardYear": 1937,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "609",
+        "name": "Roger Martin du Gard",
+        "awardYear": 1937,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "584",
+        "name": "Romain Rolland",
+        "awardYear": 1915,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "578",
+        "name": "Rudolf Eucken",
+        "awardYear": 1908,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "577",
+        "name": "Rudyard Kipling",
+        "awardYear": 1907,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "631",
+        "name": "Saint-John Perse",
+        "awardYear": 1960,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "630",
+        "name": "Salvatore Quasimodo",
+        "awardYear": 1959,
+        "category": "Literature",
+        "residence": "Italy"
+      },
+      {
+        "id": "643",
+        "name": "Samuel Beckett",
+        "awardYear": 1969,
+        "category": "Literature",
+        "residence": "Ireland"
+      },
+      {
+        "id": "652",
+        "name": "Saul Bellow",
+        "awardYear": 1976,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "672",
+        "name": "Seamus Heaney",
+        "awardYear": 1995,
+        "category": "Literature",
+        "residence": "Ireland"
+      },
+      {
+        "id": "532",
+        "name": "Seán MacBride",
+        "awardYear": 1974,
+        "category": "Peace",
+        "residence": "Ireland"
+      },
+      {
+        "id": "579",
+        "name": "Selma Lagerlöf",
+        "awardYear": 1909,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "558",
+        "name": "Shimon Peres",
+        "awardYear": 1994,
+        "category": "Peace",
+        "residence": "Israel"
+      },
+      {
+        "id": "773",
+        "name": "Shirin Ebadi",
+        "awardYear": 2003,
+        "category": "Peace",
+        "residence": "Iran"
+      },
+      {
+        "id": "639",
+        "name": "Shmuel Agnon",
+        "awardYear": 1966,
+        "category": "Literature",
+        "residence": "Israel"
+      },
+      {
+        "id": "601",
+        "name": "Sigrid Undset",
+        "awardYear": 1928,
+        "category": "Literature",
+        "residence": "Norway"
+      },
+      {
+        "id": "603",
+        "name": "Sinclair Lewis",
+        "awardYear": 1930,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "488",
+        "name": "Sir Austen Chamberlain",
+        "awardYear": 1925,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "498",
+        "name": "Sir Norman Angell",
+        "awardYear": 1933,
+        "category": "Peace",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "569",
+        "name": "Sully Prudhomme",
+        "awardYear": 1901,
+        "category": "Literature",
+        "residence": "France"
+      },
+      {
+        "id": "924",
+        "name": "Svetlana Alexievich",
+        "awardYear": 2015,
+        "category": "Literature",
+        "residence": "Belarus"
+      },
+      {
+        "id": "619",
+        "name": "T.S. Eliot",
+        "awardYear": 1948,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "871",
+        "name": "Tawakkol Karman",
+        "awardYear": 2011,
+        "category": "Peace",
+        "residence": "Yemen"
+      },
+      {
+        "id": "551",
+        "name": "The 14th Dalai Lama",
+        "awardYear": 1989,
+        "category": "Peace",
+        "residence": "India"
+      },
+      {
+        "id": "571",
+        "name": "Theodor Mommsen",
+        "awardYear": 1902,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "470",
+        "name": "Theodore Roosevelt",
+        "awardYear": 1906,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "602",
+        "name": "Thomas Mann",
+        "awardYear": 1929,
+        "category": "Literature",
+        "residence": "Germany"
+      },
+      {
+        "id": "478",
+        "name": "Tobias Asser",
+        "awardYear": 1911,
+        "category": "Peace",
+        "residence": "the Netherlands"
+      },
+      {
+        "id": "868",
+        "name": "Tomas Tranströmer",
+        "awardYear": 2011,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "670",
+        "name": "Toni Morrison",
+        "awardYear": 1993,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "748",
+        "name": "United Nations",
+        "awardYear": 2001,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "525",
+        "name": "United Nations Children's Fund",
+        "awardYear": 1965,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "550",
+        "name": "United Nations Peacekeeping Forces",
+        "awardYear": 1988,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "747",
+        "name": "V. S. Naipaul",
+        "awardYear": 2001,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "585",
+        "name": "Verner von Heidenstam",
+        "awardYear": 1916,
+        "category": "Literature",
+        "residence": "Sweden"
+      },
+      {
+        "id": "653",
+        "name": "Vicente Aleixandre",
+        "awardYear": 1977,
+        "category": "Literature",
+        "residence": "Spain"
+      },
+      {
+        "id": "783",
+        "name": "Wangari Maathai",
+        "awardYear": 2004,
+        "category": "Peace",
+        "residence": "Kenya"
+      },
+      {
+        "id": "593",
+        "name": "William Butler Yeats",
+        "awardYear": 1923,
+        "category": "Literature",
+        "residence": "Ireland"
+      },
+      {
+        "id": "620",
+        "name": "William Faulkner",
+        "awardYear": 1949,
+        "category": "Literature",
+        "residence": "USA"
+      },
+      {
+        "id": "660",
+        "name": "William Golding",
+        "awardYear": 1983,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "741",
+        "name": "William Knowles",
+        "awardYear": 2001,
+        "category": "Chemistry",
+        "residence": "St. Louis, MO, USA"
+      },
+      {
+        "id": "529",
+        "name": "Willy Brandt",
+        "awardYear": 1971,
+        "category": "Peace",
+        "residence": "Germany"
+      },
+      {
+        "id": "624",
+        "name": "Winston Churchill",
+        "awardYear": 1953,
+        "category": "Literature",
+        "residence": "United Kingdom"
+      },
+      {
+        "id": "673",
+        "name": "Wisława Szymborska",
+        "awardYear": 1996,
+        "category": "Literature",
+        "residence": "Poland"
+      },
+      {
+        "id": "594",
+        "name": "Władysław Reymont",
+        "awardYear": 1924,
+        "category": "Literature",
+        "residence": "Poland"
+      },
+      {
+        "id": "663",
+        "name": "Wole Soyinka",
+        "awardYear": 1986,
+        "category": "Literature",
+        "residence": "Nigeria"
+      },
+      {
+        "id": "483",
+        "name": "Woodrow Wilson",
+        "awardYear": 1919,
+        "category": "Peace",
+        "residence": "USA"
+      },
+      {
+        "id": "994",
+        "name": "World Food Programme",
+        "awardYear": 2020,
+        "category": "Peace",
+        "residence": null
+      },
+      {
+        "id": "557",
+        "name": "Yasser Arafat",
+        "awardYear": 1994,
+        "category": "Peace",
+        "residence": "Palestine"
+      },
+      {
+        "id": "642",
+        "name": "Yasunari Kawabata",
+        "awardYear": 1968,
+        "category": "Literature",
+        "residence": "Japan"
+      },
+      {
+        "id": "559",
+        "name": "Yitzhak Rabin",
+        "awardYear": 1994,
+        "category": "Peace",
+        "residence": "Israel"
+      }
+    ],
+    "multipleAffiliations": [
+      {
+        "id": "114",
+        "name": "Abdus Salam",
+        "awardYear": 1979,
+        "category": "Physics",
+        "used": "International Centre for Theoretical Physics",
+        "others": [
+          "Imperial College"
+        ]
+      },
+      {
+        "id": "866",
+        "name": "Adam G. Riess",
+        "awardYear": 2011,
+        "category": "Physics",
+        "used": "Johns Hopkins University",
+        "others": [
+          "Space Telescope Science Institute"
+        ]
+      },
+      {
+        "id": "199",
+        "name": "Adolf Butenandt",
+        "awardYear": 1939,
+        "category": "Chemistry",
+        "used": "Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Biochemie",
+        "others": [
+          "Berlin University"
+        ]
+      },
+      {
+        "id": "978",
+        "name": "Akira Yoshino",
+        "awardYear": 2019,
+        "category": "Chemistry",
+        "used": "Asahi Kasei Corporation",
+        "others": [
+          "Meijo University"
+        ]
+      },
+      {
+        "id": "1012",
+        "name": "Alain Aspect",
+        "awardYear": 2022,
+        "category": "Physics",
+        "used": "Institut d’Optique Graduate School – Université Paris-Saclay",
+        "others": [
+          "École Polytechnique"
+        ]
+      },
+      {
+        "id": "814",
+        "name": "Albert Fert",
+        "awardYear": 2007,
+        "category": "Physics",
+        "used": "Universit&eacute; Paris-Sud",
+        "others": [
+          "Unit&eacute; Mixte de Physique CNRS/THALES"
+        ]
+      },
+      {
+        "id": "882",
+        "name": "Alvin E. Roth",
+        "awardYear": 2012,
+        "category": "Economic Sciences",
+        "used": "Harvard University",
+        "others": [
+          "Harvard Business School"
+        ]
+      },
+      {
+        "id": "1014",
+        "name": "Anton Zeilinger",
+        "awardYear": 2022,
+        "category": "Physics",
+        "used": "University of Vienna",
+        "others": [
+          "Institute for Quantum Optics and Quantum Information, Austrian Academy of Sciences"
+        ]
+      },
+      {
+        "id": "998",
+        "name": "Ardem Patapoutian",
+        "awardYear": 2021,
+        "category": "Physiology or Medicine",
+        "used": "Scripps Research",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "942",
+        "name": "Barry C. Barish",
+        "awardYear": 2017,
+        "category": "Physics",
+        "used": "LIGO/VIRGO Collaboration",
+        "others": [
+          "California Institute of Technology (Caltech)"
+        ]
+      },
+      {
+        "id": "789",
+        "name": "Barry J. Marshall",
+        "awardYear": 2005,
+        "category": "Physiology or Medicine",
+        "used": "NHMRC Helicobacter pylori Research Laboratory, QEII Medical Centre",
+        "others": [
+          "University of Western Australia"
+        ]
+      },
+      {
+        "id": "861",
+        "name": "Bruce A. Beutler",
+        "awardYear": 2011,
+        "category": "Physiology or Medicine",
+        "used": "University of Texas Southwestern Medical Center at Dallas",
+        "others": [
+          "The Scripps Research Institute"
+        ]
+      },
+      {
+        "id": "189",
+        "name": "Carl Bosch",
+        "awardYear": 1931,
+        "category": "Chemistry",
+        "used": "University of Heidelberg",
+        "others": [
+          "I.G. Farbenindustrie A.G."
+        ]
+      },
+      {
+        "id": "1015",
+        "name": "Carolyn Bertozzi",
+        "awardYear": 2022,
+        "category": "Chemistry",
+        "used": "Stanford University",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "838",
+        "name": "Charles K. Kao",
+        "awardYear": 2009,
+        "category": "Physics",
+        "used": "Standard Telecommunication Laboratories",
+        "others": [
+          "Chinese University of Hong Kong"
+        ]
+      },
+      {
+        "id": "404",
+        "name": "Christian de Duve",
+        "awardYear": 1974,
+        "category": "Physiology or Medicine",
+        "used": "Rockefeller University",
+        "others": [
+          "Université Catholique de Louvain"
+        ]
+      },
+      {
+        "id": "153",
+        "name": "Claude Cohen-Tannoudji",
+        "awardYear": 1997,
+        "category": "Physics",
+        "used": "Collège de France",
+        "others": [
+          "École Normale Supérieure"
+        ]
+      },
+      {
+        "id": "857",
+        "name": "Dale T. Mortensen",
+        "awardYear": 2010,
+        "category": "Economic Sciences",
+        "used": "Northwestern University",
+        "others": [
+          "Aarhus University"
+        ]
+      },
+      {
+        "id": "1039",
+        "name": "David Baker",
+        "awardYear": 2024,
+        "category": "Chemistry",
+        "used": "University of Washington",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "877",
+        "name": "David J. Wineland",
+        "awardYear": 2012,
+        "category": "Physics",
+        "used": "National Institute of Standards and Technology",
+        "others": [
+          "University of Colorado"
+        ]
+      },
+      {
+        "id": "975",
+        "name": "Didier Queloz",
+        "awardYear": 2019,
+        "category": "Physics",
+        "used": "University of Geneva",
+        "others": [
+          "University of Cambridge"
+        ]
+      },
+      {
+        "id": "787",
+        "name": "Edward C. Prescott",
+        "awardYear": 2004,
+        "category": "Economic Sciences",
+        "used": "Arizona State University",
+        "others": [
+          "Federal Reserve Bank of Minneapolis"
+        ]
+      },
+      {
+        "id": "348",
+        "name": "Egas Moniz",
+        "awardYear": 1949,
+        "category": "Physiology or Medicine",
+        "used": "University of Lisbon",
+        "others": [
+          "Neurological Institute"
+        ]
+      },
+      {
+        "id": "846",
+        "name": "Elinor Ostrom",
+        "awardYear": 2009,
+        "category": "Economic Sciences",
+        "used": "Indiana University",
+        "others": [
+          "Arizona State University"
+        ]
+      },
+      {
+        "id": "1027",
+        "name": "Ferenc Krausz",
+        "awardYear": 2023,
+        "category": "Physics",
+        "used": "Max Planck Institute of Quantum Optics",
+        "others": [
+          "Ludwig-Maximilians-Universität München"
+        ]
+      },
+      {
+        "id": "786",
+        "name": "Finn E. Kydland",
+        "awardYear": 2004,
+        "category": "Economic Sciences",
+        "used": "Carnegie Mellon University",
+        "others": [
+          "University of California"
+        ]
+      },
+      {
+        "id": "190",
+        "name": "Friedrich Bergius",
+        "awardYear": 1931,
+        "category": "Chemistry",
+        "used": "University of Heidelberg",
+        "others": [
+          "I.G. Farbenindustrie A.G."
+        ]
+      },
+      {
+        "id": "355",
+        "name": "Fritz Lipmann",
+        "awardYear": 1953,
+        "category": "Physiology or Medicine",
+        "used": "Harvard Medical School",
+        "others": [
+          "Massachusetts General Hospital"
+        ]
+      },
+      {
+        "id": "1036",
+        "name": "Gary Ruvkun",
+        "awardYear": 2024,
+        "category": "Physiology or Medicine",
+        "used": "Massachusetts General Hospital",
+        "others": [
+          "Harvard Medical School"
+        ]
+      },
+      {
+        "id": "142",
+        "name": "Georges Charpak",
+        "awardYear": 1992,
+        "category": "Physics",
+        "used": "École Supérieure de Physique et Chimie",
+        "others": [
+          "CERN"
+        ]
+      },
+      {
+        "id": "961",
+        "name": "Gérard Mourou",
+        "awardYear": 2018,
+        "category": "Physics",
+        "used": "École Polytechnique",
+        "others": [
+          "University of Michigan"
+        ]
+      },
+      {
+        "id": "461",
+        "name": "Günter Blobel",
+        "awardYear": 1999,
+        "category": "Physiology or Medicine",
+        "used": "Rockefeller University",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "216",
+        "name": "Hermann Staudinger",
+        "awardYear": 1953,
+        "category": "Chemistry",
+        "used": "University of Freiburg",
+        "others": [
+          "Staatliches Institut für makromolekulare Chemie (State Research Institute for Macromolecular Chemistry), Freiburg"
+        ]
+      },
+      {
+        "id": "54",
+        "name": "Hideki Yukawa",
+        "awardYear": 1949,
+        "category": "Physics",
+        "used": "Columbia University",
+        "others": [
+          "Kyoto University"
+        ]
+      },
+      {
+        "id": "71",
+        "name": "Igor Y. Tamm",
+        "awardYear": 1958,
+        "category": "Physics",
+        "used": "Lomonosov Moscow State University",
+        "others": [
+          "P.N. Lebedev Physical Institute"
+        ]
+      },
+      {
+        "id": "721",
+        "name": "Il´ja M. Frank",
+        "awardYear": 1958,
+        "category": "Physics",
+        "used": "Lomonosov Moscow State University",
+        "others": [
+          "P.N. Lebedev Physical Institute"
+        ]
+      },
+      {
+        "id": "250",
+        "name": "Ilya Prigogine",
+        "awardYear": 1977,
+        "category": "Chemistry",
+        "used": "Université Libre de Bruxelles",
+        "others": [
+          "University of Texas"
+        ]
+      },
+      {
+        "id": "906",
+        "name": "Isamu Akasaki",
+        "awardYear": 2014,
+        "category": "Physics",
+        "used": "Meijo University",
+        "others": [
+          "Nagoya University"
+        ]
+      },
+      {
+        "id": "837",
+        "name": "Jack W. Szostak",
+        "awardYear": 2009,
+        "category": "Physiology or Medicine",
+        "used": "Harvard Medical School",
+        "others": [
+          "Massachusetts General Hospital",
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "958",
+        "name": "James P. Allison",
+        "awardYear": 2018,
+        "category": "Physiology or Medicine",
+        "used": "Parker Institute for Cancer Immunotherapy",
+        "others": [
+          "University of Texas MD Anderson Cancer Center"
+        ]
+      },
+      {
+        "id": "268",
+        "name": "Jean-Marie Lehn",
+        "awardYear": 1987,
+        "category": "Chemistry",
+        "used": "Université Louis Pasteur",
+        "others": [
+          "Collège de France"
+        ]
+      },
+      {
+        "id": "1058",
+        "name": "Joel Mokyr",
+        "awardYear": 2025,
+        "category": "Economic Sciences",
+        "used": "Northwestern University",
+        "others": [
+          "Eitan Berglas School of Economics, Tel Aviv University"
+        ]
+      },
+      {
+        "id": "270",
+        "name": "Johann Deisenhofer",
+        "awardYear": 1988,
+        "category": "Chemistry",
+        "used": "University of Texas Southwestern Medical Center at Dallas",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "356",
+        "name": "John F. Enders",
+        "awardYear": 1954,
+        "category": "Physiology or Medicine",
+        "used": "Harvard Medical School",
+        "others": [
+          "Research Division of Infectious Diseases, Children's Medical Center"
+        ]
+      },
+      {
+        "id": "792",
+        "name": "John L. Hall",
+        "awardYear": 2005,
+        "category": "Physics",
+        "used": "University of Colorado, JILA",
+        "others": [
+          "National Institute of Standards and Technology"
+        ]
+      },
+      {
+        "id": "1052",
+        "name": "John M. Martinis",
+        "awardYear": 2025,
+        "category": "Physics",
+        "used": "University of California",
+        "others": [
+          "Qolab"
+        ]
+      },
+      {
+        "id": "1061",
+        "name": "Karl Deisseroth",
+        "awardYear": 2026,
+        "category": "Physiology or Medicine",
+        "used": "Howard Hughes Medical Institute",
+        "others": [
+          "Stanford University"
+        ]
+      },
+      {
+        "id": "1024",
+        "name": "Katalin Karikó",
+        "awardYear": 2023,
+        "category": "Physiology or Medicine",
+        "used": "Szeged University",
+        "others": [
+          "University of Pennsylvania"
+        ]
+      },
+      {
+        "id": "943",
+        "name": "Kip S. Thorne",
+        "awardYear": 2017,
+        "category": "Physics",
+        "used": "LIGO/VIRGO Collaboration",
+        "others": [
+          "California Institute of Technology (Caltech)"
+        ]
+      },
+      {
+        "id": "401",
+        "name": "Konrad Lorenz",
+        "awardYear": 1973,
+        "category": "Physiology or Medicine",
+        "used": "Konrad-Lorenz-Institut der Österreichischen Akademie der Wissen­schaften, Forschungsstelle für Ethologie",
+        "others": [
+          "Max-Planck-Institut für Verhaltensphysiologie"
+        ]
+      },
+      {
+        "id": "758",
+        "name": "Kurt Wüthrich",
+        "awardYear": 2002,
+        "category": "Chemistry",
+        "used": "Eidgenössische Technische Hochschule (Swiss Federal Institute of Technology)",
+        "others": [
+          "The Scripps Research Institute"
+        ]
+      },
+      {
+        "id": "811",
+        "name": "Mario R. Capecchi",
+        "awardYear": 2007,
+        "category": "Physiology or Medicine",
+        "used": "University of Utah",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "889",
+        "name": "Martin Karplus",
+        "awardYear": 2013,
+        "category": "Chemistry",
+        "used": "Université de Strasbourg",
+        "others": [
+          "Harvard University"
+        ]
+      },
+      {
+        "id": "939",
+        "name": "Michael Rosbash",
+        "awardYear": 2017,
+        "category": "Physiology or Medicine",
+        "used": "Brandeis University",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "1051",
+        "name": "Michel H. Devoret",
+        "awardYear": 2025,
+        "category": "Physics",
+        "used": "Yale University",
+        "others": [
+          "University of California",
+          "Google Quantum AI"
+        ]
+      },
+      {
+        "id": "220",
+        "name": "Nikolay Semenov",
+        "awardYear": 1956,
+        "category": "Chemistry",
+        "used": "Institute for Chemical Physics of the Academy of Sciences of the USSR",
+        "others": [
+          "Lomonosov Moscow State University"
+        ]
+      },
+      {
+        "id": "829",
+        "name": "Osamu Shimomura",
+        "awardYear": 2008,
+        "category": "Chemistry",
+        "used": "Marine Biological Laboratory (MBL)",
+        "others": [
+          "Boston University Medical School"
+        ]
+      },
+      {
+        "id": "302",
+        "name": "Paul Ehrlich",
+        "awardYear": 1908,
+        "category": "Physiology or Medicine",
+        "used": "Goettingen University",
+        "others": [
+          "Königliches Institut für experimentelle Therapie (Royal Institute for Experimental Therapy)"
+        ]
+      },
+      {
+        "id": "922",
+        "name": "Paul Modrich",
+        "awardYear": 2015,
+        "category": "Chemistry",
+        "used": "Howard Hughes Medical Institute",
+        "others": [
+          "Duke University School of Medicine"
+        ]
+      },
+      {
+        "id": "195",
+        "name": "Peter Debye",
+        "awardYear": 1936,
+        "category": "Chemistry",
+        "used": "Berlin University",
+        "others": [
+          "Kaiser-Wilhelm-Institut (now Max-Planck-Institut) für Physik"
+        ]
+      },
+      {
+        "id": "1059",
+        "name": "Philippe Aghion",
+        "awardYear": 2025,
+        "category": "Economic Sciences",
+        "used": "Collège de France",
+        "others": [
+          "INSEAD",
+          "London School of Economics and Political Science"
+        ]
+      },
+      {
+        "id": "941",
+        "name": "Rainer Weiss",
+        "awardYear": 2017,
+        "category": "Physics",
+        "used": "LIGO/VIRGO Collaboration",
+        "others": [
+          "Massachusetts Institute of Technology (MIT)"
+        ]
+      },
+      {
+        "id": "885",
+        "name": "Randy W. Schekman",
+        "awardYear": 2013,
+        "category": "Physiology or Medicine",
+        "used": "University of California",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "989",
+        "name": "Reinhard Genzel",
+        "awardYear": 2020,
+        "category": "Physics",
+        "used": "Max Planck Institute for Extraterrestrial Physics",
+        "others": [
+          "University of California"
+        ]
+      },
+      {
+        "id": "198",
+        "name": "Richard Kuhn",
+        "awardYear": 1938,
+        "category": "Chemistry",
+        "used": "Kaiser-Wilhelm-Institut (now Max-Planck Institut) für Medizinische Forschung",
+        "others": [
+          "University of Heidelberg"
+        ]
+      },
+      {
+        "id": "176",
+        "name": "Richard Willstätter",
+        "awardYear": 1915,
+        "category": "Chemistry",
+        "used": "Kaiser-Wilhelm-Institut (now Max-Planck Institut) für Chemie",
+        "others": [
+          "Friedrich-Wilhelms-Universität"
+        ]
+      },
+      {
+        "id": "878",
+        "name": "Robert J. Lefkowitz",
+        "awardYear": 2012,
+        "category": "Chemistry",
+        "used": "Howard Hughes Medical Institute",
+        "others": [
+          "Duke University Medical Center"
+        ]
+      },
+      {
+        "id": "770",
+        "name": "Roderick MacKinnon",
+        "awardYear": 2003,
+        "category": "Chemistry",
+        "used": "Rockefeller University",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "831",
+        "name": "Roger Y. Tsien",
+        "awardYear": 2008,
+        "category": "Chemistry",
+        "used": "University of California",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "76",
+        "name": "Rudolf Mössbauer",
+        "awardYear": 1961,
+        "category": "Physics",
+        "used": "Technical University",
+        "others": [
+          "California Institute of Technology (Caltech)"
+        ]
+      },
+      {
+        "id": "864",
+        "name": "Saul Perlmutter",
+        "awardYear": 2011,
+        "category": "Physics",
+        "used": "Lawrence Berkeley National Laboratory",
+        "others": [
+          "University of California"
+        ]
+      },
+      {
+        "id": "876",
+        "name": "Serge Haroche",
+        "awardYear": 2012,
+        "category": "Physics",
+        "used": "Collège de France",
+        "others": [
+          "École Normale Supérieure"
+        ]
+      },
+      {
+        "id": "875",
+        "name": "Shinya Yamanaka",
+        "awardYear": 2012,
+        "category": "Physiology or Medicine",
+        "used": "Kyoto University",
+        "others": [
+          "Gladstone Institutes"
+        ]
+      },
+      {
+        "id": "971",
+        "name": "Sir Peter J. Ratcliffe",
+        "awardYear": 2019,
+        "category": "Physiology or Medicine",
+        "used": "University of Oxford",
+        "others": [
+          "Francis Crick Institute"
+        ]
+      },
+      {
+        "id": "910",
+        "name": "Stefan W. Hell",
+        "awardYear": 2014,
+        "category": "Chemistry",
+        "used": "Max Planck Institute for Biophysical Chemistry",
+        "others": [
+          "German Cancer Research Center"
+        ]
+      },
+      {
+        "id": "1011",
+        "name": "Svante Pääbo",
+        "awardYear": 2022,
+        "category": "Physiology or Medicine",
+        "used": "Max Planck Institute for Evolutionary Anthropology",
+        "others": [
+          "Okinawa Institute of Science and Technology",
+          "Leipzig University"
+        ]
+      },
+      {
+        "id": "793",
+        "name": "Theodor W. Hänsch",
+        "awardYear": 2005,
+        "category": "Physics",
+        "used": "Max Planck Institute of Quantum Optics",
+        "others": [
+          "Ludwig-Maximilians-Universität München"
+        ]
+      },
+      {
+        "id": "842",
+        "name": "Thomas A. Steitz",
+        "awardYear": 2009,
+        "category": "Chemistry",
+        "used": "Yale University",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "886",
+        "name": "Thomas C. Südhof",
+        "awardYear": 2013,
+        "category": "Physiology or Medicine",
+        "used": "Stanford University",
+        "others": [
+          "Howard Hughes Medical Institute"
+        ]
+      },
+      {
+        "id": "921",
+        "name": "Tomas Lindahl",
+        "awardYear": 2015,
+        "category": "Chemistry",
+        "used": "Francis Crick Institute",
+        "others": [
+          "Clare Hall Laboratory"
+        ]
+      },
+      {
+        "id": "828",
+        "name": "Toshihide Maskawa",
+        "awardYear": 2008,
+        "category": "Physics",
+        "used": "Kyoto Sangyo University",
+        "others": [
+          "Yukawa Institute for Theoretical Physics (YITP), Kyoto University"
+        ]
+      },
+      {
+        "id": "62",
+        "name": "Walther Bothe",
+        "awardYear": 1954,
+        "category": "Physics",
+        "used": "University of Heidelberg",
+        "others": [
+          "Max-Planck-Institut für medizinische Forschung"
+        ]
+      },
+      {
+        "id": "970",
+        "name": "William G. Kaelin Jr",
+        "awardYear": 2019,
+        "category": "Physiology or Medicine",
+        "used": "Harvard Medical School",
+        "others": [
+          "Howard Hughes Medical Institute",
+          "Dana-Farber Cancer Institute",
+          "Brigham and Women's Hospital"
+        ]
+      },
+      {
+        "id": "328",
+        "name": "William P. Murphy",
+        "awardYear": 1934,
+        "category": "Physiology or Medicine",
+        "used": "Harvard University",
+        "others": [
+          "Peter Brent Brigham Hospital"
+        ]
+      }
+    ],
+    "geocoded": [
+      {
+        "id": "403",
+        "name": "Albert Claude",
+        "awardYear": 1974,
+        "place": "birth",
+        "query": "Longlier, Belgium",
+        "result": "Longlier, Neufchâteau, Luxembourg, Wallonia, Belgium",
+        "source": "geocoded"
+      },
+      {
+        "id": "766",
+        "name": "Alexei Abrikosov",
+        "awardYear": 2003,
+        "place": "affiliation",
+        "query": "Argonne, IL, USA",
+        "result": "Argonne National Laboratory, Lemont, Illinois, United States",
+        "source": "manual",
+        "note": "Nominatim matched Argonne Park; used the lab itself"
+      },
+      {
+        "id": "562",
+        "name": "Carlos Filipe Ximenes Belo",
+        "awardYear": 1996,
+        "place": "birth",
+        "query": "Wailacama, East Timor",
+        "result": "Vemasse, Baucau, East Timor",
+        "source": "manual",
+        "note": "Approximate: Wailacama is in Vemasse subdistrict"
+      },
+      {
+        "id": "649",
+        "name": "Eyvind Johnson",
+        "awardYear": 1974,
+        "place": "birth",
+        "query": "Svartbjörnsbyn, Sweden",
+        "result": "Svartbjörnsbyn, Holmen, Boden, Bodens kommun, Norrbotten County, 961 62, Sweden",
+        "source": "geocoded"
+      },
+      {
+        "id": "190",
+        "name": "Friedrich Bergius",
+        "awardYear": 1931,
+        "place": "birth",
+        "query": "Goldschmieden, near Breslau, Poland",
+        "result": "Złotniki, Wrocław, Poland",
+        "source": "manual",
+        "note": "Goldschmieden is today's Złotniki district of Wrocław"
+      },
+      {
+        "id": "1009",
+        "name": "Guido W. Imbens",
+        "awardYear": 2021,
+        "place": "birth",
+        "query": "Geldrop, the Netherlands",
+        "result": "Geldrop, Geldrop-Mierlo, North Brabant, Netherlands",
+        "source": "geocoded"
+      },
+      {
+        "id": "56",
+        "name": "John Cockcroft",
+        "awardYear": 1951,
+        "place": "affiliation",
+        "query": "Harwell, Berkshire, United Kingdom",
+        "result": "Harwell Campus, Oxfordshire, United Kingdom",
+        "source": "manual",
+        "note": "Atomic Energy Research Establishment site; Harwell moved from Berkshire to Oxfordshire in 1974"
+      },
+      {
+        "id": "605",
+        "name": "John Galsworthy",
+        "awardYear": 1932,
+        "place": "birth",
+        "query": "Kingston Hill, United Kingdom",
+        "result": "Kingston upon Thames, Greater London, United Kingdom",
+        "source": "manual",
+        "note": "Nominatim matched a Kingston Hill in Stafford; Galsworthy was born at Kingston Hill, Surrey"
+      },
+      {
+        "id": "401",
+        "name": "Konrad Lorenz",
+        "awardYear": 1973,
+        "place": "affiliation",
+        "query": "Altenberg; Grünau im Almtal, Austria",
+        "result": "Altenberg, Sankt Andrä-Wördern, Austria",
+        "source": "manual",
+        "note": "API lists two sites; used Altenberg, the first"
+      },
+      {
+        "id": "8",
+        "name": "Lord Rayleigh",
+        "awardYear": 1904,
+        "place": "birth",
+        "query": "Langford Grove, Maldon, Essex, United Kingdom",
+        "result": "Langford, Maldon, Essex, United Kingdom",
+        "source": "manual",
+        "note": "Langford Grove was an estate in Langford"
+      },
+      {
+        "id": "19",
+        "name": "Max von Laue",
+        "awardYear": 1914,
+        "place": "birth",
+        "query": "Pfaffendorf, Germany",
+        "result": "Pfaffendorf, Koblenz, Rhineland-Palatinate, Germany",
+        "source": "geocoded"
+      },
+      {
+        "id": "795",
+        "name": "Robert H. Grubbs",
+        "awardYear": 2005,
+        "place": "birth",
+        "query": "Possum Trot, KY, USA",
+        "result": "Possum Trot, Marshall County, Kentucky, United States",
+        "source": "geocoded"
+      },
+      {
+        "id": "353",
+        "name": "Selman A. Waksman",
+        "awardYear": 1952,
+        "place": "birth",
+        "query": "Nova Pryluka, Ukraine",
+        "result": "Nova Pryluka, Turbiv Settlement Hromada, Vinnytsia Raion, Vinnytsia Oblast, 22512, Ukraine",
+        "source": "geocoded"
+      },
+      {
+        "id": "339",
+        "name": "Sir Alexander Fleming",
+        "awardYear": 1945,
+        "place": "birth",
+        "query": "Lochfield, Scotland",
+        "result": "Darvel, East Ayrshire, Scotland",
+        "source": "manual",
+        "note": "Nominatim matched Lochfield in Paisley; Fleming was born at Lochfield farm near Darvel"
+      },
+      {
+        "id": "207",
+        "name": "Sir Robert Robinson",
+        "awardYear": 1947,
+        "place": "birth",
+        "query": "Rufford, near Chesterfield, United Kingdom",
+        "result": "Chesterfield, Derbyshire, United Kingdom",
+        "source": "manual",
+        "note": "Approximate: Rufford Farm, near Chesterfield"
+      },
+      {
+        "id": "162",
+        "name": "Svante Arrhenius",
+        "awardYear": 1903,
+        "place": "birth",
+        "query": "Vik, Sweden",
+        "result": "Wiks slott, Uppsala, Sweden",
+        "source": "manual",
+        "note": "Nominatim matched Vik in Skåne; Arrhenius was born at Vik (Wik) castle near Uppsala"
+      },
+      {
+        "id": "999",
+        "name": "Syukuro Manabe",
+        "awardYear": 2021,
+        "place": "birth",
+        "query": "Shingu, Ehime, Japan",
+        "result": "Shingu IC, Kochi Expressway, Shikokuchuo, Ehime Prefecture, 799-0399, Japan",
+        "source": "geocoded"
+      },
+      {
+        "id": "871",
+        "name": "Tawakkol Karman",
+        "awardYear": 2011,
+        "place": "birth",
+        "query": "Ta'izz, Yemen",
+        "result": "Ta'izz, Al Qahirah District, Ta'izz Governorate, Yemen",
+        "source": "geocoded"
+      },
+      {
+        "id": "183",
+        "name": "The Svedberg",
+        "awardYear": 1926,
+        "place": "birth",
+        "query": "Fleräng, Sweden",
+        "result": "Fleräng, Ytter-Harnäs, Furuvik, Gävle kommun, Gävleborg County, 814 92, Sweden",
+        "source": "geocoded"
+      },
+      {
+        "id": "921",
+        "name": "Tomas Lindahl",
+        "awardYear": 2015,
+        "place": "affiliation",
+        "query": "Hertfordshire, United Kingdom",
+        "result": "Hertfordshire, England, United Kingdom",
+        "source": "geocoded"
+      },
+      {
+        "id": "16",
+        "name": "Wilhelm Wien",
+        "awardYear": 1911,
+        "place": "birth",
+        "query": "Parusnoye, Russia",
+        "result": "Primorsk, Kaliningrad Oblast, Russia",
+        "source": "manual",
+        "note": "Nominatim matched a Parusnoye on Sakhalin; Wien was born at Gaffken near Fischhausen (now Primorsk)"
+      },
+      {
+        "id": "224",
+        "name": "Willard F. Libby",
+        "awardYear": 1960,
+        "place": "birth",
+        "query": "Grand Valley, CO, USA",
+        "result": "Parachute, Colorado, United States",
+        "source": "manual",
+        "note": "Nominatim matched Grand Valley, Michigan; Grand Valley, CO was renamed Parachute"
+      },
+      {
+        "id": "137",
+        "name": "Wolfgang Paul",
+        "awardYear": 1989,
+        "place": "birth",
+        "query": "Lorenzkirch, Germany",
+        "result": "Lorenzkirch, Zeithain, Meissen, Saxony, Germany",
+        "source": "geocoded"
+      }
+    ],
+    "countryCentroidOnly": [
+      {
+        "id": "1061",
+        "name": "Karl Deisseroth",
+        "awardYear": 2026,
+        "place": "affiliation",
+        "country": "USA",
+        "city": null
+      },
+      {
+        "id": "977",
+        "name": "M. Stanley Whittingham",
+        "awardYear": 2019,
+        "place": "birth",
+        "country": "United Kingdom",
+        "city": null
+      },
+      {
+        "id": "1057",
+        "name": "Maria Corina Machado",
+        "awardYear": 2025,
+        "place": "birth",
+        "country": "Venezuela",
+        "city": null
+      },
+      {
+        "id": "986",
+        "name": "Michael Houghton",
+        "awardYear": 2020,
+        "place": "birth",
+        "country": "United Kingdom",
+        "city": null
+      },
+      {
+        "id": "1060",
+        "name": "Peter Howitt",
+        "awardYear": 2025,
+        "place": "birth",
+        "country": "Canada",
+        "city": null
+      },
+      {
+        "id": "851",
+        "name": "Richard F. Heck",
+        "awardYear": 2010,
+        "place": "affiliation",
+        "country": "USA",
+        "city": null
+      },
+      {
+        "id": "878",
+        "name": "Robert J. Lefkowitz",
+        "awardYear": 2012,
+        "place": "affiliation",
+        "country": "USA",
+        "city": null
+      }
+    ],
+    "noCoordinates": [
+      {
+        "id": "942",
+        "name": "Barry C. Barish",
+        "awardYear": 2017,
+        "place": "affiliation",
+        "location": null
+      },
+      {
+        "id": "943",
+        "name": "Kip S. Thorne",
+        "awardYear": 2017,
+        "place": "affiliation",
+        "location": null
+      },
+      {
+        "id": "941",
+        "name": "Rainer Weiss",
+        "awardYear": 2017,
+        "place": "affiliation",
+        "location": null
+      }
+    ],
+    "unawardedPrizes": [
+      {
+        "awardYear": 1914,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1914,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1915,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1915,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1916,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1916,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1916,
+        "category": "Physics",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1916,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1917,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1917,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1918,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1918,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1918,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1919,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1921,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1923,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1924,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1924,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1925,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1928,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1931,
+        "category": "Physics",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1932,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1933,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1934,
+        "category": "Physics",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1935,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1939,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1940,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1940,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1940,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1940,
+        "category": "Physics",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1940,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1941,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1941,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1941,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1941,
+        "category": "Physics",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1941,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1942,
+        "category": "Chemistry",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1942,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1942,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1942,
+        "category": "Physics",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1942,
+        "category": "Physiology or Medicine",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1943,
+        "category": "Literature",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1943,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1948,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1955,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1956,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1966,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money was allocated to the Special Fund of this prize section."
+      },
+      {
+        "awardYear": 1967,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. 1/3 of the prize money was allocated to the main fund and 2/3 was allocated to the special fund of this prize section."
+      },
+      {
+        "awardYear": 1972,
+        "category": "Peace",
+        "note": "No Nobel Prize was awarded this year. The prize money for 1972 was allocated to the Main Fund."
+      }
+    ],
+    "crossCheck": []
+  }
+}
