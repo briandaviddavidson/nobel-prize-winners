@@ -194,6 +194,12 @@ await mkdir(PROCESSED_DIR, { recursive: true });
 await writeFile(processedPath('laureate-prizes.json'), JSON.stringify(rows, null, 1) + '\n');
 await writeFile(processedPath('laureate-prizes.csv'), toCsv(rows));
 
+// One row per prize (including years it wasn't awarded), for prize-level charts.
+const prizeRows = nobelPrizes
+  .map((p) => ({ awardYear: Number(p.awardYear), category: en(p.category), laureateCount: p.laureates?.length ?? 0 }))
+  .sort((a, b) => a.awardYear - b.awardYear || a.category.localeCompare(b.category));
+await writeFile(processedPath('prizes.json'), JSON.stringify(prizeRows) + '\n');
+
 const summary = {
   fetchedAt,
   rows: rows.length,
