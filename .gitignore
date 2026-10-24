@@ -147,3 +147,6 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Raw Nobel API responses: regenerate with `npm run fetch-data`
+data/raw/
