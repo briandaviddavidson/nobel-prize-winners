@@ -2,17 +2,20 @@ import ChartCard from '../components/ChartCard.js';
 import Legend from '../components/Legend.js';
 import AgeChart from '../components/charts/AgeChart.js';
 import GenderChart from '../components/charts/GenderChart.js';
+import SharingChart from '../components/charts/SharingChart.js';
 import PerDecadeChart from '../components/charts/PerDecadeChart.js';
 import { CATEGORIES } from '../lib/categories.js';
 import { lastDecade, lastYear, prizes, rows, yearsInLastDecade } from '../lib/data.js';
 import { ageCaption, ages } from '../lib/charts/age.js';
 import { genderByDecade, genderCaption } from '../lib/charts/gender.js';
+import { GROUPS, WINNERS, sharing, sharingCaption } from '../lib/charts/sharing.js';
 import { perDecade, perDecadeCaption } from '../lib/charts/per-decade.js';
 
 export default function Home() {
   const decadeData = perDecade(rows, prizes);
   const ageData = ages(rows);
   const genderData = genderByDecade(rows);
+  const sharingData = sharing(prizes);
   const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${Math.abs(n).toFixed(1)}`;
   const partialNote = `*${lastDecade}–${lastYear} only (${yearsInLastDecade} of 10 years).`;
 
@@ -85,6 +88,29 @@ export default function Home() {
         }}
       >
         <GenderChart byDecade={genderData.byDecade} lastDecade={lastDecade} />
+      </ChartCard>
+
+      <ChartCard
+        id="sharing"
+        title="Solo vs. shared prizes"
+        subtitle="Share of each decade's prizes awarded to one, two or three winners"
+        takeaway={sharingCaption(sharingData)}
+        note={`${partialNote} Counted per prize; years with no award are left out. Organizations count as one winner.`}
+        table={{
+          columns: ['Group', 'Decade', ...WINNERS.map((w) => w.label), 'Prizes'],
+          rows: GROUPS.flatMap((g) =>
+            sharingData.decades.flatMap((d) => {
+              const cells = WINNERS.map(
+                (w) => sharingData.counts.find((c) => c.group === g.key && c.decade === d && c.winners === w.n)?.count ?? 0,
+              );
+              const total = cells.reduce((a, b) => a + b, 0);
+              return total ? [[g.label, d === lastDecade ? `${d}s*` : `${d}s`, ...cells, total]] : [];
+            }),
+          ),
+        }}
+      >
+        <Legend items={[...WINNERS].reverse().map((w) => ({ key: w.n, label: w.label, color: `var(--share-${w.n})` }))} />
+        <SharingChart counts={sharingData.counts} decades={sharingData.decades} lastDecade={lastDecade} />
       </ChartCard>
 
       <footer>

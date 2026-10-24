@@ -15,6 +15,7 @@ export function readTheme() {
     grid: v('--grid'),
     axis: v('--axis'),
     highlight: v('--highlight'),
+    share: (n) => v(`--share-${n}`),
     category: (key) => v(`--cat-${key}`),
   };
 }

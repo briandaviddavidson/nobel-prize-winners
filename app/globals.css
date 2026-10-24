@@ -19,6 +19,11 @@
 
   /* Single-series accent, kept apart from the category hues. */
   --highlight: #6250d6;
+
+  /* Ordinal ramp for winners per prize (1, 2, 3), validated light→dark. */
+  --share-1: #b4abf0;
+  --share-2: #8576e6;
+  --share-3: #4a3aa7;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -40,6 +45,9 @@
     --cat-peace: #d55181;
     --cat-economics: #008300;
     --highlight: #9085e9;
+    --share-1: #5b4bc9;
+    --share-2: #9085e9;
+    --share-3: #c4bdf5;
   }
 }
 
@@ -61,6 +69,9 @@
   --cat-peace: #d55181;
   --cat-economics: #008300;
   --highlight: #9085e9;
+  --share-1: #5b4bc9;
+  --share-2: #9085e9;
+  --share-3: #c4bdf5;
 }
 
 * {
