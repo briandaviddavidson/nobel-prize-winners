@@ -16,6 +16,9 @@
   --cat-literature: #eda100;
   --cat-peace: #e87ba4;
   --cat-economics: #008300;
+
+  /* Single-series accent, kept apart from the category hues. */
+  --highlight: #6250d6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -36,6 +39,7 @@
     --cat-literature: #c98500;
     --cat-peace: #d55181;
     --cat-economics: #008300;
+    --highlight: #9085e9;
   }
 }
 
@@ -56,6 +60,7 @@
   --cat-literature: #c98500;
   --cat-peace: #d55181;
   --cat-economics: #008300;
+  --highlight: #9085e9;
 }
 
 * {
@@ -146,6 +151,10 @@ footer a {
 .plot {
   min-height: 320px;
   width: 100%;
+}
+
+.plot-short {
+  min-height: 280px;
 }
 
 .plot svg {

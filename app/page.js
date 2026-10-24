@@ -1,15 +1,18 @@
 import ChartCard from '../components/ChartCard.js';
 import Legend from '../components/Legend.js';
 import AgeChart from '../components/charts/AgeChart.js';
+import GenderChart from '../components/charts/GenderChart.js';
 import PerDecadeChart from '../components/charts/PerDecadeChart.js';
 import { CATEGORIES } from '../lib/categories.js';
 import { lastDecade, lastYear, prizes, rows, yearsInLastDecade } from '../lib/data.js';
 import { ageCaption, ages } from '../lib/charts/age.js';
+import { genderByDecade, genderCaption } from '../lib/charts/gender.js';
 import { perDecade, perDecadeCaption } from '../lib/charts/per-decade.js';
 
 export default function Home() {
   const decadeData = perDecade(rows, prizes);
   const ageData = ages(rows);
+  const genderData = genderByDecade(rows);
   const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${Math.abs(n).toFixed(1)}`;
   const partialNote = `*${lastDecade}–${lastYear} only (${yearsInLastDecade} of 10 years).`;
 
@@ -63,6 +66,25 @@ export default function Home() {
         }}
       >
         <AgeChart points={ageData.points} firstYear={1900} lastYear={lastYear} />
+      </ChartCard>
+
+      <ChartCard
+        id="gender"
+        title="Women among laureates"
+        subtitle="Share of awards to people that went to women, by decade"
+        takeaway={genderCaption(genderData, { lastDecade })}
+        note={`${partialNote} Organizations are excluded. Marie Curie counts twice (1903, 1911).`}
+        table={{
+          columns: ['Decade', 'Women', 'Men', 'Share women'],
+          rows: genderData.byDecade.map((d) => [
+            d.decade === lastDecade ? `${d.decade}s*` : `${d.decade}s`,
+            d.women,
+            d.men,
+            `${(d.share * 100).toFixed(1)}%`,
+          ]),
+        }}
+      >
+        <GenderChart byDecade={genderData.byDecade} lastDecade={lastDecade} />
       </ChartCard>
 
       <footer>

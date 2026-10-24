@@ -14,6 +14,7 @@ export function readTheme() {
     muted: v('--text-muted'),
     grid: v('--grid'),
     axis: v('--axis'),
+    highlight: v('--highlight'),
     category: (key) => v(`--cat-${key}`),
   };
 }
