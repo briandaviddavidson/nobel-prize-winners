@@ -20,11 +20,29 @@ export function flattenPlace(place, prefix) {
   };
 }
 
-// Country centroid from the API, used as a last-resort coordinate.
-export function countryCentroid(place) {
+const ownCentroid = (place) => {
   const lat = num(place?.countryNow?.latitude);
   const lng = num(place?.countryNow?.longitude);
   return lat != null && lng != null ? { lat, lng } : null;
+};
+
+// Country name → centroid, from every place in the API that carries one. Residences
+// have no coordinates of their own, so they borrow these.
+export function buildCountryCentroids(laureates) {
+  const centroids = new Map();
+  for (const l of laureates) {
+    const places = [l.birth?.place, l.founded?.place, ...l.nobelPrizes.flatMap((p) => p.affiliations ?? [])];
+    for (const place of places) {
+      const c = ownCentroid(place);
+      if (c && !centroids.has(en(place.countryNow))) centroids.set(en(place.countryNow), c);
+    }
+  }
+  return centroids;
+}
+
+// Country centroid, used as a last-resort coordinate.
+export function countryCentroid(place, centroids) {
+  return ownCentroid(place) ?? centroids.get(en(place?.countryNow) ?? en(place?.country)) ?? null;
 }
 
 export const placeKey = (city, country) => [city, country].filter(Boolean).join(', ');

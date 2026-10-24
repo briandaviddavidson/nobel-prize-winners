@@ -4,7 +4,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { PROCESSED_DIR, QUALITY_REPORT, processedPath, rawPath } from './lib/paths.js';
 import { ageAt, parseApiDate } from './lib/dates.js';
-import { countryCentroid, flattenPlace, placeKey } from './lib/places.js';
+import { buildCountryCentroids, countryCentroid, flattenPlace, placeKey } from './lib/places.js';
 import { geocodeAll } from './lib/geocode.js';
 import { toCsv } from './lib/csv.js';
 
@@ -31,6 +31,8 @@ const issues = {
   notReceived: [],
   noAffiliation: [],
   multipleAffiliations: [],
+  multipleResidences: [],
+  residenceFallback: [],
   geocoded: [],
   countryCentroidOnly: [],
   noCoordinates: [],
@@ -74,6 +76,7 @@ for (const l of laureates) {
 
     if (p.prizeStatus !== 'received') issues.notReceived.push({ ...ref(p), status: p.prizeStatus });
     if (!primary) issues.noAffiliation.push({ ...ref(p), residence: residence ? en(residence.locationString) : null });
+    if (p.residences?.length > 1) issues.multipleResidences.push({ ...ref(p), used: en(residence.locationString), all: p.residences.map((r) => en(r.locationString)) });
     if (others.length) issues.multipleAffiliations.push({ ...ref(p), used: en(primary.name), others: others.map((a) => en(a.name)) });
 
     const row = {
@@ -99,25 +102,40 @@ for (const l of laureates) {
       ...flattenPlace(primary, 'affiliation'),
       affiliationCount: p.affiliations?.length ?? 0,
       otherAffiliations: others.map((a) => en(a.name)).join('; ') || null,
-      residenceCountryNow: en(residence?.countryNow),
+      ...flattenPlace(residence, 'residence'),
       prizeNumber: i + 1,
       isRepeatWinner: l.nobelPrizes.length > 1,
       motivation: en(p.motivation),
       wikidataId: l.wikidata?.id ?? null,
     };
     rows.push(row);
-    rawPlaces.set(row, { birth: isOrg ? null : l.birth?.place, affiliation: primary });
+    rawPlaces.set(row, { birth: isOrg ? null : l.birth?.place, affiliation: primary, residence });
   });
 }
 
-// Fill missing coordinates: geocode the named city, else fall back to the API's
-// country centroid (flagged, since an arc to a country's middle is only approximate).
-const PREFIXES = ['birth', 'affiliation'];
+// Fill missing coordinates: geocode the named city, else fall back to a country
+// centroid (flagged, since an arc to a country's middle is only approximate).
+// Residences are usually just a country, and the API gives them no coordinates.
+const PREFIXES = ['birth', 'affiliation', 'residence'];
+const centroids = buildCountryCentroids(laureates);
 const needsLookup = (row, prefix) => row[`${prefix}Lat`] == null && row[`${prefix}CityNow`];
 const queryFor = (row, prefix) => placeKey(row[`${prefix}CityNow`], row[`${prefix}CountryNow`]);
+const countryName = (row, prefix) => row[`${prefix}CountryNow`] ?? row[`${prefix}Country`];
+// Countries that never appear with coordinates anywhere in the API get geocoded by name.
+const needsCountryLookup = (row, prefix, place) =>
+  place && row[`${prefix}Lat`] == null && countryName(row, prefix) && !countryCentroid(place, centroids);
 
-const queries = rows.flatMap((row) => PREFIXES.filter((pf) => needsLookup(row, pf)).map((pf) => queryFor(row, pf)));
+const queries = rows.flatMap((row) =>
+  PREFIXES.flatMap((pf) => {
+    const place = rawPlaces.get(row)[pf];
+    return [
+      ...(needsLookup(row, pf) ? [queryFor(row, pf)] : []),
+      ...(needsCountryLookup(row, pf, place) ? [countryName(row, pf)] : []),
+    ];
+  }),
+);
 const { lookup, newLookups } = await geocodeAll(queries);
+const found = (hit) => (hit && !hit.notFound ? hit : null);
 
 for (const row of rows) {
   for (const pf of PREFIXES) {
@@ -125,18 +143,39 @@ for (const row of rows) {
     const place = rawPlaces.get(row)[pf];
     if (!place) continue;
     const ref = { id: row.id, name: row.name, awardYear: row.awardYear, place: pf };
-    const hit = row[`${pf}CityNow`] ? lookup[queryFor(row, pf)] : null;
-    const centroid = countryCentroid(place);
-    if (hit && !hit.notFound) {
+    const hit = row[`${pf}CityNow`] ? found(lookup[queryFor(row, pf)]) : null;
+    const centroid = countryCentroid(place, centroids) ?? found(lookup[countryName(row, pf)]);
+    if (hit) {
       const source = hit.source === 'manual' ? 'manual' : 'geocoded';
       Object.assign(row, { [`${pf}Lat`]: hit.lat, [`${pf}Lng`]: hit.lng, [`${pf}CoordSource`]: source });
       issues.geocoded.push({ ...ref, query: queryFor(row, pf), result: hit.displayName, source, note: hit.note });
     } else if (centroid) {
       Object.assign(row, { [`${pf}Lat`]: centroid.lat, [`${pf}Lng`]: centroid.lng, [`${pf}CoordSource`]: 'country-centroid' });
-      issues.countryCentroidOnly.push({ ...ref, country: row[`${pf}CountryNow`], city: row[`${pf}CityNow`] });
+      // Country-only residences are expected; only flag places that named a city we couldn't find.
+      if (pf !== 'residence' || row[`${pf}CityNow`]) {
+        issues.countryCentroidOnly.push({ ...ref, country: countryName(row, pf), city: row[`${pf}CityNow`] });
+      }
     } else {
       issues.noCoordinates.push({ ...ref, location: en(place.locationString) });
     }
+  }
+}
+
+// Where the prize-winning work happened, for the map and country charts: the
+// affiliation when there is one, else the residence the API records instead
+// (mostly Literature and Peace laureates, and usually only a country).
+for (const row of rows) {
+  const pf = ['affiliation', 'residence'].find((p) => row[`${p}Lat`] != null);
+  Object.assign(row, {
+    workLocationSource: pf ?? null,
+    workCityNow: pf ? row[`${pf}CityNow`] : null,
+    workCountryNow: pf ? countryName(row, pf) : null,
+    workLat: pf ? row[`${pf}Lat`] : null,
+    workLng: pf ? row[`${pf}Lng`] : null,
+    workPrecision: !pf ? null : row[`${pf}CoordSource`] === 'country-centroid' ? 'country' : 'city',
+  });
+  if (pf === 'residence') {
+    issues.residenceFallback.push({ id: row.id, name: row.name, awardYear: row.awardYear, category: row.category, location: placeKey(row.workCityNow, row.workCountryNow), precision: row.workPrecision });
   }
 }
 

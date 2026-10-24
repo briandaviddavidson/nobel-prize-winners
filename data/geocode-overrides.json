@@ -10,5 +10,6 @@
   "Vik, Sweden": { "lat": 59.7362983, "lng": 17.4622119, "displayName": "Wiks slott, Uppsala, Sweden", "note": "Nominatim matched Vik in Skåne; Arrhenius was born at Vik (Wik) castle near Uppsala" },
   "Parusnoye, Russia": { "lat": 54.7301946, "lng": 20.0044301, "displayName": "Primorsk, Kaliningrad Oblast, Russia", "note": "Nominatim matched a Parusnoye on Sakhalin; Wien was born at Gaffken near Fischhausen (now Primorsk)" },
   "Grand Valley, CO, USA": { "lat": 39.446423, "lng": -108.0522672, "displayName": "Parachute, Colorado, United States", "note": "Nominatim matched Grand Valley, Michigan; Grand Valley, CO was renamed Parachute" },
-  "Wailacama, East Timor": { "lat": -8.5822401, "lng": 126.274888, "displayName": "Vemasse, Baucau, East Timor", "note": "Approximate: Wailacama is in Vemasse subdistrict" }
+  "Wailacama, East Timor": { "lat": -8.5822401, "lng": 126.274888, "displayName": "Vemasse, Baucau, East Timor", "note": "Approximate: Wailacama is in Vemasse subdistrict" },
+  "Yugoslavia": { "lat": 44.8178131, "lng": 20.4568974, "displayName": "Belgrade, Serbia", "note": "Nominatim matched Pico Yugoslavia in Bolivia; the country no longer exists, so used its capital, Belgrade, where Andrić lived" }
 }

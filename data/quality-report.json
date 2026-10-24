@@ -19,7 +19,9 @@
       "notReceived": 3,
       "noAffiliation": 270,
       "multipleAffiliations": 84,
-      "geocoded": 23,
+      "multipleResidences": 3,
+      "residenceFallback": 226,
+      "geocoded": 35,
       "countryCentroidOnly": 7,
       "noCoordinates": 3,
       "unawardedPrizes": 49,
@@ -3146,6 +3148,1851 @@
         ]
       }
     ],
+    "multipleResidences": [
+      {
+        "id": "657",
+        "name": "Czesław Miłosz",
+        "awardYear": 1980,
+        "category": "Literature",
+        "used": "Poland",
+        "all": [
+          "Poland",
+          "USA"
+        ]
+      },
+      {
+        "id": "832",
+        "name": "Jean-Marie Gustave Le Clézio",
+        "awardYear": 2008,
+        "category": "Literature",
+        "used": "France",
+        "all": [
+          "France",
+          "Mauritius"
+        ]
+      },
+      {
+        "id": "1032",
+        "name": "Jon Fosse",
+        "awardYear": 2023,
+        "category": "Literature",
+        "used": "Norway",
+        "all": [
+          "Norway",
+          "Austria"
+        ]
+      }
+    ],
+    "residenceFallback": [
+      {
+        "id": "541",
+        "name": "Adolfo Pérez Esquivel",
+        "awardYear": 1980,
+        "category": "Peace",
+        "location": "Argentina",
+        "precision": "country"
+      },
+      {
+        "id": "819",
+        "name": "Al Gore",
+        "awardYear": 2007,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "628",
+        "name": "Albert Camus",
+        "awardYear": 1957,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "465",
+        "name": "Albert Gobat",
+        "awardYear": 1902,
+        "category": "Peace",
+        "location": "Switzerland",
+        "precision": "country"
+      },
+      {
+        "id": "519",
+        "name": "Albert Lutuli",
+        "awardYear": 1960,
+        "category": "Peace",
+        "location": "South Africa",
+        "precision": "country"
+      },
+      {
+        "id": "513",
+        "name": "Albert Schweitzer",
+        "awardYear": 1952,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "644",
+        "name": "Aleksandr Solzhenitsyn",
+        "awardYear": 1970,
+        "category": "Literature",
+        "location": "Russia",
+        "precision": "country"
+      },
+      {
+        "id": "1018",
+        "name": "Ales Bialiatski",
+        "awardYear": 2022,
+        "category": "Peace",
+        "location": "Belarus",
+        "precision": "country"
+      },
+      {
+        "id": "544",
+        "name": "Alfonso García Robles",
+        "awardYear": 1982,
+        "category": "Peace",
+        "location": "Geneva, Switzerland",
+        "precision": "city"
+      },
+      {
+        "id": "479",
+        "name": "Alfred Fried",
+        "awardYear": 1911,
+        "category": "Peace",
+        "location": "Austria",
+        "precision": "country"
+      },
+      {
+        "id": "892",
+        "name": "Alice Munro",
+        "awardYear": 2013,
+        "category": "Literature",
+        "location": "Canada",
+        "precision": "country"
+      },
+      {
+        "id": "543",
+        "name": "Alva Myrdal",
+        "awardYear": 1982,
+        "category": "Peace",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "590",
+        "name": "Anatole France",
+        "awardYear": 1921,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "618",
+        "name": "André Gide",
+        "awardYear": 1947,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "534",
+        "name": "Andrei Sakharov",
+        "awardYear": 1975,
+        "category": "Peace",
+        "location": "Russia",
+        "precision": "country"
+      },
+      {
+        "id": "1017",
+        "name": "Annie Ernaux",
+        "awardYear": 2022,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "538",
+        "name": "Anwar al-Sadat",
+        "awardYear": 1978,
+        "category": "Peace",
+        "location": "Egypt",
+        "precision": "country"
+      },
+      {
+        "id": "490",
+        "name": "Aristide Briand",
+        "awardYear": 1926,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "499",
+        "name": "Arthur Henderson",
+        "awardYear": 1934,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "475",
+        "name": "Auguste Beernaert",
+        "awardYear": 1909,
+        "category": "Peace",
+        "location": "Belgium",
+        "precision": "country"
+      },
+      {
+        "id": "553",
+        "name": "Aung San Suu Kyi",
+        "awardYear": 1991,
+        "category": "Peace",
+        "location": "Myanmar",
+        "precision": "country"
+      },
+      {
+        "id": "845",
+        "name": "Barack H. Obama",
+        "awardYear": 2009,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "468",
+        "name": "Bertha von Suttner",
+        "awardYear": 1905,
+        "category": "Peace",
+        "location": "Austria",
+        "precision": "country"
+      },
+      {
+        "id": "621",
+        "name": "Bertrand Russell",
+        "awardYear": 1950,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "535",
+        "name": "Betty Williams",
+        "awardYear": 1976,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "572",
+        "name": "Bjørnstjerne Bjørnson",
+        "awardYear": 1903,
+        "category": "Literature",
+        "location": "Norway",
+        "precision": "country"
+      },
+      {
+        "id": "629",
+        "name": "Boris Pasternak",
+        "awardYear": 1958,
+        "category": "Literature",
+        "location": "Russia",
+        "precision": "country"
+      },
+      {
+        "id": "666",
+        "name": "Camilo José Cela",
+        "awardYear": 1989,
+        "category": "Literature",
+        "location": "Spain",
+        "precision": "country"
+      },
+      {
+        "id": "588",
+        "name": "Carl Spitteler",
+        "awardYear": 1919,
+        "category": "Literature",
+        "location": "Switzerland",
+        "precision": "country"
+      },
+      {
+        "id": "500",
+        "name": "Carl von Ossietzky",
+        "awardYear": 1935,
+        "category": "Peace",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "562",
+        "name": "Carlos Filipe Ximenes Belo",
+        "awardYear": 1996,
+        "category": "Peace",
+        "location": "East Timor",
+        "precision": "country"
+      },
+      {
+        "id": "501",
+        "name": "Carlos Saavedra Lamas",
+        "awardYear": 1936,
+        "category": "Peace",
+        "location": "Argentina",
+        "precision": "country"
+      },
+      {
+        "id": "489",
+        "name": "Charles G. Dawes",
+        "awardYear": 1925,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "486",
+        "name": "Christian Lange",
+        "awardYear": 1921,
+        "category": "Peace",
+        "location": "Norway",
+        "precision": "country"
+      },
+      {
+        "id": "662",
+        "name": "Claude Simon",
+        "awardYear": 1985,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "505",
+        "name": "Cordell Hull",
+        "awardYear": 1945,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "657",
+        "name": "Czesław Miłosz",
+        "awardYear": 1980,
+        "category": "Literature",
+        "location": "Poland",
+        "precision": "country"
+      },
+      {
+        "id": "520",
+        "name": "Dag Hammarskjöld",
+        "awardYear": 1961,
+        "category": "Peace",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "674",
+        "name": "Dario Fo",
+        "awardYear": 1997,
+        "category": "Literature",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "567",
+        "name": "David Trimble",
+        "awardYear": 1998,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "669",
+        "name": "Derek Walcott",
+        "awardYear": 1992,
+        "category": "Literature",
+        "location": "Saint Lucia",
+        "precision": "country"
+      },
+      {
+        "id": "546",
+        "name": "Desmond Tutu",
+        "awardYear": 1984,
+        "category": "Peace",
+        "location": "South Africa",
+        "precision": "country"
+      },
+      {
+        "id": "1006",
+        "name": "Dmitry Muratov",
+        "awardYear": 2021,
+        "category": "Peace",
+        "location": "Russia",
+        "precision": "country"
+      },
+      {
+        "id": "817",
+        "name": "Doris Lessing",
+        "awardYear": 2007,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "533",
+        "name": "Eisaku Satō",
+        "awardYear": 1974,
+        "category": "Peace",
+        "location": "Japan",
+        "precision": "country"
+      },
+      {
+        "id": "782",
+        "name": "Elfriede Jelinek",
+        "awardYear": 2004,
+        "category": "Literature",
+        "location": "Austria",
+        "precision": "country"
+      },
+      {
+        "id": "658",
+        "name": "Elias Canetti",
+        "awardYear": 1981,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "464",
+        "name": "Élie Ducommun",
+        "awardYear": 1902,
+        "category": "Peace",
+        "location": "Switzerland",
+        "precision": "country"
+      },
+      {
+        "id": "548",
+        "name": "Elie Wiesel",
+        "awardYear": 1986,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "480",
+        "name": "Elihu Root",
+        "awardYear": 1912,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "869",
+        "name": "Ellen Johnson Sirleaf",
+        "awardYear": 2011,
+        "category": "Peace",
+        "location": "Liberia",
+        "precision": "country"
+      },
+      {
+        "id": "506",
+        "name": "Emily Greene Balch",
+        "awardYear": 1946,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "604",
+        "name": "Erik Axel Karlfeldt",
+        "awardYear": 1931,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "625",
+        "name": "Ernest Hemingway",
+        "awardYear": 1954,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "471",
+        "name": "Ernesto Teodoro Moneta",
+        "awardYear": 1907,
+        "category": "Peace",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "608",
+        "name": "Eugene O'Neill",
+        "awardYear": 1936,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "651",
+        "name": "Eugenio Montale",
+        "awardYear": 1975,
+        "category": "Literature",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "649",
+        "name": "Eyvind Johnson",
+        "awardYear": 1974,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "556",
+        "name": "F.W. de Klerk",
+        "awardYear": 1993,
+        "category": "Peace",
+        "location": "South Africa",
+        "precision": "country"
+      },
+      {
+        "id": "492",
+        "name": "Ferdinand Buisson",
+        "awardYear": 1927,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "623",
+        "name": "François Mauriac",
+        "awardYear": 1952,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "494",
+        "name": "Frank B. Kellogg",
+        "awardYear": 1929,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "613",
+        "name": "Frans Eemil Sillanpää",
+        "awardYear": 1939,
+        "category": "Literature",
+        "location": "Finland",
+        "precision": "country"
+      },
+      {
+        "id": "573",
+        "name": "Frédéric Mistral",
+        "awardYear": 1904,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "463",
+        "name": "Frédéric Passy",
+        "awardYear": 1901,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "474",
+        "name": "Fredrik Bajer",
+        "awardYear": 1908,
+        "category": "Peace",
+        "location": "Denmark",
+        "precision": "country"
+      },
+      {
+        "id": "487",
+        "name": "Fridtjof Nansen",
+        "awardYear": 1922,
+        "category": "Peace",
+        "location": "Norway",
+        "precision": "country"
+      },
+      {
+        "id": "659",
+        "name": "Gabriel García Márquez",
+        "awardYear": 1982,
+        "category": "Literature",
+        "location": "Mexico",
+        "precision": "country"
+      },
+      {
+        "id": "615",
+        "name": "Gabriela Mistral",
+        "awardYear": 1945,
+        "category": "Literature",
+        "location": "Chile",
+        "precision": "country"
+      },
+      {
+        "id": "734",
+        "name": "Gao Xingjian",
+        "awardYear": 2000,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "596",
+        "name": "George Bernard Shaw",
+        "awardYear": 1925,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "514",
+        "name": "George C. Marshall",
+        "awardYear": 1953,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "517",
+        "name": "Georges Pire",
+        "awardYear": 1958,
+        "category": "Peace",
+        "location": "Belgium",
+        "precision": "country"
+      },
+      {
+        "id": "582",
+        "name": "Gerhart Hauptmann",
+        "awardYear": 1912,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "635",
+        "name": "Giorgos Seferis",
+        "awardYear": 1963,
+        "category": "Literature",
+        "location": "Greece",
+        "precision": "country"
+      },
+      {
+        "id": "576",
+        "name": "Giosuè Carducci",
+        "awardYear": 1906,
+        "category": "Literature",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "597",
+        "name": "Grazia Deledda",
+        "awardYear": 1926,
+        "category": "Literature",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "676",
+        "name": "Günter Grass",
+        "awardYear": 1999,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "491",
+        "name": "Gustav Stresemann",
+        "awardYear": 1926,
+        "category": "Peace",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "626",
+        "name": "Halldór Laxness",
+        "awardYear": 1955,
+        "category": "Literature",
+        "location": "Iceland",
+        "precision": "country"
+      },
+      {
+        "id": "1042",
+        "name": "Han Kang",
+        "awardYear": 2024,
+        "category": "Literature",
+        "location": "Seoul, South Korea",
+        "precision": "city"
+      },
+      {
+        "id": "801",
+        "name": "Harold Pinter",
+        "awardYear": 2005,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "650",
+        "name": "Harry Martinson",
+        "awardYear": 1974,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "647",
+        "name": "Heinrich Böll",
+        "awardYear": 1972,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "600",
+        "name": "Henri Bergson",
+        "awardYear": 1927,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "481",
+        "name": "Henri La Fontaine",
+        "awardYear": 1913,
+        "category": "Peace",
+        "location": "Belgium",
+        "precision": "country"
+      },
+      {
+        "id": "587",
+        "name": "Henrik Pontoppidan",
+        "awardYear": 1917,
+        "category": "Literature",
+        "location": "Denmark",
+        "precision": "country"
+      },
+      {
+        "id": "462",
+        "name": "Henry Dunant",
+        "awardYear": 1901,
+        "category": "Peace",
+        "location": "Switzerland",
+        "precision": "country"
+      },
+      {
+        "id": "530",
+        "name": "Henry Kissinger",
+        "awardYear": 1973,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "575",
+        "name": "Henryk Sienkiewicz",
+        "awardYear": 1905,
+        "category": "Literature",
+        "location": "Poland",
+        "precision": "country"
+      },
+      {
+        "id": "617",
+        "name": "Hermann Hesse",
+        "awardYear": 1946,
+        "category": "Literature",
+        "location": "Switzerland",
+        "precision": "country"
+      },
+      {
+        "id": "844",
+        "name": "Herta Müller",
+        "awardYear": 2009,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "485",
+        "name": "Hjalmar Branting",
+        "awardYear": 1921,
+        "category": "Peace",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "761",
+        "name": "Imre Kertész",
+        "awardYear": 2002,
+        "category": "Literature",
+        "location": "Hungary",
+        "precision": "country"
+      },
+      {
+        "id": "654",
+        "name": "Isaac Bashevis Singer",
+        "awardYear": 1978,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "633",
+        "name": "Ivo Andrić",
+        "awardYear": 1961,
+        "category": "Literature",
+        "location": "Yugoslavia",
+        "precision": "country"
+      },
+      {
+        "id": "763",
+        "name": "J. M. Coetzee",
+        "awardYear": 2003,
+        "category": "Literature",
+        "location": "South Africa",
+        "precision": "country"
+      },
+      {
+        "id": "790",
+        "name": "J. Robin Warren",
+        "awardYear": 2005,
+        "category": "Physiology or Medicine",
+        "location": "Perth, Australia",
+        "precision": "city"
+      },
+      {
+        "id": "592",
+        "name": "Jacinto Benavente",
+        "awardYear": 1922,
+        "category": "Literature",
+        "location": "Spain",
+        "precision": "country"
+      },
+      {
+        "id": "496",
+        "name": "Jane Addams",
+        "awardYear": 1931,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "661",
+        "name": "Jaroslav Seifert",
+        "awardYear": 1984,
+        "category": "Literature",
+        "location": "Czech Republic",
+        "precision": "country"
+      },
+      {
+        "id": "832",
+        "name": "Jean-Marie Gustave Le Clézio",
+        "awardYear": 2008,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "637",
+        "name": "Jean-Paul Sartre",
+        "awardYear": 1964,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "762",
+        "name": "Jimmy Carter",
+        "awardYear": 2002,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "565",
+        "name": "Jody Williams",
+        "awardYear": 1997,
+        "category": "Peace",
+        "location": "Putney, VT, USA",
+        "precision": "city"
+      },
+      {
+        "id": "614",
+        "name": "Johannes V. Jensen",
+        "awardYear": 1944,
+        "category": "Literature",
+        "location": "Denmark",
+        "precision": "country"
+      },
+      {
+        "id": "605",
+        "name": "John Galsworthy",
+        "awardYear": 1932,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "566",
+        "name": "John Hume",
+        "awardYear": 1998,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "507",
+        "name": "John R. Mott",
+        "awardYear": 1946,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "634",
+        "name": "John Steinbeck",
+        "awardYear": 1962,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "1032",
+        "name": "Jon Fosse",
+        "awardYear": 2023,
+        "category": "Literature",
+        "location": "Norway",
+        "precision": "country"
+      },
+      {
+        "id": "574",
+        "name": "José Echegaray",
+        "awardYear": 1904,
+        "category": "Literature",
+        "location": "Spain",
+        "precision": "country"
+      },
+      {
+        "id": "563",
+        "name": "José Ramos-Horta",
+        "awardYear": 1996,
+        "category": "Peace",
+        "location": "East Timor",
+        "precision": "country"
+      },
+      {
+        "id": "675",
+        "name": "José Saramago",
+        "awardYear": 1998,
+        "category": "Literature",
+        "location": "Portugal",
+        "precision": "country"
+      },
+      {
+        "id": "664",
+        "name": "Joseph Brodsky",
+        "awardYear": 1987,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "560",
+        "name": "Joseph Rotblat",
+        "awardYear": 1995,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "627",
+        "name": "Juan Ramón Jiménez",
+        "awardYear": 1956,
+        "category": "Literature",
+        "location": "Spain",
+        "precision": "country"
+      },
+      {
+        "id": "913",
+        "name": "Kailash Satyarthi",
+        "awardYear": 2014,
+        "category": "Peace",
+        "location": "India",
+        "precision": "country"
+      },
+      {
+        "id": "586",
+        "name": "Karl Gjellerup",
+        "awardYear": 1917,
+        "category": "Literature",
+        "location": "Denmark",
+        "precision": "country"
+      },
+      {
+        "id": "278",
+        "name": "Kary B. Mullis",
+        "awardYear": 1993,
+        "category": "Chemistry",
+        "location": "La Jolla, CA, USA",
+        "precision": "city"
+      },
+      {
+        "id": "671",
+        "name": "Kenzaburo Oe",
+        "awardYear": 1994,
+        "category": "Literature",
+        "location": "Japan",
+        "precision": "country"
+      },
+      {
+        "id": "725",
+        "name": "Kim Dae-jung",
+        "awardYear": 2000,
+        "category": "Peace",
+        "location": "South Korea",
+        "precision": "country"
+      },
+      {
+        "id": "473",
+        "name": "Klas Pontus Arnoldson",
+        "awardYear": 1908,
+        "category": "Peace",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "589",
+        "name": "Knut Hamsun",
+        "awardYear": 1920,
+        "category": "Literature",
+        "location": "Norway",
+        "precision": "country"
+      },
+      {
+        "id": "749",
+        "name": "Kofi Annan",
+        "awardYear": 2001,
+        "category": "Peace",
+        "location": "Ghana",
+        "precision": "country"
+      },
+      {
+        "id": "531",
+        "name": "Le Duc Tho",
+        "awardYear": 1973,
+        "category": "Peace",
+        "location": "Vietnam",
+        "precision": "country"
+      },
+      {
+        "id": "545",
+        "name": "Lech Wałęsa",
+        "awardYear": 1983,
+        "category": "Peace",
+        "location": "Poland",
+        "precision": "country"
+      },
+      {
+        "id": "484",
+        "name": "Léon Bourgeois",
+        "awardYear": 1920,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "512",
+        "name": "Léon Jouhaux",
+        "awardYear": 1951,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "516",
+        "name": "Lester Bowles Pearson",
+        "awardYear": 1957,
+        "category": "Peace",
+        "location": "Canada",
+        "precision": "country"
+      },
+      {
+        "id": "870",
+        "name": "Leymah Gbowee",
+        "awardYear": 2011,
+        "category": "Peace",
+        "location": "Liberia",
+        "precision": "country"
+      },
+      {
+        "id": "855",
+        "name": "Liu Xiaobo",
+        "awardYear": 2010,
+        "category": "Peace",
+        "location": "China",
+        "precision": "country"
+      },
+      {
+        "id": "510",
+        "name": "Lord Boyd Orr",
+        "awardYear": 1949,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "993",
+        "name": "Louise Glück",
+        "awardYear": 2020,
+        "category": "Literature",
+        "location": "Cambridge, MA, USA",
+        "precision": "city"
+      },
+      {
+        "id": "493",
+        "name": "Ludwig Quidde",
+        "awardYear": 1927,
+        "category": "Peace",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "607",
+        "name": "Luigi Pirandello",
+        "awardYear": 1934,
+        "category": "Literature",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "536",
+        "name": "Mairead Corrigan",
+        "awardYear": 1976,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "914",
+        "name": "Malala Yousafzai",
+        "awardYear": 2014,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "1057",
+        "name": "Maria Corina Machado",
+        "awardYear": 2025,
+        "category": "Peace",
+        "location": "Venezuela",
+        "precision": "country"
+      },
+      {
+        "id": "1005",
+        "name": "Maria Ressa",
+        "awardYear": 2021,
+        "category": "Peace",
+        "location": "Philippines",
+        "precision": "country"
+      },
+      {
+        "id": "524",
+        "name": "Martin Luther King Jr.",
+        "awardYear": 1964,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "159",
+        "name": "Martinus J.G. Veltman",
+        "awardYear": 1999,
+        "category": "Physics",
+        "location": "Bilthoven, the Netherlands",
+        "precision": "city"
+      },
+      {
+        "id": "833",
+        "name": "Martti Ahtisaari",
+        "awardYear": 2008,
+        "category": "Peace",
+        "location": "Finland",
+        "precision": "country"
+      },
+      {
+        "id": "581",
+        "name": "Maurice Maeterlinck",
+        "awardYear": 1911,
+        "category": "Literature",
+        "location": "Belgium",
+        "precision": "country"
+      },
+      {
+        "id": "539",
+        "name": "Menachem Begin",
+        "awardYear": 1978,
+        "category": "Peace",
+        "location": "Israel",
+        "precision": "country"
+      },
+      {
+        "id": "641",
+        "name": "Miguel Angel Asturias",
+        "awardYear": 1967,
+        "category": "Literature",
+        "location": "Guatemala",
+        "precision": "country"
+      },
+      {
+        "id": "552",
+        "name": "Mikhail Gorbachev",
+        "awardYear": 1990,
+        "category": "Peace",
+        "location": "Russia",
+        "precision": "country"
+      },
+      {
+        "id": "638",
+        "name": "Mikhail Sholokhov",
+        "awardYear": 1965,
+        "category": "Literature",
+        "location": "Russia",
+        "precision": "country"
+      },
+      {
+        "id": "880",
+        "name": "Mo Yan",
+        "awardYear": 2012,
+        "category": "Literature",
+        "location": "China",
+        "precision": "country"
+      },
+      {
+        "id": "798",
+        "name": "Mohamed ElBaradei",
+        "awardYear": 2005,
+        "category": "Peace",
+        "location": "Egypt",
+        "precision": "country"
+      },
+      {
+        "id": "540",
+        "name": "Mother Teresa",
+        "awardYear": 1979,
+        "category": "Peace",
+        "location": "India",
+        "precision": "country"
+      },
+      {
+        "id": "809",
+        "name": "Muhammad Yunus",
+        "awardYear": 2006,
+        "category": "Peace",
+        "location": "Bangladesh",
+        "precision": "country"
+      },
+      {
+        "id": "668",
+        "name": "Nadine Gordimer",
+        "awardYear": 1991,
+        "category": "Literature",
+        "location": "South Africa",
+        "precision": "country"
+      },
+      {
+        "id": "665",
+        "name": "Naguib Mahfouz",
+        "awardYear": 1988,
+        "category": "Literature",
+        "location": "Egypt",
+        "precision": "country"
+      },
+      {
+        "id": "1033",
+        "name": "Narges Mohammadi",
+        "awardYear": 2023,
+        "category": "Peace",
+        "location": "Iran",
+        "precision": "country"
+      },
+      {
+        "id": "495",
+        "name": "Nathan Söderblom",
+        "awardYear": 1930,
+        "category": "Peace",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "925",
+        "name": "National Dialogue Quartet",
+        "awardYear": 2015,
+        "category": "Peace",
+        "location": "Tunisia",
+        "precision": "country"
+      },
+      {
+        "id": "640",
+        "name": "Nelly Sachs",
+        "awardYear": 1966,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "555",
+        "name": "Nelson Mandela",
+        "awardYear": 1993,
+        "category": "Peace",
+        "location": "South Africa",
+        "precision": "country"
+      },
+      {
+        "id": "1043",
+        "name": "Nihon Hidankyo",
+        "awardYear": 2024,
+        "category": "Peace",
+        "location": "Tokyo, Japan",
+        "precision": "city"
+      },
+      {
+        "id": "528",
+        "name": "Norman Borlaug",
+        "awardYear": 1970,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "667",
+        "name": "Octavio Paz",
+        "awardYear": 1990,
+        "category": "Literature",
+        "location": "Mexico",
+        "precision": "country"
+      },
+      {
+        "id": "655",
+        "name": "Odysseus Elytis",
+        "awardYear": 1979,
+        "category": "Literature",
+        "location": "Greece",
+        "precision": "country"
+      },
+      {
+        "id": "979",
+        "name": "Olga Tokarczuk",
+        "awardYear": 2018,
+        "category": "Literature",
+        "location": "Wroclaw, Poland",
+        "precision": "city"
+      },
+      {
+        "id": "808",
+        "name": "Orhan Pamuk",
+        "awardYear": 2006,
+        "category": "Literature",
+        "location": "Turkey",
+        "precision": "country"
+      },
+      {
+        "id": "549",
+        "name": "Oscar Arias Sánchez",
+        "awardYear": 1987,
+        "category": "Peace",
+        "location": "Costa Rica",
+        "precision": "country"
+      },
+      {
+        "id": "645",
+        "name": "Pablo Neruda",
+        "awardYear": 1971,
+        "category": "Literature",
+        "location": "Chile",
+        "precision": "country"
+      },
+      {
+        "id": "622",
+        "name": "Pär Lagerkvist",
+        "awardYear": 1951,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "912",
+        "name": "Patrick Modiano",
+        "awardYear": 2014,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "648",
+        "name": "Patrick White",
+        "awardYear": 1973,
+        "category": "Literature",
+        "location": "Australia",
+        "precision": "country"
+      },
+      {
+        "id": "476",
+        "name": "Paul Henri d'Estournelles de Constant",
+        "awardYear": 1909,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "580",
+        "name": "Paul Heyse",
+        "awardYear": 1910,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "610",
+        "name": "Pearl Buck",
+        "awardYear": 1938,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "980",
+        "name": "Peter Handke",
+        "awardYear": 2019,
+        "category": "Literature",
+        "location": "Chaville, France",
+        "precision": "city"
+      },
+      {
+        "id": "518",
+        "name": "Philip Noel-Baker",
+        "awardYear": 1959,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "583",
+        "name": "Rabindranath Tagore",
+        "awardYear": 1913,
+        "category": "Literature",
+        "location": "India",
+        "precision": "country"
+      },
+      {
+        "id": "466",
+        "name": "Randal Cremer",
+        "awardYear": 1903,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "526",
+        "name": "René Cassin",
+        "awardYear": 1968,
+        "category": "Peace",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "554",
+        "name": "Rigoberta Menchú Tum",
+        "awardYear": 1992,
+        "category": "Peace",
+        "location": "Guatemala",
+        "precision": "country"
+      },
+      {
+        "id": "502",
+        "name": "Robert Cecil, Viscount Cecil of Chelwood",
+        "awardYear": 1937,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "609",
+        "name": "Roger Martin du Gard",
+        "awardYear": 1937,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "584",
+        "name": "Romain Rolland",
+        "awardYear": 1915,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "578",
+        "name": "Rudolf Eucken",
+        "awardYear": 1908,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "577",
+        "name": "Rudyard Kipling",
+        "awardYear": 1907,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "631",
+        "name": "Saint-John Perse",
+        "awardYear": 1960,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "630",
+        "name": "Salvatore Quasimodo",
+        "awardYear": 1959,
+        "category": "Literature",
+        "location": "Italy",
+        "precision": "country"
+      },
+      {
+        "id": "643",
+        "name": "Samuel Beckett",
+        "awardYear": 1969,
+        "category": "Literature",
+        "location": "Ireland",
+        "precision": "country"
+      },
+      {
+        "id": "652",
+        "name": "Saul Bellow",
+        "awardYear": 1976,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "672",
+        "name": "Seamus Heaney",
+        "awardYear": 1995,
+        "category": "Literature",
+        "location": "Ireland",
+        "precision": "country"
+      },
+      {
+        "id": "532",
+        "name": "Seán MacBride",
+        "awardYear": 1974,
+        "category": "Peace",
+        "location": "Ireland",
+        "precision": "country"
+      },
+      {
+        "id": "579",
+        "name": "Selma Lagerlöf",
+        "awardYear": 1909,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "558",
+        "name": "Shimon Peres",
+        "awardYear": 1994,
+        "category": "Peace",
+        "location": "Israel",
+        "precision": "country"
+      },
+      {
+        "id": "773",
+        "name": "Shirin Ebadi",
+        "awardYear": 2003,
+        "category": "Peace",
+        "location": "Iran",
+        "precision": "country"
+      },
+      {
+        "id": "639",
+        "name": "Shmuel Agnon",
+        "awardYear": 1966,
+        "category": "Literature",
+        "location": "Israel",
+        "precision": "country"
+      },
+      {
+        "id": "601",
+        "name": "Sigrid Undset",
+        "awardYear": 1928,
+        "category": "Literature",
+        "location": "Norway",
+        "precision": "country"
+      },
+      {
+        "id": "603",
+        "name": "Sinclair Lewis",
+        "awardYear": 1930,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "488",
+        "name": "Sir Austen Chamberlain",
+        "awardYear": 1925,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "498",
+        "name": "Sir Norman Angell",
+        "awardYear": 1933,
+        "category": "Peace",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "569",
+        "name": "Sully Prudhomme",
+        "awardYear": 1901,
+        "category": "Literature",
+        "location": "France",
+        "precision": "country"
+      },
+      {
+        "id": "924",
+        "name": "Svetlana Alexievich",
+        "awardYear": 2015,
+        "category": "Literature",
+        "location": "Belarus",
+        "precision": "country"
+      },
+      {
+        "id": "619",
+        "name": "T.S. Eliot",
+        "awardYear": 1948,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "871",
+        "name": "Tawakkol Karman",
+        "awardYear": 2011,
+        "category": "Peace",
+        "location": "Yemen",
+        "precision": "country"
+      },
+      {
+        "id": "551",
+        "name": "The 14th Dalai Lama",
+        "awardYear": 1989,
+        "category": "Peace",
+        "location": "India",
+        "precision": "country"
+      },
+      {
+        "id": "571",
+        "name": "Theodor Mommsen",
+        "awardYear": 1902,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "470",
+        "name": "Theodore Roosevelt",
+        "awardYear": 1906,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "602",
+        "name": "Thomas Mann",
+        "awardYear": 1929,
+        "category": "Literature",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "478",
+        "name": "Tobias Asser",
+        "awardYear": 1911,
+        "category": "Peace",
+        "location": "the Netherlands",
+        "precision": "country"
+      },
+      {
+        "id": "868",
+        "name": "Tomas Tranströmer",
+        "awardYear": 2011,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "670",
+        "name": "Toni Morrison",
+        "awardYear": 1993,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "747",
+        "name": "V. S. Naipaul",
+        "awardYear": 2001,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "585",
+        "name": "Verner von Heidenstam",
+        "awardYear": 1916,
+        "category": "Literature",
+        "location": "Sweden",
+        "precision": "country"
+      },
+      {
+        "id": "653",
+        "name": "Vicente Aleixandre",
+        "awardYear": 1977,
+        "category": "Literature",
+        "location": "Spain",
+        "precision": "country"
+      },
+      {
+        "id": "783",
+        "name": "Wangari Maathai",
+        "awardYear": 2004,
+        "category": "Peace",
+        "location": "Kenya",
+        "precision": "country"
+      },
+      {
+        "id": "593",
+        "name": "William Butler Yeats",
+        "awardYear": 1923,
+        "category": "Literature",
+        "location": "Ireland",
+        "precision": "country"
+      },
+      {
+        "id": "620",
+        "name": "William Faulkner",
+        "awardYear": 1949,
+        "category": "Literature",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "660",
+        "name": "William Golding",
+        "awardYear": 1983,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "741",
+        "name": "William Knowles",
+        "awardYear": 2001,
+        "category": "Chemistry",
+        "location": "St. Louis, MO, USA",
+        "precision": "city"
+      },
+      {
+        "id": "529",
+        "name": "Willy Brandt",
+        "awardYear": 1971,
+        "category": "Peace",
+        "location": "Germany",
+        "precision": "country"
+      },
+      {
+        "id": "624",
+        "name": "Winston Churchill",
+        "awardYear": 1953,
+        "category": "Literature",
+        "location": "United Kingdom",
+        "precision": "country"
+      },
+      {
+        "id": "673",
+        "name": "Wisława Szymborska",
+        "awardYear": 1996,
+        "category": "Literature",
+        "location": "Poland",
+        "precision": "country"
+      },
+      {
+        "id": "594",
+        "name": "Władysław Reymont",
+        "awardYear": 1924,
+        "category": "Literature",
+        "location": "Poland",
+        "precision": "country"
+      },
+      {
+        "id": "663",
+        "name": "Wole Soyinka",
+        "awardYear": 1986,
+        "category": "Literature",
+        "location": "Nigeria",
+        "precision": "country"
+      },
+      {
+        "id": "483",
+        "name": "Woodrow Wilson",
+        "awardYear": 1919,
+        "category": "Peace",
+        "location": "USA",
+        "precision": "country"
+      },
+      {
+        "id": "557",
+        "name": "Yasser Arafat",
+        "awardYear": 1994,
+        "category": "Peace",
+        "location": "Palestine",
+        "precision": "country"
+      },
+      {
+        "id": "642",
+        "name": "Yasunari Kawabata",
+        "awardYear": 1968,
+        "category": "Literature",
+        "location": "Japan",
+        "precision": "country"
+      },
+      {
+        "id": "559",
+        "name": "Yitzhak Rabin",
+        "awardYear": 1994,
+        "category": "Peace",
+        "location": "Israel",
+        "precision": "country"
+      }
+    ],
     "geocoded": [
       {
         "id": "403",
@@ -3165,6 +5012,15 @@
         "result": "Argonne National Laboratory, Lemont, Illinois, United States",
         "source": "manual",
         "note": "Nominatim matched Argonne Park; used the lab itself"
+      },
+      {
+        "id": "544",
+        "name": "Alfonso García Robles",
+        "awardYear": 1982,
+        "place": "residence",
+        "query": "Geneva, Switzerland",
+        "result": "Geneva, Switzerland",
+        "source": "geocoded"
       },
       {
         "id": "562",
@@ -3205,6 +5061,33 @@
         "source": "geocoded"
       },
       {
+        "id": "1042",
+        "name": "Han Kang",
+        "awardYear": 2024,
+        "place": "residence",
+        "query": "Seoul, South Korea",
+        "result": "Seoul, South Korea",
+        "source": "geocoded"
+      },
+      {
+        "id": "790",
+        "name": "J. Robin Warren",
+        "awardYear": 2005,
+        "place": "residence",
+        "query": "Perth, Australia",
+        "result": "Perth, Western Australia, 6000, Australia",
+        "source": "geocoded"
+      },
+      {
+        "id": "565",
+        "name": "Jody Williams",
+        "awardYear": 1997,
+        "place": "residence",
+        "query": "Putney, VT, USA",
+        "result": "Putney, Windham County, Vermont, 05346, United States",
+        "source": "geocoded"
+      },
+      {
         "id": "56",
         "name": "John Cockcroft",
         "awardYear": 1951,
@@ -3223,6 +5106,15 @@
         "result": "Kingston upon Thames, Greater London, United Kingdom",
         "source": "manual",
         "note": "Nominatim matched a Kingston Hill in Stafford; Galsworthy was born at Kingston Hill, Surrey"
+      },
+      {
+        "id": "278",
+        "name": "Kary B. Mullis",
+        "awardYear": 1993,
+        "place": "residence",
+        "query": "La Jolla, CA, USA",
+        "result": "La Jolla, San Diego, San Diego County, California, United States",
+        "source": "geocoded"
       },
       {
         "id": "401",
@@ -3245,12 +5137,57 @@
         "note": "Langford Grove was an estate in Langford"
       },
       {
+        "id": "993",
+        "name": "Louise Glück",
+        "awardYear": 2020,
+        "place": "residence",
+        "query": "Cambridge, MA, USA",
+        "result": "Cambridge, Middlesex County, Massachusetts, United States",
+        "source": "geocoded"
+      },
+      {
+        "id": "159",
+        "name": "Martinus J.G. Veltman",
+        "awardYear": 1999,
+        "place": "residence",
+        "query": "Bilthoven, the Netherlands",
+        "result": "Bilthoven, De Bilt, Utrecht, Netherlands",
+        "source": "geocoded"
+      },
+      {
         "id": "19",
         "name": "Max von Laue",
         "awardYear": 1914,
         "place": "birth",
         "query": "Pfaffendorf, Germany",
         "result": "Pfaffendorf, Koblenz, Rhineland-Palatinate, Germany",
+        "source": "geocoded"
+      },
+      {
+        "id": "1043",
+        "name": "Nihon Hidankyo",
+        "awardYear": 2024,
+        "place": "residence",
+        "query": "Tokyo, Japan",
+        "result": "Tokyo, Japan",
+        "source": "geocoded"
+      },
+      {
+        "id": "979",
+        "name": "Olga Tokarczuk",
+        "awardYear": 2018,
+        "place": "residence",
+        "query": "Wroclaw, Poland",
+        "result": "Wrocław, Lower Silesian Voivodeship, Poland",
+        "source": "geocoded"
+      },
+      {
+        "id": "980",
+        "name": "Peter Handke",
+        "awardYear": 2019,
+        "place": "residence",
+        "query": "Chaville, France",
+        "result": "Chaville, Boulogne-Billancourt, Hauts-de-Seine, Ile-de-France, Metropolitan France, 92370, France",
         "source": "geocoded"
       },
       {
@@ -3338,6 +5275,15 @@
         "source": "geocoded"
       },
       {
+        "id": "361",
+        "name": "Werner Forssmann",
+        "awardYear": 1956,
+        "place": "residence",
+        "query": "Bad Kreuznach, Germany",
+        "result": "Bad Kreuznach, Landkreis Bad Kreuznach, Rhineland-Palatinate, Germany",
+        "source": "geocoded"
+      },
+      {
         "id": "16",
         "name": "Wilhelm Wien",
         "awardYear": 1911,
@@ -3356,6 +5302,15 @@
         "result": "Parachute, Colorado, United States",
         "source": "manual",
         "note": "Nominatim matched Grand Valley, Michigan; Grand Valley, CO was renamed Parachute"
+      },
+      {
+        "id": "741",
+        "name": "William Knowles",
+        "awardYear": 2001,
+        "place": "residence",
+        "query": "St. Louis, MO, USA",
+        "result": "Saint Louis, Missouri, United States",
+        "source": "geocoded"
       },
       {
         "id": "137",

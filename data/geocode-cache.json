@@ -11,6 +11,34 @@
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:33:48.734Z"
   },
+  "Bad Kreuznach, Germany": {
+    "lat": 49.8153468,
+    "lng": 7.9125221,
+    "displayName": "Bad Kreuznach, Landkreis Bad Kreuznach, Rhineland-Palatinate, Germany",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:49.629Z"
+  },
+  "Bilthoven, the Netherlands": {
+    "lat": 52.1289693,
+    "lng": 5.2046134,
+    "displayName": "Bilthoven, De Bilt, Utrecht, Netherlands",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:43.798Z"
+  },
+  "Cambridge, MA, USA": {
+    "lat": 42.3656347,
+    "lng": -71.1040018,
+    "displayName": "Cambridge, Middlesex County, Massachusetts, United States",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:42.369Z"
+  },
+  "Chaville, France": {
+    "lat": 48.8086297,
+    "lng": 2.1882897,
+    "displayName": "Chaville, Boulogne-Billancourt, Hauts-de-Seine, Ile-de-France, Metropolitan France, 92370, France",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:48.397Z"
+  },
   "Fleräng, Sweden": {
     "lat": 60.6370727,
     "lng": 17.3618155,
@@ -24,6 +52,13 @@
     "displayName": "Geldrop, Geldrop-Mierlo, North Brabant, Netherlands",
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:33:54.653Z"
+  },
+  "Geneva, Switzerland": {
+    "lat": 46.2017559,
+    "lng": 6.1466014,
+    "displayName": "Geneva, Switzerland",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:33.056Z"
   },
   "Goldschmieden, near Breslau, Poland": {
     "notFound": true,
@@ -55,6 +90,13 @@
     "displayName": "Kingston Hill, Beaconside, Stafford, Staffordshire, England, United Kingdom",
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:33:57.616Z"
+  },
+  "La Jolla, CA, USA": {
+    "lat": 32.8458529,
+    "lng": -117.2575702,
+    "displayName": "La Jolla, San Diego, San Diego County, California, United States",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:40.726Z"
   },
   "Langford Grove, Maldon, Essex, United Kingdom": {
     "notFound": true,
@@ -89,12 +131,26 @@
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:34:04.576Z"
   },
+  "Palestine": {
+    "lat": 32.2591449,
+    "lng": 35.3015948,
+    "displayName": "Palestinian Territories, West Bank, Palestinian Territories",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:52.670Z"
+  },
   "Parusnoye, Russia": {
     "lat": 45.2907016,
     "lng": 148.3447287,
     "displayName": "Parusnoye, Kurilsky District, Sakhalin Oblast, Far Eastern Federal District, Russia",
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:34:16.030Z"
+  },
+  "Perth, Australia": {
+    "lat": -31.9558967,
+    "lng": 115.8605784,
+    "displayName": "Perth, Western Australia, 6000, Australia",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:37.621Z"
   },
   "Pfaffendorf, Germany": {
     "lat": 50.3432963,
@@ -110,10 +166,24 @@
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:34:03.151Z"
   },
+  "Putney, VT, USA": {
+    "lat": 42.9751766,
+    "lng": -72.5215973,
+    "displayName": "Putney, Windham County, Vermont, 05346, United States",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:39.170Z"
+  },
   "Rufford, near Chesterfield, United Kingdom": {
     "notFound": true,
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:34:07.449Z"
+  },
+  "Seoul, South Korea": {
+    "lat": 37.5666791,
+    "lng": 126.9782914,
+    "displayName": "Seoul, South Korea",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:34.752Z"
   },
   "Shingu, Ehime, Japan": {
     "lat": 33.9219336,
@@ -121,6 +191,13 @@
     "displayName": "Shingu IC, Kochi Expressway, Shikokuchuo, Ehime Prefecture, 799-0399, Japan",
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:34:10.387Z"
+  },
+  "St. Louis, MO, USA": {
+    "lat": 38.6254063,
+    "lng": -90.190009,
+    "displayName": "Saint Louis, Missouri, United States",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:51.270Z"
   },
   "Svartbjörnsbyn, Sweden": {
     "lat": 65.8470216,
@@ -136,6 +213,13 @@
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:34:11.923Z"
   },
+  "Tokyo, Japan": {
+    "lat": 35.6768601,
+    "lng": 139.7638947,
+    "displayName": "Tokyo, Japan",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:45.427Z"
+  },
   "Vik, Sweden": {
     "lat": 55.6139486,
     "lng": 14.2892998,
@@ -147,5 +231,19 @@
     "notFound": true,
     "source": "nominatim",
     "queriedAt": "2026-10-24T23:33:50.146Z"
+  },
+  "Wroclaw, Poland": {
+    "lat": 51.1263106,
+    "lng": 16.9781963,
+    "displayName": "Wrocław, Lower Silesian Voivodeship, Poland",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:46.943Z"
+  },
+  "Yugoslavia": {
+    "lat": -16.1479939,
+    "lng": -68.241578,
+    "displayName": "Pico Yugoslavia, Municipio Batallas, Provincia Los Andes, La Paz, Bolivia",
+    "source": "nominatim",
+    "queriedAt": "2026-10-24T23:43:36.221Z"
   }
 }
