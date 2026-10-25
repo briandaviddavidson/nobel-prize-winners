@@ -6,6 +6,10 @@ import { useLaureatePanel } from '../LaureatePanel.js';
 import { readTheme } from '../usePlot.js';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+// With a Map ID, Google serves a vector map that can tilt, and deck.gl draws into the same
+// 3D scene (interleaved), so arcs rise off the globe. Without one, a flat raster map.
+const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID;
+const THREE_D = Boolean(MAP_ID);
 const SAME_PLACE_KM = 5;
 
 const rgb = (hex, alpha = 255) => {
@@ -89,19 +93,36 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           setOptions({ key: API_KEY, v: 'weekly' });
           const { Map } = await importLibrary('maps');
           if (cancelled) return;
-          const map = new Map(el.current, {
-            // Phones start on the Atlantic (US and Europe); wider screens fit California to Australia.
-            center: el.current.clientWidth < 600 ? { lat: 40, lng: -30 } : { lat: 30, lng: 13 },
-            zoom: el.current.clientWidth < 600 ? 1 : 2,
-            minZoom: 1,
-            styles: mapStyles(isDark()),
-            backgroundColor: readTheme().surface,
-            disableDefaultUI: true,
-            zoomControl: true,
-            gestureHandling: 'cooperative',
-          });
+          const narrow = el.current.clientWidth < 600;
+          const common = { disableDefaultUI: true, zoomControl: true, gestureHandling: 'cooperative' };
+          const map = new Map(
+            el.current,
+            THREE_D
+              ? {
+                  ...common,
+                  // Tilted over the Atlantic, looking north, so the US–Europe arcs are seen side-on.
+                  mapId: MAP_ID,
+                  renderingType: 'VECTOR',
+                  colorScheme: isDark() ? 'DARK' : 'LIGHT',
+                  center: { lat: 30, lng: -25 },
+                  zoom: narrow ? 2 : 2.6,
+                  tilt: 55,
+                  heading: 0,
+                  minZoom: 2,
+                  rotateControl: true,
+                }
+              : {
+                  ...common,
+                  // Phones start on the Atlantic (US and Europe); wider screens fit California to Australia.
+                  center: narrow ? { lat: 40, lng: -30 } : { lat: 30, lng: 13 },
+                  zoom: narrow ? 1 : 2,
+                  minZoom: 1,
+                  styles: mapStyles(isDark()),
+                  backgroundColor: readTheme().surface,
+                },
+          );
           const overlay = new GoogleMapsOverlay({
-            interleaved: false,
+            interleaved: THREE_D,
             layers: [],
             getTooltip: tooltip,
             onClick: ({ object }) => object && openRef.current({ key: object.key }),
@@ -137,7 +158,8 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
     if (status !== 'ready') return;
     const { map, overlay, ArcLayer, ScatterplotLayer } = lib.current;
     const theme = readTheme();
-    map.setOptions({ styles: mapStyles(isDark()), backgroundColor: theme.surface });
+    // A Map ID map takes its look from Cloud Console; only the raster map is styled here.
+    if (!THREE_D) map.setOptions({ styles: mapStyles(isDark()), backgroundColor: theme.surface });
     const color = Object.fromEntries(CATEGORIES.map((c) => [c.name, theme.category(c.key)]));
     const moved = shown.filter((a) => a.km >= SAME_PLACE_KM);
     const stayed = shown.filter((a) => a.km < SAME_PLACE_KM);
@@ -153,10 +175,10 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           getSourceColor: (a) => rgb(color[a.category], alpha(a, 0)),
           getTargetColor: (a) => rgb(color[a.category], alpha(a, 1)),
           getWidth: (a) => (a.approximate ? 1 : 1.5),
-          // Seen from straight above, an upright arc looks like a straight line; tilting it
-          // onto the map plane shows the curve.
-          getTilt: 90,
-          getHeight: 0.2,
+          // In 3D the arcs stand upright and the tilted camera shows them side-on. Seen from
+          // straight above (2D) an upright arc is a straight line, so lay it on the map plane.
+          getTilt: THREE_D ? 0 : 90,
+          getHeight: THREE_D ? 0.5 : 0.2,
           widthUnits: 'pixels',
           pickable: true,
           autoHighlight: true,
