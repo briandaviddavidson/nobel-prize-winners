@@ -10,8 +10,11 @@
   },
   "scripts": {
     "fetch-data": "node scripts/fetch-data.js",
+    "fetch-portraits": "node scripts/fetch-portraits.js",
     "transform": "node scripts/transform.js",
+    "predev": "node scripts/build-details.js",
     "dev": "next dev",
+    "prebuild": "node scripts/build-details.js",
     "build": "next build",
     "test": "node --test"
   },

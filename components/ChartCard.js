@@ -1,10 +1,11 @@
 // Shared frame for every chart: title, subtitle, the chart, its computed takeaway,
 // and a table view so no value depends on hovering.
-export default function ChartCard({ id, title, subtitle, takeaway, note, table, children }) {
+export default function ChartCard({ id, title, subtitle, hint, takeaway, note, table, children }) {
   return (
     <section className="chart" id={id} aria-labelledby={`${id}-title`}>
       <h2 id={`${id}-title`}>{title}</h2>
       {subtitle && <p className="subtitle">{subtitle}</p>}
+      {hint && <p className="hint">{hint}</p>}
       {children}
       <p className="takeaway">{takeaway}</p>
       {note && <p className="note">{note}</p>}

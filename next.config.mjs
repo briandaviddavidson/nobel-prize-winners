@@ -1,8 +1,10 @@
+import { BASE_PATH } from './lib/site.js';
+
 // Static export, deployed at https://briandaviddavidson.com/nobel/
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/nobel',
+  basePath: BASE_PATH,
   trailingSlash: true,
   images: { unoptimized: true },
 };

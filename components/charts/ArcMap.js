@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { CATEGORIES } from '../../lib/categories.js';
+import { useLaureatePanel } from '../LaureatePanel.js';
 import { readTheme } from '../usePlot.js';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
@@ -55,6 +56,9 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
   const [scheme, setScheme] = useState(0);
   const el = useRef(null);
   const lib = useRef(null);
+  const openPanel = useLaureatePanel();
+  const openRef = useRef(openPanel);
+  openRef.current = openPanel;
 
   const shown = useMemo(
     () =>
@@ -96,7 +100,13 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
             zoomControl: true,
             gestureHandling: 'cooperative',
           });
-          const overlay = new GoogleMapsOverlay({ interleaved: false, layers: [], getTooltip: tooltip });
+          const overlay = new GoogleMapsOverlay({
+            interleaved: false,
+            layers: [],
+            getTooltip: tooltip,
+            onClick: ({ object }) => object && openRef.current({ key: object.key }),
+            getCursor: ({ isHovering }) => (isHovering ? 'pointer' : 'grab'),
+          });
           overlay.setMap(map);
           lib.current = { map, overlay, ArcLayer, ScatterplotLayer };
           setStatus('ready');

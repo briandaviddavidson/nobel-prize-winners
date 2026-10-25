@@ -147,6 +147,12 @@ footer a {
   margin: 0 0 16px;
 }
 
+.chart .hint {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  margin: -8px 0 16px;
+}
+
 .chart .takeaway {
   font-size: 1rem;
   margin: 16px 0 0;
@@ -362,4 +368,227 @@ footer a {
   font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif !important;
   max-width: 260px;
   padding: 8px 10px !important;
+}
+
+/* Laureate panel: a side drawer on wide screens, a bottom sheet on phones */
+.laureate-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  height: 100dvh;
+  margin: 0 0 0 auto;
+  max-height: none;
+  max-width: 420px;
+  padding: 0;
+  width: 100%;
+}
+
+.laureate-panel::backdrop {
+  background: rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 600px) {
+  .laureate-panel {
+    border-radius: 12px 12px 0 0;
+    height: auto;
+    margin: auto 0 0;
+    max-height: 85dvh;
+    max-width: none;
+  }
+}
+
+.panel-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: inherit;
+}
+
+.laureate-panel header {
+  align-items: center;
+  border-bottom: 1px solid var(--grid);
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.laureate-panel h2 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.laureate-panel header button {
+  background: none;
+  border: 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font: inherit;
+  min-height: 32px;
+}
+
+.laureate-panel .close {
+  font-size: 1.5rem;
+  line-height: 1;
+  min-width: 32px;
+}
+
+.laureate-panel .back {
+  font-weight: 600;
+  padding: 0;
+  text-align: left;
+}
+
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 16px;
+}
+
+.panel-status {
+  color: var(--text-muted);
+}
+
+.portrait {
+  background: var(--grid);
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+.portrait.placeholder {
+  align-items: center;
+  color: var(--text-secondary);
+  display: flex;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.portrait-small {
+  border-radius: 50%;
+  flex: none;
+  font-size: 0.8125rem;
+  height: 40px;
+  width: 40px;
+}
+
+.portrait-large {
+  border-radius: 8px;
+  font-size: 2.5rem;
+  height: 240px;
+  margin-bottom: 16px;
+  max-width: 100%;
+  width: 192px;
+}
+
+.laureate-list h3 {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.laureate-list h3 .count {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.laureate-list + .laureate-list {
+  margin-top: 20px;
+}
+
+.laureate-list ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.laureate-list button {
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  gap: 12px;
+  padding: 6px;
+  text-align: left;
+  width: 100%;
+}
+
+.laureate-list button:hover,
+.laureate-list button:focus-visible {
+  background: var(--page);
+}
+
+.laureate-list .name {
+  display: block;
+  font-weight: 500;
+}
+
+.laureate-list .meta {
+  color: var(--text-muted);
+  display: block;
+  font-size: 0.8125rem;
+}
+
+.laureate-detail h3 {
+  font-size: 1.375rem;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+
+.laureate-detail .meta {
+  color: var(--text-secondary);
+  margin: 0 0 12px;
+}
+
+.laureate-detail .motivation {
+  font-style: italic;
+  margin: 0 0 16px;
+}
+
+.laureate-detail dl {
+  display: grid;
+  gap: 2px 12px;
+  grid-template-columns: auto 1fr;
+  margin: 0 0 16px;
+}
+
+.laureate-detail dt {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+.laureate-detail dd {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.wiki-link {
+  border: 1px solid var(--axis);
+  border-radius: 999px;
+  color: var(--text-primary);
+  display: inline-block;
+  font-weight: 600;
+  padding: 6px 14px;
+  text-decoration: none;
+}
+
+.wiki-link:hover {
+  border-color: var(--text-primary);
+}
+
+.credit {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin: 20px 0 0;
+}
+
+.credit a {
+  color: inherit;
 }

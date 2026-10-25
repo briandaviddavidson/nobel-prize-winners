@@ -1,10 +1,12 @@
 'use client';
 
 import * as Plot from '@observablehq/plot';
+import { useLaureatePanel } from '../LaureatePanel.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 // Dumbbell: ring = born there, filled dot = worked there, net change at right.
 export default function CountriesChart({ list }) {
+  const openPanel = useLaureatePanel();
   const ref = usePlot(
     (width, theme) => {
       const narrow = width < 560;
@@ -46,6 +48,14 @@ export default function CountriesChart({ list }) {
       });
     },
     [list],
+    (v) =>
+      openPanel({
+        title: v.country,
+        sections: [
+          { title: 'Worked there', match: (d) => d.type === 'person' && d.workCountry === v.country },
+          { title: 'Born there', match: (d) => d.type === 'person' && d.birthCountry === v.country },
+        ],
+      }),
   );
 
   return (

@@ -2,10 +2,12 @@
 
 import * as Plot from '@observablehq/plot';
 import { CATEGORIES } from '../../lib/categories.js';
+import { useLaureatePanel } from '../LaureatePanel.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 // Small multiples: one panel per category, so six hues never share a scatter.
 export default function AgeChart({ points, firstYear, lastYear }) {
+  const openPanel = useLaureatePanel();
   const ref = usePlot(
     (width, theme) => {
       const columns = width < 560 ? 2 : 3;
@@ -76,6 +78,7 @@ export default function AgeChart({ points, firstYear, lastYear }) {
       });
     },
     [points, firstYear, lastYear],
+    (v) => openPanel({ key: v.key }),
   );
 
   return (

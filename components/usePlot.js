@@ -22,8 +22,11 @@ export function readTheme() {
 
 // Renders an Observable Plot figure into a div, and re-renders when the container
 // resizes or the color scheme changes. `build(width, theme)` returns the plot.
-export function usePlot(build, deps) {
+// `onSelect`, if given, gets the datum under the pointer (the mark with the tip) on click.
+export function usePlot(build, deps, onSelect) {
   const ref = useRef(null);
+  const select = useRef(onSelect);
+  select.current = onSelect;
 
   useEffect(() => {
     const el = ref.current;
@@ -33,7 +36,16 @@ export function usePlot(build, deps) {
       const width = Math.floor(el.clientWidth);
       if (!width) return;
       lastWidth = width;
-      el.replaceChildren(build(width, readTheme()));
+      const plot = build(width, readTheme());
+      if (select.current) {
+        plot.addEventListener('input', () => {
+          plot.style.cursor = plot.value ? 'pointer' : '';
+        });
+        plot.addEventListener('click', () => {
+          if (plot.value) select.current?.(plot.value);
+        });
+      }
+      el.replaceChildren(plot);
     };
     render();
 

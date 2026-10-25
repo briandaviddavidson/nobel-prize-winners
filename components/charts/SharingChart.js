@@ -2,11 +2,13 @@
 
 import * as Plot from '@observablehq/plot';
 import { GROUPS, WINNERS } from '../../lib/charts/sharing.js';
+import { useLaureatePanel } from '../LaureatePanel.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 // Small multiples, one panel per group: each bar is 100% of that decade's prizes,
 // split by number of winners. Three-way splits sit on the baseline.
 export default function SharingChart({ counts, decades, lastDecade }) {
+  const openPanel = useLaureatePanel();
   const ref = usePlot(
     (width, theme) => {
       const columns = 2;
@@ -59,6 +61,14 @@ export default function SharingChart({ counts, decades, lastDecade }) {
       });
     },
     [counts, decades, lastDecade],
+    (v) => {
+      const group = GROUPS.find((g) => g.key === v.group);
+      const winners = WINNERS.find((w) => w.n === v.winners).label.toLowerCase();
+      openPanel({
+        title: `${group.short ?? group.label}, ${v.decade}s: ${winners}`,
+        sections: [{ match: (d) => group.test(d.category) && d.decade === v.decade && d.laureateCount === v.winners }],
+      });
+    },
   );
 
   return (

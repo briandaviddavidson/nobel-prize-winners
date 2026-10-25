@@ -107,6 +107,7 @@ for (const l of laureates) {
       isRepeatWinner: l.nobelPrizes.length > 1,
       motivation: en(p.motivation),
       wikidataId: l.wikidata?.id ?? null,
+      wikipediaUrl: l.wikipedia?.english ?? null,
     };
     rows.push(row);
     rawPlaces.set(row, { birth: isOrg ? null : l.birth?.place, affiliation: primary, residence });

@@ -2,9 +2,11 @@
 
 import * as Plot from '@observablehq/plot';
 import { CATEGORIES, shortName } from '../../lib/categories.js';
+import { useLaureatePanel } from '../LaureatePanel.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 export default function PerDecadeChart({ counts, decades, lastDecade }) {
+  const openPanel = useLaureatePanel();
   const ref = usePlot(
     (width, theme) => {
       const label = (d) => (d === lastDecade ? `${d}s*` : `${d}s`);
@@ -46,6 +48,11 @@ export default function PerDecadeChart({ counts, decades, lastDecade }) {
       });
     },
     [counts, decades, lastDecade],
+    (v) =>
+      openPanel({
+        title: `${shortName(v.category)}, ${v.decade}s`,
+        sections: [{ match: (d) => d.decade === v.decade && d.category === v.category }],
+      }),
   );
 
   return <div ref={ref} className="plot" role="img" aria-label="Stacked bar chart of Nobel laureates per decade by category" />;
