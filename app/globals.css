@@ -1,13 +1,27 @@
+/*
+ * Brand: inspired by the restraint of the Nobel Prize identity (Stockholm Design Lab),
+ * not a copy of it. Warm white and near-black with gold as the single brand accent;
+ * Jost (geometric sans) for interface and charts, Newsreader (serif) for the story.
+ * The category colors are the validated chart palette and are not brand colors.
+ */
 :root {
   color-scheme: light;
-  --page: #f9f9f7;
-  --surface: #fcfcfb;
-  --text-primary: #0b0b0b;
-  --text-secondary: #52514e;
-  --text-muted: #6f6d68;
-  --grid: #e1e0d9;
-  --axis: #c3c2b7;
-  --border: rgba(11, 11, 11, 0.1);
+  --font-sans: 'Jost Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader Variable', Georgia, 'Times New Roman', serif;
+
+  --page: #faf8f4;
+  --surface: #ffffff;
+  --text-primary: #1a1915;
+  --text-secondary: #4f4b43;
+  --text-muted: #6e6a61;
+  --grid: #e6e2d8;
+  --axis: #c9c4b8;
+  --rule: #ddd8cc;
+  --border: rgba(26, 25, 21, 0.1);
+
+  /* Gold: --gold for rules, marks and bars (3.4:1); --gold-text for gold type (5.9:1). */
+  --gold: #a77f36;
+  --gold-text: #7a5c22;
 
   /* Category colors: validated as an ordered categorical palette (adjacent pairs). */
   --cat-physics: #2a78d6;
@@ -17,31 +31,34 @@
   --cat-peace: #e87ba4;
   --cat-economics: #008300;
 
-  /* Single-series accent, kept apart from the category hues. */
-  --highlight: #6250d6;
+  /* Single-series accent: the brand gold. */
+  --highlight: #a77f36;
 
-  /* Ordinal ramp for winners per prize (1, 2, 3), validated light→dark. */
-  --share-1: #b4abf0;
-  --share-2: #8576e6;
-  --share-3: #4a3aa7;
+  /* Ordinal ramp for winners per prize (1, 2, 3), validated light→dark in gold. */
+  --share-1: #cba560;
+  --share-2: #a77f36;
+  --share-3: #6e5523;
 
   /* Arc map basemap: muted, so the arcs carry the color. */
-  --map-ocean: #e6ebef;
-  --map-land: #f6f5f1;
-  --map-border: #cfccc3;
+  --map-ocean: #ebe8e1;
+  --map-land: #faf8f4;
+  --map-border: #cfc9bc;
 }
 
 @media (prefers-color-scheme: dark) {
   :root:where(:not([data-theme='light'])) {
     color-scheme: dark;
-    --page: #0d0d0d;
-    --surface: #1a1a19;
-    --text-primary: #f0efec;
-    --text-secondary: #c3c2b7;
-    --text-muted: #9a9890;
-    --grid: #2c2c2a;
-    --axis: #383835;
+    --page: #121110;
+    --surface: #1c1b19;
+    --text-primary: #efebe3;
+    --text-secondary: #bdb8ad;
+    --text-muted: #958f84;
+    --grid: #2b2926;
+    --axis: #3d3a35;
+    --rule: #34312c;
     --border: rgba(255, 255, 255, 0.1);
+    --gold: #c9a45c;
+    --gold-text: #d4b06a;
 
     --cat-physics: #3987e5;
     --cat-chemistry: #d95926;
@@ -49,26 +66,30 @@
     --cat-literature: #c98500;
     --cat-peace: #d55181;
     --cat-economics: #008300;
-    --highlight: #9085e9;
-    --share-1: #5b4bc9;
-    --share-2: #9085e9;
-    --share-3: #c4bdf5;
-    --map-ocean: #111213;
-    --map-land: #262624;
-    --map-border: #3f3e3a;
+    --highlight: #c9a45c;
+    /* Reversed so three-way stays the most prominent step against the dark page. */
+    --share-1: #6e5523;
+    --share-2: #a77f36;
+    --share-3: #d9bd84;
+    --map-ocean: #0c0b0a;
+    --map-land: #1f1e1b;
+    --map-border: #3a3732;
   }
 }
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --page: #0d0d0d;
-  --surface: #1a1a19;
-  --text-primary: #f0efec;
-  --text-secondary: #c3c2b7;
-  --text-muted: #9a9890;
-  --grid: #2c2c2a;
-  --axis: #383835;
+  --page: #121110;
+  --surface: #1c1b19;
+  --text-primary: #efebe3;
+  --text-secondary: #bdb8ad;
+  --text-muted: #958f84;
+  --grid: #2b2926;
+  --axis: #3d3a35;
+  --rule: #34312c;
   --border: rgba(255, 255, 255, 0.1);
+  --gold: #c9a45c;
+  --gold-text: #d4b06a;
 
   --cat-physics: #3987e5;
   --cat-chemistry: #d95926;
@@ -76,13 +97,13 @@
   --cat-literature: #c98500;
   --cat-peace: #d55181;
   --cat-economics: #008300;
-  --highlight: #9085e9;
-  --share-1: #5b4bc9;
-  --share-2: #9085e9;
-  --share-3: #c4bdf5;
-  --map-ocean: #111213;
-  --map-land: #262624;
-  --map-border: #3f3e3a;
+  --highlight: #c9a45c;
+  --share-1: #6e5523;
+  --share-2: #a77f36;
+  --share-3: #d9bd84;
+  --map-ocean: #0c0b0a;
+  --map-land: #1f1e1b;
+  --map-border: #3a3732;
 }
 
 * {
@@ -93,90 +114,212 @@ body {
   margin: 0;
   background: var(--page);
   color: var(--text-primary);
-  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  line-height: 1.5;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
 
-main {
-  max-width: 880px;
-  margin: 0 auto;
-  padding: 48px 16px 64px;
+a {
+  color: inherit;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
-header h1 {
-  font-size: clamp(2rem, 6vw, 3rem);
-  line-height: 1.1;
-  margin: 0 0 12px;
+a:hover {
+  color: var(--gold-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 920px;
+  padding: 0 16px;
+}
+
+/* Site bar */
+.site-bar {
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-bar .wrap {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  min-height: 56px;
+}
+
+.site-name {
+  align-items: center;
+  display: inline-flex;
+  font-weight: 500;
+  gap: 10px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.site-name .mark {
+  color: var(--gold);
+  height: 26px;
+  width: 26px;
+}
+
+.site-bar .byline {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Hero */
+.hero {
+  padding: 72px 0 56px;
+}
+
+.eyebrow {
+  color: var(--gold-text);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.75rem, 9vw, 5rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1;
+  margin: 0 0 24px;
   text-wrap: balance;
 }
 
-header p {
+.hero .deck {
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  margin: 0 0 40px;
-  max-width: 60ch;
+  font-family: var(--font-serif);
+  font-size: clamp(1.1875rem, 2.6vw, 1.4375rem);
+  line-height: 1.45;
+  margin: 0;
+  max-width: 34em;
+  text-wrap: pretty;
 }
 
-footer {
-  border-top: 1px solid var(--grid);
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  margin-top: 48px;
-  padding-top: 16px;
-}
-
-footer a {
-  color: inherit;
-}
-
-/* Chart card */
-.chart {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  margin: 0 0 32px;
-  padding: 24px;
+.hero-stats {
+  border-top: 1px solid var(--rule);
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 48px 0 0;
+  padding: 20px 0 0;
 }
 
 @media (max-width: 600px) {
-  .chart {
-    padding: 16px;
-    border-radius: 8px;
+  .hero {
+    padding: 48px 0 40px;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
+.hero-stats strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.hero-stats span {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Chart sections: open, ruled sections rather than boxed cards */
+.chart {
+  border-top: 1px solid var(--rule);
+  padding: 48px 0 56px;
+}
+
+.chart .eyebrow {
+  margin-bottom: 10px;
+}
+
 .chart h2 {
-  font-size: 1.25rem;
-  margin: 0 0 4px;
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 4.5vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin: 0 0 8px;
   text-wrap: balance;
 }
 
 .chart .subtitle {
   color: var(--text-secondary);
-  font-size: 0.9375rem;
-  margin: 0 0 16px;
+  font-size: 1rem;
+  margin: 0 0 4px;
+  max-width: 60ch;
 }
 
 .chart .hint {
   color: var(--text-muted);
   font-size: 0.8125rem;
-  margin: -8px 0 16px;
+  margin: 0 0 24px;
+  max-width: 70ch;
 }
 
 .chart .takeaway {
-  font-size: 1rem;
-  margin: 16px 0 0;
-  max-width: 68ch;
+  border-left: 2px solid var(--gold);
+  font-family: var(--font-serif);
+  font-size: 1.1875rem;
+  line-height: 1.5;
+  margin: 28px 0 0;
+  max-width: 40em;
+  padding-left: 18px;
+  text-wrap: pretty;
 }
 
 .chart .note {
   color: var(--text-muted);
   font-size: 0.8125rem;
-  margin: 8px 0 0;
+  margin: 12px 0 0;
+  max-width: 80ch;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--rule);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  padding: 40px 0 64px;
+}
+
+.site-footer .mark {
+  color: var(--gold);
+  height: 28px;
+  margin-bottom: 16px;
+  width: 28px;
+}
+
+.site-footer p {
+  margin: 0 0 10px;
+  max-width: 72ch;
+}
+
+.site-footer .disclaimer {
+  margin-top: 20px;
 }
 
 .plot {
+  font-family: var(--font-sans);
   min-height: 320px;
   width: 100%;
 }
@@ -192,7 +335,7 @@ footer a {
 
 .plot:focus-visible {
   border-radius: 4px;
-  outline: 2px solid var(--text-primary);
+  outline: 2px solid var(--gold);
   outline-offset: 6px;
 }
 
@@ -400,6 +543,36 @@ footer a {
   width: 100%;
 }
 
+/* Covers the map until it's clicked, so page scrolling passes over it. */
+.map-activate {
+  align-items: center;
+  background: color-mix(in srgb, var(--page) 35%, transparent);
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  inset: 0;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.map-activate span {
+  background: var(--surface);
+  border: 1px solid var(--axis);
+  border-radius: 999px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  color: var(--text-primary);
+  font-weight: 500;
+  padding: 10px 20px;
+}
+
+.map-activate:hover span,
+.map-activate:focus-visible span {
+  border-color: var(--gold);
+}
+
 .map-controls {
   bottom: 12px;
   display: flex;
@@ -407,7 +580,8 @@ footer a {
   gap: 6px;
   position: absolute;
   right: 12px;
-  z-index: 1;
+  /* Above the activation overlay, so the buttons work before the map is clicked. */
+  z-index: 2;
 }
 
 .map-controls button {
@@ -457,7 +631,7 @@ footer a {
   border: 1px solid var(--axis);
   border-radius: 6px;
   color: var(--text-primary) !important;
-  font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif !important;
+  font: 13px/1.4 var(--font-sans) !important;
   max-width: 260px;
   padding: 8px 10px !important;
 }
@@ -629,7 +803,9 @@ footer a {
 }
 
 .laureate-detail h3 {
-  font-size: 1.375rem;
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 400;
   line-height: 1.2;
   margin: 0 0 4px;
 }
@@ -640,6 +816,8 @@ footer a {
 }
 
 .laureate-detail .motivation {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
   font-style: italic;
   margin: 0 0 16px;
 }

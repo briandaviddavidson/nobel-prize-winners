@@ -13,6 +13,8 @@ const startView = (narrow) =>
     ? { longitude: 15, latitude: 18, zoom: -0.45, pitch: 40, bearing: 0 }
     : { longitude: 15, latitude: 22, zoom: 0.8, pitch: 45, bearing: 0 };
 const PITCH_3D = 45;
+// Scroll zooms directly (no modifier key); right-drag or Shift-drag tilts and rotates.
+const CONTROLLER = { scrollZoom: true, dragRotate: true, touchRotate: true, keyboard: true, maxPitch: 60, minZoom: -1 };
 
 // Rings that cross the 180° meridian (Russia, Fiji) would draw a line across the whole
 // world; shift their western-hemisphere points past 180° so each ring stays in one piece.
@@ -55,6 +57,10 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
   const [status, setStatus] = useState('idle');
   const [scheme, setScheme] = useState(0);
   const [tilted, setTilted] = useState(true);
+  // The map ignores scroll and drag until it is clicked, so scrolling the page past it
+  // never zooms it by accident. Leaving it, clicking elsewhere or Escape turns it off again.
+  const [active, setActive] = useState(false);
+  const frame = useRef(null);
   const el = useRef(null);
   const lib = useRef(null);
   const view = useRef(null);
@@ -86,16 +92,16 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           ]);
           if (cancelled) return;
           const topology = world.default ?? world;
-          const countries = unwrapAntimeridian(feature(topology, topology.objects.countries).features);
+          // Antarctica has no laureates, and its tilted outline only clutters the bottom edge.
+          const countries = unwrapAntimeridian(
+            feature(topology, topology.objects.countries).features.filter((c) => c.properties.name !== 'Antarctica'),
+          );
           view.current = startView(el.current.clientWidth < 600);
           const deck = new Deck({
             parent: el.current,
             views: new MapView({ repeat: false }),
             initialViewState: view.current,
-            // Scroll zooms directly (no modifier key); right-drag or Shift-drag tilts and rotates.
-            controller: { scrollZoom: true, dragRotate: true, touchRotate: true, keyboard: true, maxPitch: 60, minZoom: -1 },
-            // On touch screens a vertical one-finger swipe still scrolls the page.
-            touchAction: 'pan-y',
+            controller: false,
             onViewStateChange: ({ viewState }) => {
               view.current = viewState;
               setTilted(viewState.pitch > 1);
@@ -122,6 +128,24 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
       lib.current = null;
     };
   }, []);
+
+  useEffect(() => {
+    lib.current?.deck.setProps({ controller: active ? CONTROLLER : false });
+    if (!active) return;
+    const node = frame.current;
+    const deactivate = () => setActive(false);
+    const onPointerDown = (e) => !node.contains(e.target) && deactivate();
+    const onLeave = (e) => e.pointerType === 'mouse' && deactivate();
+    const onKey = (e) => e.key === 'Escape' && deactivate();
+    document.addEventListener('pointerdown', onPointerDown);
+    node.addEventListener('pointerleave', onLeave);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown);
+      node.removeEventListener('pointerleave', onLeave);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [active, status]);
 
   // Follow the OS color scheme.
   useEffect(() => {
@@ -250,8 +274,13 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           Show these laureates
         </button>
       </div>
-      <div className="map-frame">
+      <div className="map-frame" ref={frame}>
         <div ref={el} className="map" />
+        {status === 'ready' && !active && (
+          <button type="button" className="map-activate" onClick={() => setActive(true)}>
+            <span>Explore the map</span>
+          </button>
+        )}
         {status === 'ready' && (
           <div className="map-controls" role="group" aria-label="Map view">
             <button type="button" onClick={() => moveCamera((v) => ({ zoom: Math.min(v.zoom + 1, 8) }))} aria-label="Zoom in">

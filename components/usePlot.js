@@ -89,7 +89,7 @@ export function usePlot(build, deps, onSelect, { layout } = {}) {
 export function baseOptions(width, theme) {
   return {
     width,
-    style: { background: 'transparent', color: theme.textSecondary, fontSize: '12px', overflow: 'visible' },
+    style: { background: 'transparent', color: theme.textSecondary, fontFamily: 'inherit', fontSize: '12px', overflow: 'visible' },
     marginTop: 8,
   };
 }
