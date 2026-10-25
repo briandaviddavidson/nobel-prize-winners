@@ -86,7 +86,8 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           const { Map } = await importLibrary('maps');
           if (cancelled) return;
           const map = new Map(el.current, {
-            center: { lat: 35, lng: 0 },
+            // Phones start on the Atlantic (US and Europe); wider screens fit California to Australia.
+            center: el.current.clientWidth < 600 ? { lat: 40, lng: -30 } : { lat: 30, lng: 13 },
             zoom: el.current.clientWidth < 600 ? 1 : 2,
             minZoom: 1,
             styles: mapStyles(isDark()),
@@ -131,7 +132,7 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
     const moved = shown.filter((a) => a.km >= SAME_PLACE_KM);
     const stayed = shown.filter((a) => a.km < SAME_PLACE_KM);
     // Arcs fade in from the birthplace; country-level (approximate) arcs are fainter and thinner.
-    const alpha = (a, end) => (a.approximate ? [25, 110] : [50, 230])[end];
+    const alpha = (a, end) => (a.approximate ? [15, 80] : [30, 170])[end];
     overlay.setProps({
       layers: [
         new ArcLayer({
@@ -142,6 +143,10 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           getSourceColor: (a) => rgb(color[a.category], alpha(a, 0)),
           getTargetColor: (a) => rgb(color[a.category], alpha(a, 1)),
           getWidth: (a) => (a.approximate ? 1 : 1.5),
+          // Seen from straight above, an upright arc looks like a straight line; tilting it
+          // onto the map plane shows the curve.
+          getTilt: 90,
+          getHeight: 0.2,
           widthUnits: 'pixels',
           pickable: true,
           autoHighlight: true,
