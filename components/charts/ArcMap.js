@@ -5,46 +5,42 @@ import { CATEGORIES } from '../../lib/categories.js';
 import { useLaureatePanel } from '../LaureatePanel.js';
 import { readTheme } from '../usePlot.js';
 
-const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
-// With a Map ID, Google serves a vector map that can tilt, and deck.gl draws into the same
-// 3D scene (interleaved), so arcs rise off the globe. Without one, a flat raster map.
-const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID;
-const THREE_D = Boolean(MAP_ID);
 const SAME_PLACE_KM = 5;
 
-const rgb = (hex, alpha = 255) => {
-  const n = parseInt(hex.replace('#', ''), 16);
+// Start tilted, with the whole world in view, so the arcs are seen from the side.
+const startView = (narrow) =>
+  narrow
+    ? { longitude: 15, latitude: 18, zoom: -0.45, pitch: 40, bearing: 0 }
+    : { longitude: 15, latitude: 22, zoom: 0.8, pitch: 45, bearing: 0 };
+const PITCH_3D = 45;
+
+// Rings that cross the 180° meridian (Russia, Fiji) would draw a line across the whole
+// world; shift their western-hemisphere points past 180° so each ring stays in one piece.
+function unwrapAntimeridian(features) {
+  const fixRing = (ring) => {
+    const lngs = ring.map(([lng]) => lng);
+    if (Math.max(...lngs) - Math.min(...lngs) <= 180) return ring;
+    return ring.map(([lng, lat]) => [lng < 0 ? lng + 360 : lng, lat]);
+  };
+  return features.map((f) => {
+    const g = f.geometry;
+    if (!g) return f;
+    const coordinates =
+      g.type === 'Polygon' ? g.coordinates.map(fixRing) : g.type === 'MultiPolygon' ? g.coordinates.map((p) => p.map(fixRing)) : g.coordinates;
+    return { ...f, geometry: { ...g, coordinates } };
+  });
+}
+
+const rgb = (color, alpha = 255) => {
+  const n = parseInt(color.replace('#', ''), 16);
   return [(n >> 16) & 255, (n >> 8) & 255, n & 255, alpha];
 };
 
 const escapeHtml = (s) =>
   String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-// Muted basemaps so the arcs carry the color. Raster styles apply only without a Map ID.
-const mapStyles = (dark) => {
-  const c = dark
-    ? { land: '#232322', water: '#121212', border: '#3d3d3a', text: '#8a8984', halo: '#1a1a19' }
-    : { land: '#f1f0ec', water: '#dde4ea', border: '#c9c7bf', text: '#7a7872', halo: '#fcfcfb' };
-  return [
-    { elementType: 'geometry', stylers: [{ color: c.land }] },
-    { elementType: 'labels.text.fill', stylers: [{ color: c.text }] },
-    { elementType: 'labels.text.stroke', stylers: [{ color: c.halo }] },
-    { elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
-    { featureType: 'water', elementType: 'geometry', stylers: [{ color: c.water }] },
-    { featureType: 'water', elementType: 'labels', stylers: [{ visibility: 'off' }] },
-    { featureType: 'administrative', elementType: 'geometry.stroke', stylers: [{ color: c.border }] },
-    { featureType: 'administrative.province', stylers: [{ visibility: 'off' }] },
-    { featureType: 'administrative.locality', stylers: [{ visibility: 'off' }] },
-    { featureType: 'poi', stylers: [{ visibility: 'off' }] },
-    { featureType: 'road', stylers: [{ visibility: 'off' }] },
-    { featureType: 'transit', stylers: [{ visibility: 'off' }] },
-  ];
-};
-
-const isDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
-
 function tooltip({ object }) {
-  if (!object) return null;
+  if (!object?.key) return null;
   const d = object;
   const where = d.km < SAME_PLACE_KM ? `Born and worked in ${escapeHtml(d.born)}` : `${escapeHtml(d.born)} → ${escapeHtml(d.worked)}`;
   return {
@@ -56,10 +52,12 @@ function tooltip({ object }) {
 export default function ArcMap({ arcs, decades, lastDecade }) {
   const [category, setCategory] = useState('all');
   const [decade, setDecade] = useState('all');
-  const [status, setStatus] = useState(API_KEY ? 'idle' : 'nokey');
+  const [status, setStatus] = useState('idle');
   const [scheme, setScheme] = useState(0);
+  const [tilted, setTilted] = useState(true);
   const el = useRef(null);
   const lib = useRef(null);
+  const view = useRef(null);
   const openPanel = useLaureatePanel();
   const openRef = useRef(openPanel);
   openRef.current = openPanel;
@@ -70,66 +68,44 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
     [arcs, category, decade],
   );
 
-  // Load Google Maps and deck.gl only when the map scrolls near the viewport.
+  // Load deck.gl and the country outlines only when the map scrolls near the viewport.
   useEffect(() => {
-    if (!API_KEY || !el.current) return;
+    if (!el.current) return;
     let cancelled = false;
     const observer = new IntersectionObserver(
       async ([entry]) => {
         if (!entry.isIntersecting) return;
         observer.disconnect();
         setStatus('loading');
-        // Google calls this global when it rejects the key (invalid, or not allowed on this domain).
-        window.gm_authFailure = () => {
-          lib.current?.overlay.setMap(null);
-          if (!cancelled) setStatus('autherror');
-        };
         try {
-          const [{ setOptions, importLibrary }, { GoogleMapsOverlay }, { ArcLayer, ScatterplotLayer }] = await Promise.all([
-            import('@googlemaps/js-api-loader'),
-            import('@deck.gl/google-maps'),
+          const [{ Deck, MapView }, layers, { feature }, world] = await Promise.all([
+            import('@deck.gl/core'),
             import('@deck.gl/layers'),
+            import('topojson-client'),
+            import('world-atlas/countries-110m.json'),
           ]);
-          setOptions({ key: API_KEY, v: 'weekly' });
-          const { Map } = await importLibrary('maps');
           if (cancelled) return;
-          const narrow = el.current.clientWidth < 600;
-          const common = { disableDefaultUI: true, zoomControl: true, gestureHandling: 'cooperative' };
-          const map = new Map(
-            el.current,
-            THREE_D
-              ? {
-                  ...common,
-                  // Tilted over the Atlantic, looking north, so the US–Europe arcs are seen side-on.
-                  mapId: MAP_ID,
-                  renderingType: 'VECTOR',
-                  colorScheme: isDark() ? 'DARK' : 'LIGHT',
-                  center: { lat: 30, lng: -25 },
-                  zoom: narrow ? 2 : 2.6,
-                  tilt: 55,
-                  heading: 0,
-                  minZoom: 2,
-                  rotateControl: true,
-                }
-              : {
-                  ...common,
-                  // Phones start on the Atlantic (US and Europe); wider screens fit California to Australia.
-                  center: narrow ? { lat: 40, lng: -30 } : { lat: 30, lng: 13 },
-                  zoom: narrow ? 1 : 2,
-                  minZoom: 1,
-                  styles: mapStyles(isDark()),
-                  backgroundColor: readTheme().surface,
-                },
-          );
-          const overlay = new GoogleMapsOverlay({
-            interleaved: THREE_D,
-            layers: [],
+          const topology = world.default ?? world;
+          const countries = unwrapAntimeridian(feature(topology, topology.objects.countries).features);
+          view.current = startView(el.current.clientWidth < 600);
+          const deck = new Deck({
+            parent: el.current,
+            views: new MapView({ repeat: false }),
+            initialViewState: view.current,
+            // Scroll zooms directly (no modifier key); right-drag or Shift-drag tilts and rotates.
+            controller: { scrollZoom: true, dragRotate: true, touchRotate: true, keyboard: true, maxPitch: 60, minZoom: -1 },
+            // On touch screens a vertical one-finger swipe still scrolls the page.
+            touchAction: 'pan-y',
+            onViewStateChange: ({ viewState }) => {
+              view.current = viewState;
+              setTilted(viewState.pitch > 1);
+            },
             getTooltip: tooltip,
-            onClick: ({ object }) => object && openRef.current({ key: object.key }),
-            getCursor: ({ isHovering }) => (isHovering ? 'pointer' : 'grab'),
+            getCursor: ({ isDragging, isHovering }) => (isDragging ? 'grabbing' : isHovering ? 'pointer' : 'grab'),
+            onClick: ({ object }) => object?.key && openRef.current({ key: object.key }),
+            layers: [],
           });
-          overlay.setMap(map);
-          lib.current = { map, overlay, ArcLayer, ScatterplotLayer };
+          lib.current = { deck, countries, ...layers };
           setStatus('ready');
         } catch (err) {
           console.error('Arc map failed to load', err);
@@ -142,7 +118,8 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
     return () => {
       cancelled = true;
       observer.disconnect();
-      lib.current?.overlay.finalize();
+      lib.current?.deck.finalize();
+      lib.current = null;
     };
   }, []);
 
@@ -156,17 +133,30 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
 
   useEffect(() => {
     if (status !== 'ready') return;
-    const { map, overlay, ArcLayer, ScatterplotLayer } = lib.current;
+    const { deck, countries, GeoJsonLayer, ArcLayer, ScatterplotLayer } = lib.current;
     const theme = readTheme();
-    // A Map ID map takes its look from Cloud Console; only the raster map is styled here.
-    if (!THREE_D) map.setOptions({ styles: mapStyles(isDark()), backgroundColor: theme.surface });
+    const css = getComputedStyle(document.documentElement);
+    const token = (name) => css.getPropertyValue(name).trim();
     const color = Object.fromEntries(CATEGORIES.map((c) => [c.name, theme.category(c.key)]));
     const moved = shown.filter((a) => a.km >= SAME_PLACE_KM);
     const stayed = shown.filter((a) => a.km < SAME_PLACE_KM);
     // Arcs fade in from the birthplace; country-level (approximate) arcs are fainter and thinner.
     const alpha = (a, end) => (a.approximate ? [15, 80] : [30, 170])[end];
-    overlay.setProps({
+    // Data marks draw over the land without depth-fighting at their ground-level ends.
+    const onTop = { depthCompare: 'always', depthWriteEnabled: false };
+    deck.setProps({
       layers: [
+        new GeoJsonLayer({
+          id: 'land',
+          data: countries,
+          filled: true,
+          stroked: true,
+          getFillColor: rgb(token('--map-land')),
+          getLineColor: rgb(token('--map-border')),
+          lineWidthUnits: 'pixels',
+          getLineWidth: 0.5,
+          updateTriggers: { getFillColor: scheme, getLineColor: scheme },
+        }),
         new ArcLayer({
           id: 'arcs',
           data: moved,
@@ -175,15 +165,16 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           getSourceColor: (a) => rgb(color[a.category], alpha(a, 0)),
           getTargetColor: (a) => rgb(color[a.category], alpha(a, 1)),
           getWidth: (a) => (a.approximate ? 1 : 1.5),
-          // In 3D the arcs stand upright and the tilted camera shows them side-on. Seen from
-          // straight above (2D) an upright arc is a straight line, so lay it on the map plane.
-          getTilt: THREE_D ? 0 : 90,
-          getHeight: THREE_D ? 0.5 : 0.2,
+          // Upright arcs are seen side-on when the camera is tilted; from straight above they
+          // would look like straight lines, so in flat (2D) view they lie on the map instead.
+          getTilt: tilted ? 0 : 90,
+          getHeight: tilted ? 0.3 : 0.2,
           widthUnits: 'pixels',
           pickable: true,
           autoHighlight: true,
-          highlightColor: [255, 255, 255, 200],
-          updateTriggers: { getSourceColor: scheme, getTargetColor: scheme },
+          highlightColor: [255, 255, 255, 220],
+          parameters: onTop,
+          updateTriggers: { getSourceColor: scheme, getTargetColor: scheme, getTilt: tilted, getHeight: tilted },
         }),
         new ScatterplotLayer({
           id: 'stayed',
@@ -194,11 +185,23 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           getRadius: 3,
           pickable: true,
           autoHighlight: true,
+          parameters: onTop,
           updateTriggers: { getFillColor: scheme },
         }),
       ],
     });
-  }, [status, shown, scheme]);
+  }, [status, shown, scheme, tilted]);
+
+  // Camera buttons: the keyboard-reachable way to zoom, tilt and reset.
+  const moveCamera = (change) => {
+    const deck = lib.current?.deck;
+    if (!deck || !view.current) return;
+    const next = { ...view.current, ...change(view.current), transitionDuration: 400 };
+    view.current = next;
+    setTilted(next.pitch > 1);
+    deck.setProps({ initialViewState: next });
+  };
+  const resetView = () => moveCamera(() => startView(el.current.clientWidth < 600));
 
   const decadeLabel = (d) => (d === lastDecade ? `${d}s*` : `${d}s`);
 
@@ -249,12 +252,30 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
       </div>
       <div className="map-frame">
         <div ref={el} className="map" />
+        {status === 'ready' && (
+          <div className="map-controls" role="group" aria-label="Map view">
+            <button type="button" onClick={() => moveCamera((v) => ({ zoom: Math.min(v.zoom + 1, 8) }))} aria-label="Zoom in">
+              +
+            </button>
+            <button type="button" onClick={() => moveCamera((v) => ({ zoom: Math.max(v.zoom - 1, -1) }))} aria-label="Zoom out">
+              −
+            </button>
+            <button
+              type="button"
+              className="wide"
+              aria-pressed={tilted}
+              onClick={() => moveCamera((v) => (v.pitch > 1 ? { pitch: 0, bearing: 0 } : { pitch: PITCH_3D }))}
+            >
+              3D
+            </button>
+            <button type="button" className="wide" onClick={resetView}>
+              Reset
+            </button>
+          </div>
+        )}
         {status !== 'ready' && (
           <div className="map-status">
-            {status === 'nokey' && 'Map unavailable: no Google Maps API key is configured.'}
-            {status === 'error' && 'The map failed to load. The table below summarizes it.'}
-            {status === 'autherror' && 'Google Maps rejected the API key for this site. The table below summarizes the map.'}
-            {(status === 'idle' || status === 'loading') && 'Loading map…'}
+            {status === 'error' ? 'The map failed to load. The table below summarizes it.' : 'Loading map…'}
           </div>
         )}
       </div>

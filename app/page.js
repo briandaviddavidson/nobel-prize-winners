@@ -191,9 +191,9 @@ export default function Home() {
           id="map"
           title="From birthplace to prize-winning work"
           subtitle="Each arc runs from where a laureate was born to where they did the work, brightest at the destination"
-          hint="Select an arc or dot to see the laureate."
+          hint="Select an arc or dot to see the laureate. Drag to pan, scroll to zoom, and right-drag (or Shift-drag, or two fingers) to tilt and rotate."
           takeaway={mapCaption(mapData)}
-          note={`Dots mark laureates who worked where they were born. Fainter arcs end at a country's center: no institution is recorded, only a country of residence. Not shown: ${mapData.notShown} awards (mostly organizations and Peace laureates) with no birthplace or place of work. Distances use city-level arcs only.`}
+          note={`Dots mark laureates who worked where they were born. Fainter arcs end at a country's center: no institution is recorded, only a country of residence. Not shown: ${mapData.notShown} awards (mostly organizations and Peace laureates) with no birthplace or place of work. Distances use city-level arcs only. Country outlines: Natural Earth.`}
           table={{
             columns: ['Most common moves', 'Awards'],
             rows: mapData.routes.map((r) => ({

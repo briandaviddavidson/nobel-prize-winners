@@ -24,6 +24,11 @@
   --share-1: #b4abf0;
   --share-2: #8576e6;
   --share-3: #4a3aa7;
+
+  /* Arc map basemap: muted, so the arcs carry the color. */
+  --map-ocean: #e6ebef;
+  --map-land: #f6f5f1;
+  --map-border: #cfccc3;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,6 +53,9 @@
     --share-1: #5b4bc9;
     --share-2: #9085e9;
     --share-3: #c4bdf5;
+    --map-ocean: #111213;
+    --map-land: #262624;
+    --map-border: #3f3e3a;
   }
 }
 
@@ -72,6 +80,9 @@
   --share-1: #5b4bc9;
   --share-2: #9085e9;
   --share-3: #c4bdf5;
+  --map-ocean: #111213;
+  --map-land: #262624;
+  --map-border: #3f3e3a;
 }
 
 * {
@@ -383,9 +394,42 @@ footer a {
 }
 
 .map {
-  background: var(--page);
+  background: var(--map-ocean);
   height: 520px;
+  position: relative;
   width: 100%;
+}
+
+.map-controls {
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: absolute;
+  right: 12px;
+  z-index: 1;
+}
+
+.map-controls button {
+  background: var(--surface);
+  border: 1px solid var(--axis);
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.875rem;
+  height: 32px;
+  min-width: 32px;
+  padding: 0 8px;
+}
+
+.map-controls button[aria-pressed='true'] {
+  border-color: var(--text-primary);
+  font-weight: 600;
+}
+
+.map-controls button:hover {
+  border-color: var(--text-primary);
 }
 
 @media (max-width: 600px) {
