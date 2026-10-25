@@ -10,19 +10,22 @@
   },
   "scripts": {
     "fetch-data": "node scripts/fetch-data.js",
+    "fetch-portraits": "node scripts/fetch-portraits.js",
     "transform": "node scripts/transform.js",
+    "predev": "node scripts/build-details.js",
     "dev": "next dev",
+    "prebuild": "node scripts/build-details.js",
     "build": "next build",
     "test": "node --test"
   },
   "dependencies": {
     "@deck.gl/core": "^9.4.0",
-    "@deck.gl/google-maps": "^9.4.0",
     "@deck.gl/layers": "^9.4.0",
-    "@googlemaps/js-api-loader": "^2.1.3",
     "@observablehq/plot": "^0.6.17",
     "next": "^16.4.3",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
   }
 }

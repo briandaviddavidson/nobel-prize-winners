@@ -2,10 +2,13 @@
 
 import * as Plot from '@observablehq/plot';
 import { CATEGORIES } from '../../lib/categories.js';
+import { useLaureatePanel } from '../LaureatePanel.js';
+import PlotHost from '../PlotHost.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 // Small multiples: one panel per category, so six hues never share a scatter.
 export default function AgeChart({ points, firstYear, lastYear }) {
+  const openPanel = useLaureatePanel();
   const ref = usePlot(
     (width, theme) => {
       const columns = width < 560 ? 2 : 3;
@@ -44,6 +47,7 @@ export default function AgeChart({ points, firstYear, lastYear }) {
             y: 'age',
             ...facet,
             r: 2.5,
+            className: 'kbd-target',
             fill: color,
             fillOpacity: 0.55,
           }),
@@ -65,7 +69,7 @@ export default function AgeChart({ points, firstYear, lastYear }) {
               y: 'age',
               ...facet,
               ...tipOptions(theme),
-              title: (d) => `Age ${d.age}\n${d.name}, ${d.year}`,
+              title: (d) => `Age ${d.age}\n${d.name}, ${cell[d.category].short} ${d.year}`,
             }),
           ),
           Plot.dot(
@@ -76,14 +80,14 @@ export default function AgeChart({ points, firstYear, lastYear }) {
       });
     },
     [points, firstYear, lastYear],
+    (v) => openPanel({ key: v.key }),
   );
 
   return (
-    <div
-      ref={ref}
-      className="plot"
-      role="img"
-      aria-label="Scatter plots of laureate age at award by year, one panel per category, each with a linear trend line"
+    <PlotHost
+      hostRef={ref}
+      label="Scatter plots of laureate age at award by year, one panel per category, each with a linear trend line"
+      help="Use the left and right arrow keys to step through the years and the up and down arrow keys to move between laureates in the same year. Page Up and Page Down switch between category panels. Press Enter to see the laureate."
     />
   );
 }

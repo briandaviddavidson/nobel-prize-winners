@@ -1,9 +1,12 @@
 'use client';
 
 import * as Plot from '@observablehq/plot';
+import { useLaureatePanel } from '../LaureatePanel.js';
+import PlotHost from '../PlotHost.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 export default function GenderChart({ byDecade, lastDecade }) {
+  const openPanel = useLaureatePanel();
   const ref = usePlot(
     (width, theme) => {
       const decades = byDecade.map((d) => d.decade);
@@ -31,6 +34,7 @@ export default function GenderChart({ byDecade, lastDecade }) {
         marks: [
           Plot.gridY({ stroke: theme.grid, strokeOpacity: 1, ticks: 5 }),
           Plot.barY(byDecade, {
+            className: 'kbd-target',
             x: 'decade',
             y: 'share',
             fill: theme.highlight,
@@ -54,7 +58,19 @@ export default function GenderChart({ byDecade, lastDecade }) {
       });
     },
     [byDecade, lastDecade],
+    (v) =>
+      openPanel({
+        title: `Women laureates, ${v.decade}s`,
+        sections: [{ match: (d) => d.type === 'person' && d.gender === 'female' && d.decade === v.decade }],
+      }),
   );
 
-  return <div ref={ref} className="plot plot-short" role="img" aria-label="Bar chart of the share of Nobel awards to women in each decade" />;
+  return (
+    <PlotHost
+      hostRef={ref}
+      className="plot-short"
+      label="Bar chart of the share of Nobel awards to women in each decade"
+      help="Use the left and right arrow keys to move between decades. Press Enter to list the women who won that decade."
+    />
+  );
 }
