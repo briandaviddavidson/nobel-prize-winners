@@ -1,24 +1,365 @@
 :root {
-  --bg: #fdfcfa;
-  --fg: #1f1d1a;
+  color-scheme: light;
+  --page: #f9f9f7;
+  --surface: #fcfcfb;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #6f6d68;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgba(11, 11, 11, 0.1);
+
+  /* Category colors: validated as an ordered categorical palette (adjacent pairs). */
+  --cat-physics: #2a78d6;
+  --cat-chemistry: #eb6834;
+  --cat-medicine: #1baf7a;
+  --cat-literature: #eda100;
+  --cat-peace: #e87ba4;
+  --cat-economics: #008300;
+
+  /* Single-series accent, kept apart from the category hues. */
+  --highlight: #6250d6;
+
+  /* Ordinal ramp for winners per prize (1, 2, 3), validated light→dark. */
+  --share-1: #b4abf0;
+  --share-2: #8576e6;
+  --share-3: #4a3aa7;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #161514;
-    --fg: #ece9e4;
+  :root:where(:not([data-theme='light'])) {
+    color-scheme: dark;
+    --page: #0d0d0d;
+    --surface: #1a1a19;
+    --text-primary: #f0efec;
+    --text-secondary: #c3c2b7;
+    --text-muted: #9a9890;
+    --grid: #2c2c2a;
+    --axis: #383835;
+    --border: rgba(255, 255, 255, 0.1);
+
+    --cat-physics: #3987e5;
+    --cat-chemistry: #d95926;
+    --cat-medicine: #199e70;
+    --cat-literature: #c98500;
+    --cat-peace: #d55181;
+    --cat-economics: #008300;
+    --highlight: #9085e9;
+    --share-1: #5b4bc9;
+    --share-2: #9085e9;
+    --share-3: #c4bdf5;
   }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: #0d0d0d;
+  --surface: #1a1a19;
+  --text-primary: #f0efec;
+  --text-secondary: #c3c2b7;
+  --text-muted: #9a9890;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgba(255, 255, 255, 0.1);
+
+  --cat-physics: #3987e5;
+  --cat-chemistry: #d95926;
+  --cat-medicine: #199e70;
+  --cat-literature: #c98500;
+  --cat-peace: #d55181;
+  --cat-economics: #008300;
+  --highlight: #9085e9;
+  --share-1: #5b4bc9;
+  --share-2: #9085e9;
+  --share-3: #c4bdf5;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: system-ui, sans-serif;
+  background: var(--page);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 main {
-  max-width: 960px;
+  max-width: 880px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 48px 16px 64px;
+}
+
+header h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.1;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+
+header p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  margin: 0 0 40px;
+  max-width: 60ch;
+}
+
+footer {
+  border-top: 1px solid var(--grid);
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-top: 48px;
+  padding-top: 16px;
+}
+
+footer a {
+  color: inherit;
+}
+
+/* Chart card */
+.chart {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 0 0 32px;
+  padding: 24px;
+}
+
+@media (max-width: 600px) {
+  .chart {
+    padding: 16px;
+    border-radius: 8px;
+  }
+}
+
+.chart h2 {
+  font-size: 1.25rem;
+  margin: 0 0 4px;
+  text-wrap: balance;
+}
+
+.chart .subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin: 0 0 16px;
+}
+
+.chart .takeaway {
+  font-size: 1rem;
+  margin: 16px 0 0;
+  max-width: 68ch;
+}
+
+.chart .note {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  margin: 8px 0 0;
+}
+
+.plot {
+  min-height: 320px;
+  width: 100%;
+}
+
+.plot-short {
+  min-height: 280px;
+}
+
+.plot svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.plot [aria-label='tip'] text {
+  font-variant-numeric: tabular-nums;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  list-style: none;
+  margin: 0 0 12px;
+  padding: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.legend li {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.legend .swatch {
+  border-radius: 3px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.legend .swatch.dot {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
+.legend .swatch.line {
+  border-radius: 1px;
+  height: 2px;
+  width: 16px;
+}
+
+/* Table view: the accessible twin of each chart */
+.table-view {
+  margin-top: 12px;
+  font-size: 0.875rem;
+}
+
+.table-view summary {
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.table-view .scroll {
+  overflow-x: auto;
+  margin-top: 8px;
+}
+
+.table-view table {
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+  width: 100%;
+}
+
+.table-view th,
+.table-view td {
+  border-bottom: 1px solid var(--grid);
+  padding: 4px 8px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.table-view th:first-child,
+.table-view td:first-child {
+  text-align: left;
+}
+
+/* Arc map */
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.map-filters {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-bottom: 8px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--grid);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 0.875rem;
+  gap: 6px;
+  min-height: 32px;
+  padding: 2px 12px;
+}
+
+.chip:hover {
+  border-color: var(--axis);
+}
+
+.chip[aria-pressed='true'] {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.chip .swatch {
+  border-radius: 50%;
+  height: 8px;
+  width: 8px;
+}
+
+.select select {
+  background: var(--surface);
+  border: 1px solid var(--grid);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.875rem;
+  min-height: 32px;
+  padding: 2px 8px;
+}
+
+.map-count {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+  margin: 0 0 8px;
+}
+
+.map-frame {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.map {
+  background: var(--page);
+  height: 520px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .map {
+    height: 420px;
+  }
+}
+
+/* Covers the map while loading, and Google's own error screen if the key is rejected. */
+.map-status {
+  align-items: center;
+  background: var(--page);
+  color: var(--text-muted);
+  z-index: 1;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 16px;
+  position: absolute;
+  text-align: center;
+}
+
+.map-tip {
+  background: var(--surface) !important;
+  border: 1px solid var(--axis);
+  border-radius: 6px;
+  color: var(--text-primary) !important;
+  font: 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif !important;
+  max-width: 260px;
+  padding: 8px 10px !important;
 }
