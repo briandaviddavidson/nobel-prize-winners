@@ -2,6 +2,7 @@ import ChartCard from '../components/ChartCard.js';
 import Legend from '../components/Legend.js';
 import AgeChart from '../components/charts/AgeChart.js';
 import GenderChart from '../components/charts/GenderChart.js';
+import ArcMap from '../components/charts/ArcMap.js';
 import CountriesChart from '../components/charts/CountriesChart.js';
 import SharingChart from '../components/charts/SharingChart.js';
 import PerDecadeChart from '../components/charts/PerDecadeChart.js';
@@ -11,6 +12,7 @@ import { ageCaption, ages } from '../lib/charts/age.js';
 import { genderByDecade, genderCaption } from '../lib/charts/gender.js';
 import { GROUPS, WINNERS, sharing, sharingCaption } from '../lib/charts/sharing.js';
 import { countries, countriesCaption } from '../lib/charts/countries.js';
+import { arcs, mapCaption } from '../lib/charts/map.js';
 import { perDecade, perDecadeCaption } from '../lib/charts/per-decade.js';
 
 export default function Home() {
@@ -19,6 +21,7 @@ export default function Home() {
   const genderData = genderByDecade(rows);
   const sharingData = sharing(prizes);
   const countryData = countries(rows);
+  const mapData = arcs(rows);
   const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${Math.abs(n).toFixed(1)}`;
   const partialNote = `*${lastDecade}–${lastYear} only (${yearsInLastDecade} of 10 years).`;
 
@@ -134,6 +137,20 @@ export default function Home() {
           ]}
         />
         <CountriesChart list={countryData.list} />
+      </ChartCard>
+
+      <ChartCard
+        id="map"
+        title="From birthplace to prize-winning work"
+        subtitle="Each arc runs from where a laureate was born to where they did the work, brightest at the destination"
+        takeaway={mapCaption(mapData)}
+        note={`Dots mark laureates who worked where they were born. Fainter arcs end at a country's center: no institution is recorded, only a country of residence. Not shown: ${mapData.notShown} awards (mostly organizations and Peace laureates) with no birthplace or place of work. Distances use city-level arcs only.`}
+        table={{
+          columns: ['Most common moves', 'Awards'],
+          rows: mapData.routes.map((r) => [r.route, r.count]),
+        }}
+      >
+        <ArcMap arcs={mapData.arcs} decades={decadeData.decades} lastDecade={lastDecade} />
       </ChartCard>
 
       <footer>
