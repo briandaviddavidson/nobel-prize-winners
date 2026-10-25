@@ -2,6 +2,7 @@
 
 import * as Plot from '@observablehq/plot';
 import { useLaureatePanel } from '../LaureatePanel.js';
+import PlotHost from '../PlotHost.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 // Dumbbell: ring = born there, filled dot = worked there, net change at right.
@@ -30,7 +31,7 @@ export default function CountriesChart({ list }) {
           Plot.gridX({ stroke: theme.grid, strokeOpacity: 1, ticks: narrow ? 4 : 6 }),
           Plot.ruleX([0], { stroke: theme.axis }),
           Plot.link(list, { x1: 'born', x2: 'worked', y1: 'country', y2: 'country', stroke: theme.axis, strokeWidth: 2 }),
-          Plot.dot(list, { x: 'born', y: 'country', r: 5, stroke: theme.muted, strokeWidth: 2, fill: theme.surface }),
+          Plot.dot(list, { className: 'kbd-target', x: 'born', y: 'country', r: 5, stroke: theme.muted, strokeWidth: 2, fill: theme.surface }),
           // Smaller and on top, so equal values read as a bullseye instead of hiding the ring.
           Plot.dot(list, { x: 'worked', y: 'country', r: 3.5, fill: theme.highlight }),
           Plot.text(list, {
@@ -56,14 +57,15 @@ export default function CountriesChart({ list }) {
           { title: 'Born there', match: (d) => d.type === 'person' && d.birthCountry === v.country },
         ],
       }),
+    { layout: 'rows' },
   );
 
   return (
-    <div
-      ref={ref}
-      className="plot plot-short"
-      role="img"
-      aria-label="Dot plot comparing awards by birthplace country and by country where the work was done"
+    <PlotHost
+      hostRef={ref}
+      className="plot-short"
+      label="Dot plot comparing awards by birthplace country and by country where the work was done"
+      help="Use the up and down arrow keys to move between countries. Press Enter to list the laureates born or working there."
     />
   );
 }

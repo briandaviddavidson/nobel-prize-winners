@@ -48,7 +48,14 @@ export default function Home() {
             columns: ['Decade', ...CATEGORIES.map((c) => c.short), 'Total'],
             rows: decadeData.decades.map((d) => {
               const cells = CATEGORIES.map((c) => decadeData.counts.find((x) => x.decade === d && x.category === c.name)?.count ?? 0);
-              return [d === lastDecade ? `${d}s*` : `${d}s`, ...cells, cells.reduce((a, b) => a + b, 0)];
+              return {
+                cells: [d === lastDecade ? `${d}s*` : `${d}s`, ...cells, cells.reduce((a, b) => a + b, 0)],
+                label: `${d}s`,
+                select: {
+                  title: `${d}s`,
+                  sections: CATEGORIES.map((c) => ({ title: c.short, filter: { decade: d, category: c.name } })),
+                },
+              };
             }),
           }}
         >
@@ -67,15 +74,22 @@ export default function Home() {
           } laureates only the birth year is known, so their age may be off by one.`}
           table={{
             columns: ['Category', 'Laureates', 'Median before 1950', 'Median since 2000', 'Trend (yrs/decade)', 'Youngest', 'Oldest'],
-            rows: ageData.stats.map((s) => [
-              CATEGORIES.find((c) => c.name === s.category).short,
-              s.count,
-              s.earlyMedian ?? '–',
-              s.recentMedian ?? '–',
-              signed(s.slope),
-              `${s.youngest.name} (${s.youngest.age}, ${s.youngest.year})`,
-              `${s.oldest.name} (${s.oldest.age}, ${s.oldest.year})`,
-            ]),
+            rows: ageData.stats.map((s) => {
+              const short = CATEGORIES.find((c) => c.name === s.category).short;
+              return {
+                cells: [
+                  short,
+                  s.count,
+                  s.earlyMedian ?? '–',
+                  s.recentMedian ?? '–',
+                  signed(s.slope),
+                  `${s.youngest.name} (${s.youngest.age}, ${s.youngest.year})`,
+                  `${s.oldest.name} (${s.oldest.age}, ${s.oldest.year})`,
+                ],
+                label: short,
+                select: { title: short, sections: [{ filter: { category: s.category, type: 'person' } }] },
+              };
+            }),
           }}
         >
           <AgeChart points={ageData.points} firstYear={1900} lastYear={lastYear} />
@@ -90,12 +104,19 @@ export default function Home() {
           note={`${partialNote} Organizations are excluded. Marie Curie counts twice (1903, 1911).`}
           table={{
             columns: ['Decade', 'Women', 'Men', 'Share women'],
-            rows: genderData.byDecade.map((d) => [
-              d.decade === lastDecade ? `${d.decade}s*` : `${d.decade}s`,
-              d.women,
-              d.men,
-              `${(d.share * 100).toFixed(1)}%`,
-            ]),
+            rows: genderData.byDecade.map((d) => ({
+              cells: [
+                d.decade === lastDecade ? `${d.decade}s*` : `${d.decade}s`,
+                d.women,
+                d.men,
+                `${(d.share * 100).toFixed(1)}%`,
+              ],
+              label: `women, ${d.decade}s`,
+              select: {
+                title: `Women laureates, ${d.decade}s`,
+                sections: [{ filter: { type: 'person', gender: 'female', decade: d.decade } }],
+              },
+            })),
           }}
         >
           <GenderChart byDecade={genderData.byDecade} lastDecade={lastDecade} />
@@ -116,7 +137,17 @@ export default function Home() {
                   (w) => sharingData.counts.find((c) => c.group === g.key && c.decade === d && c.winners === w.n)?.count ?? 0,
                 );
                 const total = cells.reduce((a, b) => a + b, 0);
-                return total ? [[g.label, d === lastDecade ? `${d}s*` : `${d}s`, ...cells, total]] : [];
+                if (!total) return [];
+                return [
+                  {
+                    cells: [g.label, d === lastDecade ? `${d}s*` : `${d}s`, ...cells, total],
+                    label: `${g.label}, ${d}s`,
+                    select: {
+                      title: `${g.short ?? g.label}, ${d}s`,
+                      sections: WINNERS.map((w) => ({ title: w.label, filter: { group: g.key, decade: d, laureateCount: w.n } })),
+                    },
+                  },
+                ];
               }),
             ),
           }}
@@ -134,7 +165,17 @@ export default function Home() {
           note={`Today's borders: someone born in Breslau, Germany, counts as Poland. Scotland and Northern Ireland count as the UK. Place of work is the affiliation at the time of the award, or the country of residence when there is none. Net = worked − born. Repeat winners count once per award. Not shown: ${countryData.missingBirth} with no recorded birthplace and ${countryData.missingWork} with no place of work.`}
           table={{
             columns: ['Country', 'Born there', 'Worked there', 'Net'],
-            rows: countryData.list.map((d) => [d.country, d.born, d.worked, d.net > 0 ? `+${d.net}` : d.net]),
+            rows: countryData.list.map((d) => ({
+              cells: [d.country, d.born, d.worked, d.net > 0 ? `+${d.net}` : d.net],
+              label: d.country,
+              select: {
+                title: d.country,
+                sections: [
+                  { title: 'Worked there', filter: { type: 'person', workCountry: d.country } },
+                  { title: 'Born there', filter: { type: 'person', birthCountry: d.country } },
+                ],
+              },
+            })),
           }}
         >
           <Legend
@@ -155,7 +196,11 @@ export default function Home() {
           note={`Dots mark laureates who worked where they were born. Fainter arcs end at a country's center: no institution is recorded, only a country of residence. Not shown: ${mapData.notShown} awards (mostly organizations and Peace laureates) with no birthplace or place of work. Distances use city-level arcs only.`}
           table={{
             columns: ['Most common moves', 'Awards'],
-            rows: mapData.routes.map((r) => [r.route, r.count]),
+            rows: mapData.routes.map((r) => ({
+              cells: [r.route, r.count],
+              label: r.route,
+              select: { title: r.route, sections: [{ filter: { type: 'person', birthCountry: r.from, workCountry: r.to } }] },
+            })),
           }}
         >
           <ArcMap arcs={mapData.arcs} decades={decadeData.decades} lastDecade={lastDecade} />

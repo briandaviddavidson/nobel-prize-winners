@@ -3,9 +3,11 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { BASE_PATH, DETAILS_FILE } from '../lib/site.js';
 import { shortName } from '../lib/categories.js';
+import { matcher } from '../lib/select.js';
 
 // Charts call open({ key }) for one laureate, or open({ title, sections: [{ title, match }] })
-// for a group (a bar segment, a country). Details load on the first open.
+// for a group (a bar segment, a country); a section may give a serializable `filter`
+// (lib/select.js) instead of `match`. Details load on the first open.
 const PanelContext = createContext(() => {});
 export const useLaureatePanel = () => useContext(PanelContext);
 
@@ -149,7 +151,7 @@ export default function LaureatePanelProvider({ children }) {
         return;
       }
       const sections = request.sections
-        .map((s) => ({ title: s.title, items: all.filter(s.match).sort((a, b) => a.year - b.year || a.name.localeCompare(b.name)) }))
+        .map((s) => ({ title: s.title, items: all.filter(s.match ?? matcher(s.filter)).sort((a, b) => a.year - b.year || a.name.localeCompare(b.name)) }))
         .filter((s) => s.items.length);
       setView({ title: request.title, sections });
     } catch (err) {

@@ -27,7 +27,7 @@ test('arcs keeps only drawable rows, flags approximate ends, and counts moves', 
   assert.deepEqual(data.arcs.map((a) => a.approximate), [false, false, true]);
   assert.equal(data.moved, 2);
   assert.equal(data.movedToUS, 2);
-  assert.deepEqual(data.routes, [{ route: 'Germany → USA', count: 2 }]);
+  assert.deepEqual(data.routes, [{ route: 'Germany → USA', from: 'Germany', to: 'USA', count: 2 }]);
   assert.equal(data.arcs[0].worked, 'Uni, B, USA');
   // The recent median skips the approximate arc.
   assert.equal(data.kmRecent, data.arcs[1].km);

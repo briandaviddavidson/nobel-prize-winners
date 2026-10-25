@@ -180,6 +180,13 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
 
   const decadeLabel = (d) => (d === lastDecade ? `${d}s*` : `${d}s`);
 
+  const showList = () => {
+    const keys = new Set(shown.map((a) => a.key));
+    const what = category === 'all' ? 'All categories' : CATEGORIES.find((c) => c.name === category).short;
+    const when = decade === 'all' ? 'all decades' : `${decade}s`;
+    openPanel({ title: `${what}, ${when}`, sections: [{ match: (d) => keys.has(d.key) }] });
+  };
+
   return (
     <>
       <div className="map-filters" role="group" aria-label="Filter the map">
@@ -209,9 +216,15 @@ export default function ArcMap({ arcs, decades, lastDecade }) {
           </select>
         </label>
       </div>
-      <p className="map-count" aria-live="polite">
-        Showing {shown.length.toLocaleString('en-US')} {shown.length === 1 ? 'award' : 'awards'}
-      </p>
+      <div className="map-count">
+        <p aria-live="polite">
+          Showing {shown.length.toLocaleString('en-US')} {shown.length === 1 ? 'award' : 'awards'}
+        </p>
+        {/* The keyboard (and screen reader) route to the laureates the arcs stand for. */}
+        <button type="button" className="text-button" onClick={showList} disabled={!shown.length}>
+          Show these laureates
+        </button>
+      </div>
       <div className="map-frame">
         <div ref={el} className="map" />
         {status !== 'ready' && (

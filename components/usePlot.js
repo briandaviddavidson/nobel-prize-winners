@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { attachKeyboard } from './plotKeyboard.js';
 
 // Reads the chart tokens off :root so Plot gets real colors (SVG attributes can't
 // take var()). Re-read on every render, so a theme change repaints correctly.
@@ -22,8 +23,10 @@ export function readTheme() {
 
 // Renders an Observable Plot figure into a div, and re-renders when the container
 // resizes or the color scheme changes. `build(width, theme)` returns the plot.
-// `onSelect`, if given, gets the datum under the pointer (the mark with the tip) on click.
-export function usePlot(build, deps, onSelect) {
+// `onSelect`, if given, gets the datum under the pointer (the mark with the tip) on click,
+// or under the keyboard focus on Enter; marks with className 'kbd-target' are focusable.
+// `layout` is the keyboard layout ('columns' or 'rows', see plotKeyboard.js).
+export function usePlot(build, deps, onSelect, { layout } = {}) {
   const ref = useRef(null);
   const select = useRef(onSelect);
   select.current = onSelect;
@@ -32,11 +35,26 @@ export function usePlot(build, deps, onSelect) {
     const el = ref.current;
     if (!el) return;
     let lastWidth = 0;
+    let plot = null;
+    const live = el.parentElement.querySelector('[data-live]');
+    const keyboard = select.current
+      ? attachKeyboard(el, () => plot, {
+          layout,
+          onSelect: (v) => select.current?.(v),
+          announce: (text) => {
+            if (live) live.textContent = text;
+          },
+        })
+      : null;
+    // A click opens the laureate panel, so don't let Plot pin ("stick") its tooltip too.
+    const noSticky = (e) => e.stopPropagation();
+    el.addEventListener('pointerdown', noSticky, true);
     const render = () => {
       const width = Math.floor(el.clientWidth);
       if (!width) return;
       lastWidth = width;
-      const plot = build(width, readTheme());
+      plot = build(width, readTheme());
+      keyboard?.reset();
       if (select.current) {
         plot.addEventListener('input', () => {
           plot.style.cursor = plot.value ? 'pointer' : '';
@@ -56,6 +74,8 @@ export function usePlot(build, deps, onSelect) {
     const scheme = window.matchMedia('(prefers-color-scheme: dark)');
     scheme.addEventListener('change', render);
     return () => {
+      keyboard?.detach();
+      el.removeEventListener('pointerdown', noSticky, true);
       resize.disconnect();
       scheme.removeEventListener('change', render);
     };

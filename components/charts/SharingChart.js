@@ -3,6 +3,7 @@
 import * as Plot from '@observablehq/plot';
 import { GROUPS, WINNERS } from '../../lib/charts/sharing.js';
 import { useLaureatePanel } from '../LaureatePanel.js';
+import PlotHost from '../PlotHost.js';
 import { baseOptions, tipOptions, usePlot } from '../usePlot.js';
 
 // Small multiples, one panel per group: each bar is 100% of that decade's prizes,
@@ -45,6 +46,7 @@ export default function SharingChart({ counts, decades, lastDecade }) {
             fontSize: 13,
           }),
           Plot.barY(counts, {
+            className: 'kbd-target',
             x: 'decade',
             y: 'count',
             fill: 'winners',
@@ -55,7 +57,7 @@ export default function SharingChart({ counts, decades, lastDecade }) {
             insetBottom: 1,
             tip: tipOptions(theme),
             title: (d) =>
-              `${pct(d.count / d.total)} ${winnersLabel[d.winners].toLowerCase()}\n${d.count} of ${d.total} prizes, ${label(d.decade)}`,
+              `${pct(d.count / d.total)} ${winnersLabel[d.winners].toLowerCase()}\n${d.count} of ${d.total} ${(cell[d.group].short ?? cell[d.group].label).toLowerCase()} prizes, ${label(d.decade)}`,
           }),
         ],
       });
@@ -72,11 +74,10 @@ export default function SharingChart({ counts, decades, lastDecade }) {
   );
 
   return (
-    <div
-      ref={ref}
-      className="plot"
-      role="img"
-      aria-label="Stacked bar charts of the share of prizes with one, two or three winners per decade, by prize group"
+    <PlotHost
+      hostRef={ref}
+      label="Stacked bar charts of the share of prizes with one, two or three winners per decade, by prize group"
+      help="Use the left and right arrow keys to move between decades and the up and down arrow keys to move between one, two and three winners. Page Up and Page Down switch between panels. Press Enter to list the laureates."
     />
   );
 }
