@@ -1,4 +1,5 @@
 import ChartCard from '../components/ChartCard.js';
+import Mark from '../components/Mark.js';
 import LaureatePanelProvider from '../components/LaureatePanel.js';
 import Legend from '../components/Legend.js';
 import AgeChart from '../components/charts/AgeChart.js';
@@ -12,7 +13,7 @@ import { lastDecade, lastYear, prizes, rows, yearsInLastDecade } from '../lib/da
 import { ageCaption, ages } from '../lib/charts/age.js';
 import { genderByDecade, genderCaption } from '../lib/charts/gender.js';
 import { GROUPS, WINNERS, sharing, sharingCaption } from '../lib/charts/sharing.js';
-import { countries, countriesCaption } from '../lib/charts/countries.js';
+import { countries, countriesCaption, normalizeCountry } from '../lib/charts/countries.js';
 import { arcs, mapCaption } from '../lib/charts/map.js';
 import { perDecade, perDecadeCaption } from '../lib/charts/per-decade.js';
 
@@ -24,21 +25,56 @@ export default function Home() {
   const countryData = countries(rows);
   const mapData = arcs(rows);
   const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${Math.abs(n).toFixed(1)}`;
+  const laureateCount = new Set(rows.map((r) => r.id)).size;
+  const birthCountries = new Set(rows.map((r) => normalizeCountry(r.birthCountryNow)).filter(Boolean)).size;
+  const n = (x) => x.toLocaleString('en-US');
   const partialNote = `*${lastDecade}–${lastYear} only (${yearsInLastDecade} of 10 years).`;
 
   return (
     <LaureatePanelProvider>
-      <main>
-        <header>
-          <h1>Who Wins the Nobel</h1>
-          <p>
-            {rows.length.toLocaleString('en-US')} awards to {new Set(rows.map((r) => r.id)).size.toLocaleString('en-US')} people
-            and organizations, 1901–{lastYear}: who wins, how old they are, where they come from, and how that has changed.
+      <header className="site-bar">
+        <div className="wrap">
+          <a className="site-name" href="#top">
+            <Mark />
+            Who Wins the Nobel
+          </a>
+          <a className="byline" href="https://briandaviddavidson.com/">
+            Brian Davidson
+          </a>
+        </div>
+      </header>
+
+      <main className="wrap" id="top">
+        <section className="hero" aria-labelledby="page-title">
+          <p className="eyebrow">A data story · 1901–{lastYear}</p>
+          <h1 id="page-title">Who Wins the Nobel</h1>
+          <p className="deck">
+            Every Nobel Prize since the first in 1901: who wins, how old they are, where they come from, and how all of that
+            has changed in more than a century of awards.
           </p>
-        </header>
+          <ul className="hero-stats">
+            <li>
+              <strong>{n(rows.length)}</strong>
+              <span>awards</span>
+            </li>
+            <li>
+              <strong>{n(laureateCount)}</strong>
+              <span>laureates, people and organizations</span>
+            </li>
+            <li>
+              <strong>{birthCountries}</strong>
+              <span>countries of birth, today's borders</span>
+            </li>
+            <li>
+              <strong>{lastYear - 1901 + 1}</strong>
+              <span>years of prizes</span>
+            </li>
+          </ul>
+        </section>
 
         <ChartCard
           id="per-decade"
+          eyebrow="01 · Volume"
           title="Laureates per decade"
           subtitle="Each laureate-prize counted once; shared prizes count every winner"
           hint="Select a bar segment to see who won."
@@ -65,6 +101,7 @@ export default function Home() {
 
         <ChartCard
           id="age"
+          eyebrow="02 · Age"
           title="Age at award"
           subtitle="Each dot is one laureate; the line is the linear trend with its 95% confidence band"
           hint="Select a dot to see the laureate."
@@ -97,6 +134,7 @@ export default function Home() {
 
         <ChartCard
           id="gender"
+          eyebrow="03 · Gender"
           title="Women among laureates"
           subtitle="Share of awards to people that went to women, by decade"
           hint="Select a bar to see the women who won that decade."
@@ -124,6 +162,7 @@ export default function Home() {
 
         <ChartCard
           id="sharing"
+          eyebrow="04 · Teams"
           title="Solo vs. shared prizes"
           subtitle="Share of each decade's prizes awarded to one, two or three winners"
           hint="Select a bar segment to see the laureates."
@@ -158,6 +197,7 @@ export default function Home() {
 
         <ChartCard
           id="countries"
+          eyebrow="05 · Geography"
           title="Where laureates are born vs. where they work"
           subtitle="Awards to people, by country of birth and by country of the prize-winning work (top 10 of each)"
           hint="Select a country to see who was born or worked there."
@@ -189,9 +229,10 @@ export default function Home() {
 
         <ChartCard
           id="map"
+          eyebrow="06 · Movement"
           title="From birthplace to prize-winning work"
           subtitle="Each arc runs from where a laureate was born to where they did the work, brightest at the destination"
-          hint="Select an arc or dot to see the laureate. Drag to pan, scroll to zoom, and right-drag (or Shift-drag, or two fingers) to tilt and rotate."
+          hint="Click the map to explore it: drag to pan, scroll to zoom, right-drag (or Shift-drag, or two fingers) to tilt and rotate, and select an arc or dot to see the laureate."
           takeaway={mapCaption(mapData)}
           note={`Dots mark laureates who worked where they were born. Fainter arcs end at a country's center: no institution is recorded, only a country of residence. Not shown: ${mapData.notShown} awards (mostly organizations and Peace laureates) with no birthplace or place of work. Distances use city-level arcs only. Country outlines: Natural Earth.`}
           table={{
@@ -206,10 +247,27 @@ export default function Home() {
           <ArcMap arcs={mapData.arcs} decades={decadeData.decades} lastDecade={lastDecade} />
         </ChartCard>
 
-        <footer>
-          Data: <a href="https://www.nobelprize.org/about/developer-zone-2/">Nobel Prize API</a> (Nobel Prize Outreach), through {lastYear}.
-        </footer>
       </main>
+
+      <footer className="site-footer">
+        <div className="wrap">
+          <Mark />
+          <p>
+            A data project by <a href="https://briandaviddavidson.com/">Brian Davidson</a>. Laureate and prize data from the{' '}
+            <a href="https://www.nobelprize.org/about/developer-zone-2/">Nobel Prize API</a> (Nobel Prize Outreach),
+            through {lastYear}.
+          </p>
+          <p>
+            Missing coordinates geocoded with Nominatim, © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>{' '}
+            contributors. Country outlines from <a href="https://www.naturalearthdata.com/">Natural Earth</a>. Portraits from{' '}
+            <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>, credited with each photo.
+          </p>
+          <p className="disclaimer">
+            An independent project, not affiliated with or endorsed by the Nobel Foundation or Nobel Prize Outreach. Nobel
+            Prize® is a registered trademark of the Nobel Foundation.
+          </p>
+        </div>
+      </footer>
     </LaureatePanelProvider>
   );
 }
