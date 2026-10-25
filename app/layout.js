@@ -1,6 +1,7 @@
 import '@fontsource-variable/jost';
 import '@fontsource-variable/newsreader/opsz.css';
 import '@fontsource-variable/newsreader/opsz-italic.css';
+import Script from 'next/script';
 import './globals.css';
 
 const title = 'Who Wins the Nobel';
@@ -36,6 +37,21 @@ export default function RootLayout({ children }) {
     // Browser extensions (e.g. Ember Inspector, Grammarly) add attributes to <html> and
     // <body> before hydration; this ignores those two elements' attributes only.
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-44KQRGV3PN"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-44KQRGV3PN');
+          `}
+        </Script>
+      </head>
       <body suppressHydrationWarning>{children}</body>
     </html>
   );
