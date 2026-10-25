@@ -2,6 +2,7 @@ import ChartCard from '../components/ChartCard.js';
 import Legend from '../components/Legend.js';
 import AgeChart from '../components/charts/AgeChart.js';
 import GenderChart from '../components/charts/GenderChart.js';
+import CountriesChart from '../components/charts/CountriesChart.js';
 import SharingChart from '../components/charts/SharingChart.js';
 import PerDecadeChart from '../components/charts/PerDecadeChart.js';
 import { CATEGORIES } from '../lib/categories.js';
@@ -9,6 +10,7 @@ import { lastDecade, lastYear, prizes, rows, yearsInLastDecade } from '../lib/da
 import { ageCaption, ages } from '../lib/charts/age.js';
 import { genderByDecade, genderCaption } from '../lib/charts/gender.js';
 import { GROUPS, WINNERS, sharing, sharingCaption } from '../lib/charts/sharing.js';
+import { countries, countriesCaption } from '../lib/charts/countries.js';
 import { perDecade, perDecadeCaption } from '../lib/charts/per-decade.js';
 
 export default function Home() {
@@ -16,6 +18,7 @@ export default function Home() {
   const ageData = ages(rows);
   const genderData = genderByDecade(rows);
   const sharingData = sharing(prizes);
+  const countryData = countries(rows);
   const signed = (n) => `${n > 0 ? '+' : n < 0 ? '−' : ''}${Math.abs(n).toFixed(1)}`;
   const partialNote = `*${lastDecade}–${lastYear} only (${yearsInLastDecade} of 10 years).`;
 
@@ -111,6 +114,26 @@ export default function Home() {
       >
         <Legend items={[...WINNERS].reverse().map((w) => ({ key: w.n, label: w.label, color: `var(--share-${w.n})` }))} />
         <SharingChart counts={sharingData.counts} decades={sharingData.decades} lastDecade={lastDecade} />
+      </ChartCard>
+
+      <ChartCard
+        id="countries"
+        title="Where laureates are born vs. where they work"
+        subtitle="Awards to people, by country of birth and by country of the prize-winning work (top 10 of each)"
+        takeaway={countriesCaption(countryData)}
+        note={`Today's borders: someone born in Breslau, Germany, counts as Poland. Scotland and Northern Ireland count as the UK. Place of work is the affiliation at the time of the award, or the country of residence when there is none. Net = worked − born. Repeat winners count once per award. Not shown: ${countryData.missingBirth} with no recorded birthplace and ${countryData.missingWork} with no place of work.`}
+        table={{
+          columns: ['Country', 'Born there', 'Worked there', 'Net'],
+          rows: countryData.list.map((d) => [d.country, d.born, d.worked, d.net > 0 ? `+${d.net}` : d.net]),
+        }}
+      >
+        <Legend
+          items={[
+            { key: 'born', label: 'Born there', color: 'var(--text-muted)', shape: 'ring' },
+            { key: 'worked', label: 'Worked there', color: 'var(--highlight)', shape: 'dot' },
+          ]}
+        />
+        <CountriesChart list={countryData.list} />
       </ChartCard>
 
       <footer>

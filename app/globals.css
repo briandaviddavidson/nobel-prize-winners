@@ -203,6 +203,12 @@ footer a {
   width: 12px;
 }
 
+.legend .swatch.dot {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+}
+
 .legend .swatch.line {
   border-radius: 1px;
   height: 2px;
